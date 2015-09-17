@@ -5,6 +5,6 @@ library("hexbin")
 theme_set(theme_classic())
 
 ggplot (cls, aes (x = proj1, y = proj2,fill = Area)) + 
-  stat_binhex (bins=5, aes (alpha = sqrt(..density..))) + facet_wrap (~ Area)
+  stat_binhex (bins=10, aes (alpha = log(..density..))) + facet_wrap (~ Area)
 ggplot (cls, aes (x = proj1, y = proj3,fill = Area)) + 
-  stat_binhex (bins=5, aes (alpha = sqrt(..density..))) + facet_wrap (~ Area)
+  stat_binhex (bins=10, aes (alpha = log(..density..))) + facet_wrap (~ Area)
