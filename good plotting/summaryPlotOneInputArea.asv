@@ -31,7 +31,7 @@ CueColor= [  0 	0 	255;%blue
              0 0 0
              0 255 0]/255; % grey
          trialType = [1 2 3 4 9 10];
-figure('Position',[360 50 1000 920]);
+figure('Position',[200 200 1000 787]);
 subplot(4,1,1)
 for i = [1 2 4 5]
         smoothed = smooth(averagePSTH(trialType(i),:),100);    
@@ -57,7 +57,7 @@ end
 xlim([200 4800])
 title(sprintf('input neurons US+ %d out of %d %.1f%%', sum(validT&lightIdx'),...
     sum(lightIdx),100*sum(validT&lightIdx')/sum(lightIdx)))
-
+%%
 validT = ~isnan( squeeze(rawPSTH(:,5,1)));
 averagePSTH = squeeze(nanmean(rawPSTH(validT,:,:)));
 averagelightPSTH = squeeze(nanmean(rawPSTH(lightIdx&validT',:,:)));
@@ -72,8 +72,7 @@ end
 %prettyP([200 4800],'','','','a')
 xlim([200 4800])
 
-title(sprintf('all neurons US- %d out of %d %.1f%%', sum(validT),...
-    length(validT),100*sum(validT)/length(validT)))
+title('all neurons average US-')
 
 subplot(4,1,4)
 for i = 1:3
@@ -85,8 +84,7 @@ end
 %legend('OM 90%W','OM 50%W','90% Nothing','OM 80% puff');  
 %prettyP([200 4800],'','','','a')
 xlim([200 4800])
-title(sprintf('input neurons US- %d out of %d %.1f%%', sum(validT&lightIdx'),...
-    sum(lightIdx),100*sum(validT&lightIdx')/sum(lightIdx)))
+title('input neurons average US-')
 suptitle([brainArea ' average PSTH'])
 export_fig(gcf,[saveFolder brainArea '_AveragePSTH.pdf'])
 
@@ -168,8 +166,6 @@ export_fig([saveFolder brainArea 'PCAresults.pdf'])
 % add dimension reduction of dataToCluster
 %%
 %
-%nanIdx = find(isnan(dataToCluster)); % debug the missing data
-%[I, J] = ind2sub(size(dataToCluster),nanIdx);
 for i = 1:10
     nclusters =i;
     minD = inf;
@@ -285,7 +281,7 @@ for j = 1:nclusters
 %     a = squeeze(psthValue(2,find(clustLabel==j),:));
 %     idx = ~isnan(a(:,1));
     maxy = 0;
-    for k = 1:4
+    for k = 1:5
         a = squeeze(psthValue(k,find(clustLabel==j),:));
         %a = a(find(idx==1),:); % remove empty trials
         if min(size(a))>1
@@ -309,7 +305,7 @@ for j = 1:nclusters
     
     p(3,j).select()
     maxy = 0;
-    for k = 1:4
+    for k = 1:5
         a = squeeze(lickValue(k,find(clustLabel==j),:));
         %a = a(find(idx==1),:); % remove empty trials
         if min(size(a))>1

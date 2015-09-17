@@ -95,5 +95,3 @@ clustering_sum.Area = areaList';
 clustering_sum.proj1 = proj(:,1);
 clustering_sum.proj2 = proj(:,2);
 clustering_sum.proj3 = proj(:,3);
-clustering_sum.light = ismember(allfl',allLightFiles.FileName);
-writetable(clustering_sum,[savePath 'clustering_all.txt'],'Delimiter',' ')
