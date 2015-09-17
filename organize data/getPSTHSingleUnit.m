@@ -14,6 +14,10 @@ function analyzedData = getPSTHSingleUnit(filename)
         events.odorOn(events.trialType==8)
         events.rewardOn(events.trialType==9)-2000
         events.airpuffOn(events.trialType==10)-2000
+        events.odorOn(events.odorID == 3)
+        events.odorOn(events.odorID == 1)
+        events.odorOn(events.odorID == 2)
+        events.odorOn(events.odorID == 4)
         }; % 90% reward
 
      [~, r, psths] = plotPSTH(responses.spike, trigger, pretrigger, posttrigger, ...
@@ -47,8 +51,11 @@ function analyzedData = getPSTHSingleUnit(filename)
     analyzedData.smoothPSTH = smoothPSTH;
     analyzedData.rawPSTH = psths;
     analyzedData.rocPSTH = rocPSTH;
-    analyzedData.rawLick = psths;
     analyzedData.raster = r;
     analyzedData.psthName = {'90%water','50% reward','10% reward','80% airpuff',...
             'omission 90% water','omission 50% reward','omssion 10% reward',...
             'omission airpuff','free reward','free airpuff'};
+        
+    [~, r, psths] = plotPSTH(responses.lick, trigger, pretrigger, posttrigger, ...
+          'plotflag', 'none','smooth','n');        
+    analyzedData.rawLick = psths;

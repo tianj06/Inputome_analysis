@@ -1,7 +1,7 @@
 %CopyUniqueUnitsFromExcelNew  excel format 2013-07-16_00-00-10	TT2_01
-homePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_PPTg\';
+homePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_Striatum\';
 desFormattedDataPath = [homePath 'uniqueUnits\'];
-desPlotPath = [homePath 'unique units plotting\'];
+desPlotPath = [homePath 'uniqueUnitsPlotting\'];
 SourcePlottingPath = [homePath 'plotting\'];
 SourceFormattedDataPath = [homePath 'formatted\'];
 %dataFiles = {dataFiles.name};
@@ -11,9 +11,9 @@ plotFiles = {plotFiles.name};
 missingFormatted = cell(1,1);
 missingPlotting = cell(1,1);
 %% read excelsheet about units infor
-excelDoc = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\NeuronFinalPPTg.xlsx';
+excelDoc = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\NeuronFinalSt.xlsx';
 [~,sheets] = xlsfinfo( excelDoc );
-for i = 9%length(sheets)
+for i = 5%length(sheets)
     [num, txt, ~] = xlsread(excelDoc,sheets{i});
     if ~isempty(num)
         a = num2str(num);

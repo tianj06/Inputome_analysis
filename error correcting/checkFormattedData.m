@@ -56,12 +56,13 @@ for i = 1:length(fl)
        trialProb (i,:) = a;
         
        if max(abs(a(1:4) - [90 50 0 80]))>15 || a(5)>40 || a(6) > 40
-        a
+        
 %             try
 %                 updateEventExtractionsAllClick(fl{i},rawDataPath)
 %                 %updateEventExtractions(fl{i},rawDataPath)
 %             catch
-                 errorFiles{k} = fl{i};
+                 errorFiles{k,1} = fl{i};
+                 errorFiles{k,2} = a;
                  k = k+1;
 %            end
       end

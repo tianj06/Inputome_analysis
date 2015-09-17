@@ -1,13 +1,13 @@
 % ind = find(strcmp('cant find psth and light result files',...
 %     errorProcess(:,2)));
 % dataFile = errorProcess(ind,1);
-ProcessedDataPath = 'D:\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_Striatum\formatted\';
+ProcessedDataPath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_RMTg\uniqueUnits\';
 cd(ProcessedDataPath);
 fl = what(ProcessedDataPath);
 dataFile = fl.mat;
-savePath = 'D:\Dropbox (Uchida Lab)\lab\FunInputome\Plottings\';
+savePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\Plottings\';
 %rawPath = {'K:\St\','M:\rabies\','N:\rabies\','D:\VP_LPO\'};
-rawPath = {'K:\St\'};
+rawPath = {'H:\rabiesRMTg\'};
 
 if ~iscell(dataFile)
     dataFile = {dataFile};
@@ -21,7 +21,7 @@ for i = 1:length(dataFile) %145:225%
     varName = {info.name};
     
     try
-       if isempty(find(strcmp('analyzedData',varName)))
+       if 1%isempty(find(strcmp('analyzedData',varName)))
             analyzedData = getPSTHSingleUnit(filename); 
             save(filename,'-append','analyzedData');
         end
@@ -36,14 +36,15 @@ for i = 1:length(dataFile) %145:225%
                 end
             end
             if rawfind
-                plotLaserResponse_SingleNeuron_AfterSnippets(filename,ProcessedDataPath,rawdataPath);
-                %plotLaserResponse_SingleNeuron(filename,ProcessedDataPath,rawdataPath);
+                %plotLaserResponse_SingleNeuron_AfterSnippets(filename,ProcessedDataPath,rawdataPath);
+                plotLaserResponse_SingleNeuron(filename,ProcessedDataPath,rawdataPath);
                 set(gcf,'units','normalized','outerposition',[0 0 1 1])
                 saveas(gcf,[savePath fn 'Light'],'tif')
                 close all
             else
                 filename
                 display('Could not find raw files')
+                copyfile(filename,['C:\Users\uchidalab\Desktop\missing check laser\' filename])
             end
             
         end

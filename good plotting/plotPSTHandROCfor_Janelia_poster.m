@@ -1,10 +1,8 @@
-filePath = 'D:\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VTA\analysis\DAtype';
+filePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VTA\analysis\DAtype';
 
 fl = dir(filePath);
 fl(1:2) = [];
 fl = {fl.name};
-
-
 
 for i = 1:length(fl)
     fn = [fl{i}(1:end-4) '_formatted.mat']; %

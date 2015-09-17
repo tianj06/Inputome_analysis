@@ -4,7 +4,7 @@ function [allPSTH, averagePSTH, norAllPSTH]= getAveragePSTH_filelist(fileList,ty
         end
         pretrigger = 1000;
         posttrigger = 4000;
-        psthValue = zeros(length(fileList),10,5001);
+        psthValue = zeros(length(fileList),14,5001);
         rocBin = 100;
         binNum = (pretrigger + posttrigger)/rocBin;
         for i = 1:length(fileList)

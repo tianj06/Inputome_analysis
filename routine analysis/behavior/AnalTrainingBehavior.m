@@ -1,0 +1,40 @@
+
+dataPath = pwd;
+[events responses saveFile] = formatBehavioralData(dataPath);
+%%
+
+trig = {events.odorOn((events.odorID==3)&(~isnan(events.rewardOn))), ...   ~90% reward
+        events.odorOn((events.odorID==1)&(~isnan(events.rewardOn))), ...   ~50% reward
+        events.odorOn((events.odorID==2)&(isnan(events.rewardOn))), ...   ~90% no reward
+        events.odorOn((events.odorID==4)&(~isnan(events.airpuffOn)))};    % ~90% airpuff
+CueColor= [  0 	0 	255;%blue  
+                   30 	144 	255;%light blue  
+                   128 	128 128; % grey
+                    255 0 0]/255; % red
+legText = {'Reward cue', '50% cue','No reward cue', 'Airpuff cue'};
+figure;
+[~,r,~,~,~,~,~,~,legh] = ...
+  plotPSTH(responses.lick, trig, 1000, 4000, 'plottype','PSTH', ...
+    'smooth','box',100,'legend', legText,...
+    'ax',gca,'co',CueColor);
+set(legh,'box','off','Location','NorthWest');
+patch([0 0 1000 1000],[min(ylim) .025*max(ylim) .025*max(ylim) min(ylim)], ...
+    [0.5 0.5 0.5],'LineStyle','none');
+plot([2000 2000],ylim,'k--');
+%temp = get(gca,'Children'); set(gca,'Children',flipud(temp));
+xlabel('Time from odor onset (ms)');
+ylabel('Licks /s');
+saveas(gcf,saveFile(1:end-4),'jpg')
+%%
+figure;
+for i = 1:length(r)
+    subplot(length(r),1,i)
+    rasterPlotOriginal(r{i},CueColor(i,:));
+    plot([4000 4000],ylim,'k--');
+    set(gca,'XTick',[0 1000 2000 3000 4000 5000], 'XTicklabel',{'-1','0','1','2','3','4'})
+end
+
+
+%temp = get(gca,'Children'); set(gca,'Children',flipud(temp));
+xlabel('Time from odor onset (ms)');
+saveas(gcf,[saveFile(1:end-4) 'raster'],'jpg')
