@@ -12,10 +12,12 @@ rawPSTH = zeros(length(filelist),10,5001);
 
 for i = 1:length(filelist)
     load([formattedpath '\' filelist{i}], 'analyzedData')
+    analyzedData = remove_too_few_trials(analyzedData);
     smoothPSTH(i,:,:) = analyzedData.smoothPSTH(1:10,:);
     rocPSTH(i,:,:) = analyzedData.rocPSTH(1:10,:);
     lickPSTH(i,:,:) = analyzedData.rawLick(1:10,:);
     rawPSTH(i,:,:) = analyzedData.rawPSTH(1:10,:);
+    %
 end
 %% plot average psth for all neurons and identified neurons
 averagePSTH = squeeze(nanmean(smoothPSTH));
