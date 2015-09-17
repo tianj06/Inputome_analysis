@@ -29,6 +29,7 @@ for i = 1:length(flall)
         llowSalt(i) = lightResult.lowSaltP; 
         lhightSalt(i) = lightResult.highSaltP; 
         lwvcorr(i) = lightResult.wvCorrAll; 
+        ljitter(i) = nanstd(checkLaser.LaserEvokedPeak);
         p(i) = checkLaser.p_inhibit;
         %brainAreaAll{i} = area;
         %lightResult.wvCorrSpecific
@@ -95,7 +96,7 @@ end
 lightIdx = (llowSalt<lowSaltCR)&(lhightSalt< highsalt)&(lwvcorr>wvcorrCR)&(p>0.05);
 lightfiles = flall(lightIdx);
 lightlatency = llatency(lightIdx);
-lightjitter =  nanstd(checkLaser.LaserEvokedPeak);
+lightjitter = ljitter(lightIdx);
 
 %% visualize light identified neurons' response
 if plotflag == 1
