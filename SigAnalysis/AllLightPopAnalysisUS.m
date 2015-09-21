@@ -10,6 +10,16 @@ for i = 1:length(fl)
 end
 
 [G,areaName]=grp2idx(brainArea);
+%% change  the name of brain areas
+oldnames = {'Striatum','LH','VS','PPTg','RMTg','VP','St','DA','VTA3','VTA2','Ce'};
+newnames = {'Dorsal striatum','Lateral hypothalamus','Ventral striatum',...
+    'PPTg','RMTg','Ventral pallidum','Dorsal striatum','Dopamine','VTA type3',...
+    'VTA type2','Central amygdala'};
+oldbrain = brainArea;
+for i = 1:length(oldnames)
+    idx = ismember(oldbrain,oldnames{i});
+    brainArea(idx) = newnames(i);
+end
 %%
 
 figure;
@@ -25,6 +35,7 @@ figure;
 bar(grpstats(RPE,G))
 set(gca,'xtickLabel',areaName)
 %%
+savePath = ['C:\Users\uchidalab\Documents\GitHub\Inputome_analysis\SigAnalysis\'];
 Tus.pureReward = Tus.sig50Rvs50OM&(~Tus.sigExp)&(~Tus.sig50OM);
 Tus.pureExp = Tus.sig90Reward&(~Tus.sig50Rvs50OM)&Tus.EXPsign;
 Tus.RPE = Tus.sig50R&Tus.sigExp&Tus.RPEsign;
@@ -35,7 +46,7 @@ Tus.brainArea = brainArea';
 Tus.mixed = Tus.sig50Rvs50OM&(~Tus.pureReward)&(~Tus.RPE);
 Tus.other = (~Tus.sig50Rvs50OM)&(~Tus.pureExp);
 Tus.brainArea = brainArea';
-writetable(Tus,'us.txt','Delimiter',' ');
+writetable(Tus,[savePath 'us.txt'],'Delimiter',',');
 
 %plot_pop_summary_fromAnalyzedPanel(fl(Tus.pureReward & G ==5 ),savePath)
 % idx = find(Tus.sigReward&(~Tus.sigExp)&(~Tus.sig50OM));
@@ -66,7 +77,7 @@ CSposNegRPE = AllRPE;
 CSposRPE = PosRPE;
 JoinedRPE = table(CSposRPE,CSposNegRPE);
 JoinedRPE.brainArea = brainArea';
-writetable(JoinedRPE,'jRPE.txt','Delimiter',' ');
+writetable(JoinedRPE,[savePath 'jRPE.txt'],'Delimiter',',');
 
 
 figure;

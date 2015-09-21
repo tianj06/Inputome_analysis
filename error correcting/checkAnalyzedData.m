@@ -1,7 +1,4 @@
-ProcessedDataPath = 'D:\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_Striatum\uniqueUnits\';
 
-savePath = 'D:\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_Striatum\uniqueUnits\';
-% 
 fl = what(pwd);
 fl = fl.mat;
 
