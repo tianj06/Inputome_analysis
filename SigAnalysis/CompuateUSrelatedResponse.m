@@ -1,4 +1,4 @@
-function valueAnalyzedUS = CompuateUSrelatedResponseNew(fn)
+function valueAnalyzedUS = CompuateUSrelatedResponse(fn)
     load(fn,'analyzedData');
     rs = analyzedData.raster;
    

@@ -42,7 +42,7 @@ function plot_pop_summary_fromAnalyzedPanel(fl,savePath,figureName)
         p(rowIdx,colIdx,1).select()
         plotTrialType = [1 2 9];
         for i = 1:length(plotTrialType)
-            plot(-1:0.001:4,squeeze(psthAll(n,plotTrialType(i),:)),'color',colorSet(i,:)); hold on;
+            plot(-1:0.001:4,smooth(squeeze(psthAll(n,plotTrialType(i),:)),10),'color',colorSet(i,:)); hold on;
             xlim([-0.9 3.9])
             yL = ylim;
             if i==2

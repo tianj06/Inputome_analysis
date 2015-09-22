@@ -52,10 +52,7 @@ inputG = G<=7|G==10;
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&inputG&Tus.Rewardsign)) %,savePath
 plotAveragePSTH_analyzed_filelist(fl(Tus.RPE&inputG&Tus.Rewardsign)) %,savePath
 
-plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==1&inputG)) %,savePath
-
-plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==2&inputG)) %,savePath
-
+plotAveragePSTH_analyzed_filelist(fl(Tus.pureRPEDir==&inputG&Tus.Rewardsign)) %,savePath
 
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&(G<=7|G==10)))
 idx = find(Tus.sigReward&(~Tus.sigExp)&(~Tus.sig50OM));
