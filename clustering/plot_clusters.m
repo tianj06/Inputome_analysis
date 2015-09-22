@@ -1,5 +1,5 @@
-function plot_clusters(clustLabel,rocValues,psthValue,lickValue)
-nclusters = length(unique(clustLabel));
+function plot_clusters(clustLabel,rocValues,psthValue,lickValue,brainArea)
+nclusters = max(clustLabel);
 clustlines = nan(3,nclusters-1);
 for i = 1:nclusters-1
     temp = sum(clustLabel<=i) + 0.5;
@@ -10,7 +10,7 @@ clustlines = clustlines(:); %now verticalize
 figure('Position',[-14 -3 1000 787]);
 p = panel();
 p.pack('v',[0.6 0.2 0.2])
-p(1).pack('h',6)
+p(1).pack('h',5)
 p(2).pack('h',nclusters)
 p(3).pack('h',nclusters)
 
@@ -26,7 +26,11 @@ for j = 1:5
     plot(xlines,clustlines,'r');
     set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
     ylabel('Neuron'); xlabel('Time (s)');
-    title(titleText{j});
+    if j ==1
+        title([brainArea ' ' titleText{j}]);
+    else
+        title(titleText{j});
+    end
 end
 colorset= [  0 	0 	255;%blue  
              30 	144 	255;%light blue  
@@ -45,7 +49,7 @@ for j = 1:nclusters
         else
             averagePSTH = a;
         end
-        plot(smooth(averagePSTH,100),'Color',colorset(k,:),'LineWidth',2);hold on
+        plot(smooth(averagePSTH,100),'Color',colorset(k,:),'LineWidth',1);hold on
         if maxy < max(smooth(averagePSTH,100))
             maxy = max(smooth(averagePSTH,100));
         end
@@ -69,7 +73,7 @@ for j = 1:nclusters
         else
             averagePSTH = a;
         end
-        plot(smooth(averagePSTH,100),'Color',colorset(k,:),'LineWidth',2);hold on
+        plot(smooth(averagePSTH,100),'Color',colorset(k,:),'LineWidth',1);hold on
         if maxy < max(smooth(averagePSTH,100))
             maxy = max(smooth(averagePSTH,100));
         end

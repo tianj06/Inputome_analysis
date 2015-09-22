@@ -1,6 +1,6 @@
 clear all;
-filePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VTA\analysis\DAtype';
-cd('C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VTA\formatted\')
+filePath = 'D:\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VTA\analysis\DAtype';
+cd('D:\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VTA\formatted\')
 fl = dir(filePath);
 fl(1:2) = [];
 fl = {fl.name};
@@ -36,7 +36,7 @@ for j = 1:length(sigpair)
     timeWin = windowpair{j}(1):windowpair{j}(2);
     responses = squeeze(mean(psthAll(:,sigpair{j},timeWin),3)) - ...
     repmat(b,1,2);
-    hfig(j) = figure('Position',[ 377   476   658   295]);
+    hfig(j) = figure;%('Position',[ 377   476   658   295])
     subplot(1,2,1);
     scatter(responses(:,1),responses(:,2))
     hold on;
@@ -51,7 +51,7 @@ for j = 1:length(sigpair)
 end
 
 %% do same analysis for AAV dopamine data
-filePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VTA\analysis\AAVcontrol';
+filePath = 'D:\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VTA\analysis\AAVcontrol';
 fl = what(filePath);fl = fl.mat;
 cd(filePath)
 sigpair = {[11 12],[12 13],[1,2],[5 6]};

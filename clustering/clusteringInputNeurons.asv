@@ -2,16 +2,16 @@ fl = what(pwd);
 fl = fl.mat;
 N = length(fl);
 for i = 1:length(fl)
-    %load(fl{i},'analyzedData')
-    analyzedData = getPSTHSingleUnit(fl{i}); 
-    save(fl{i},'-append','analyzedData');
+    load(fl{i},'analyzedData')
+    %analyzedData = getPSTHSingleUnit(fl{i}); 
+    %save(fl{i},'-append','analyzedData');
     rocPSTH(i,:,:) = analyzedData.rocPSTH(1:10,:);
     lickPSTH(i,:,:) = analyzedData.rawLick(1:10,:);
     rawPSTH(i,:,:) = analyzedData.rawPSTH(1:10,:);
 end
 proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
 dataToCluster = squeeze(reshape(proc,N,1,[]));
-plotRSS_clusterNum(dataToCluster)
+%plotRSS_clusterNum(dataToCluster)
 [eigvect,proj,eigval] = princomp(dataToCluster);
 %%
 for i = 1:length(fl)
@@ -97,7 +97,7 @@ for j = 1:nclusters
         else
             averagePSTH = a;
         end
-        plot(smooth(averagePSTH,100),'Color',colorset(k,:),'LineWidth',2);hold on
+        plot(smooth(averagePSTH,100),'Color',colorset(k,:),'LineWidth',1);hold on
         if maxy < max(smooth(averagePSTH,100))
             maxy = max(smooth(averagePSTH,100));
         end
@@ -159,7 +159,7 @@ for i = 1:10
         bar(j,nor_tbl(j,i),'FaceColor',c(j,:))
         hold on;
     end
-    set(gca,'xtick',1:7)
+    set(gca,'xtick',1:5)
     title(orderAreas{i})
 end
 
@@ -185,7 +185,7 @@ for j = 1:5
         else
             averagePSTH = a;
         end
-        plot(smooth(averagePSTH,100),'Color',colorset(k,:),'LineWidth',2);hold on
+        plot(smooth(averagePSTH,100),'Color',colorset(k,:),'LineWidth',1);hold on
         if maxy < max(smooth(averagePSTH,100))
             maxy = max(smooth(averagePSTH,100));
         end
@@ -200,15 +200,105 @@ for j = 1:5
 end
 
 %% do the same plot for each area
-for i = 1:length(orderAreas)
-    neuronIdx = find(grp == i);
-    rocValues = rocPSTH(plotorder(neuronIdx),[1 2 7 4 9],:);
+
+% reorder the neurons so that cluster 1, 2, 3.. neurons are in sequential
+% order
+orderedROC = rocPSTH(plotorder,:,:);
+orderedPSTH = rawPSTH(plotorder,:,:);
+orderedLick = lickPSTH(plotorder,:,:);
+orderedLabel = mergeClustLabel(plotorder);
+orderedArea = brainArea(plotorder);
+savePath = 'D:\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\';
+for i = 3:length(newnames)
+    neuronIdx = strcmp(orderedArea,newnames{i});
+    rocValues = orderedROC(neuronIdx,[1 2 7 4 9],:);
     rocValues = permute(rocValues,[2 1 3]);
     
-    psthValue = permute(rawPSTH(plotorder(neuronIdx),[1 2 7 4 9],:),[2 1 3] );
-    lickValue = permute(lickPSTH(neuronIdx,[1 2 7 4 9],:),[2 1 3] );
-    a = mergeClustLabel(plotorder);
-    plot_clusters(a(neuronIdx),rocValues,psthValue,lickValue)
+    psthValue = permute(orderedPSTH(neuronIdx,[1 2 7 4 9],:),[2 1 3]);
+    lickValue = permute(orderedLick(neuronIdx,[1 2 7 4 9],:),[2 1 3]);
+    plot_clusters(orderedLabel(neuronIdx),rocValues,psthValue,lickValue,newnames{i});
+    set(gcf,'units','normalized','outerposition',[0 0 1 1],'PaperPositionMode','auto');
+    saveas(gcf,[savePath newnames{i} 'Input_cluster'],'tif')
 end
+%% plot all input areas side by side
+plotAreas = {'Dopamine','PPTg','RMTg','Lateral hypothalamus',...
+    'Central amygdala','Ventral pallidum','Dorsal striatum','Ventral striatum'};
+figure;
+diversityIdx = [];
+for i = 1:length(plotAreas)
+    neuronIdx = strcmp(brainArea,plotAreas{i});
+    rocValues = squeeze(rocPSTH(neuronIdx,1,:));
+    % sort rocValues by its cue response
+    [~,plt_idx] = sort(mean(rocValues(:,11:30),2),'ascend');
+    subplot(1,length(plotAreas),i)
+    imagesc(rocValues(plt_idx,:),[0 1])
+    colormap yellowblue
+    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
+    n = sum(neuronIdx);
+    div_data = dataToCluster(neuronIdx,:);
+    n_time = size(div_data,2);
+    temp = 0;
+    for j = 1:n
+        
+        
+    end
+    div_data = div_data - repmat(mean(div_data),n,1);
+    diversityIdx(i) = sum(sum(div_data.*div_data))/n;
+    title(plotAreas{i});
+end
+table(plotAreas',diversityIdx')
+%%
+figure('Position',[720  86   1693  1227]); 
+xmax = -inf;
+xmin = inf;
+ymax = -inf;
+ymin = inf;
+for i = 1:length(plotAreas)
+    neuronIdx = strcmp(brainArea,plotAreas{i});
+    subplot(3,3,i)
+    x = proj(neuronIdx,1);
+    y = proj(neuronIdx,3);
+    scatter(x,y)
+    title(plotAreas{i})
+    xlabel('PC1')
+    ylabel('PC3')
+    if min(x) < xmin
+        xmin = min(x);
+    end
+    if max(x) > xmax
+        xmax = max(x);
+    end
+    if min(y)<ymin
+        ymin = min(y);
+    end
+    if max(y)>ymax
+        ymax = max(y);
+    end
+end
+for i = 1:length(plotAreas)
+    subplot(3,3,i)
+    xlim([xmin xmax])
+    ylim([ymin ymax])
+end
+%%
+figure;
+plot(100*cumsum(eigval)/sum(eigval))
+ylim([0 100]); xlim([0 20])
+xlabel('number of PCs')
+ylabel('% variance explained')
 
-
+figure;
+pvec = eigvect(:,1:3);
+nanvec = nan(3,size(pvec,2));
+pvec = [pvec(1:31,:); nanvec; pvec(32:62,:); nanvec; pvec(63:93,:)]; % nanvec; pvec(94:end,:)
+plot(pvec(:,1:3))
+varExp = eigval/sum(eigval);
+for i = 1:3
+    legendStr{i} = sprintf('PC%d Var:%0.2f',i,varExp(i));
+end
+legend(legendStr,'Location','Eastoutside')
+tPos = 15:33:124;
+tText = {'90% W','50% W','0% W'};%,'80% Puff'
+for i = 1:length(tText)
+    text(tPos(i),0.2,tText{i})
+end
