@@ -19,6 +19,7 @@ for i = 1:length(filelist)
     rawPSTH(i,:,:) = analyzedData.rawPSTH(1:10,:);
     %
 end
+%{
 %% plot average psth for all neurons and identified neurons
 temp = isnan( squeeze(rawPSTH(:,9,1)));
 validT = ~temp;
@@ -120,7 +121,7 @@ end
 suptitle( [brainArea 'all neurons sorted by Cue'])
 export_fig([saveFolder brainArea 'ROCsortedByCue.pdf'])
 
-%% clustering analysis
+%% PCA analysis
 proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
 dataToCluster = squeeze(reshape(proc,length(filelist),1,[]));
 [eigvect,proj,eigval] = princomp(dataToCluster);
@@ -197,7 +198,10 @@ xlabel('Number of clusters')
 ylabel('1-RSS or variance explained')
 ylim([0 1])
 export_fig(gcf,[saveFolder brainArea 'KmeanClusteringRSS.pdf'])
-%%
+%}
+%% clustering analysis
+proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
+dataToCluster = squeeze(reshape(proc,length(filelist),1,[]));
 nclusters =4;
 minD = inf;
 for i = 1:50
@@ -208,8 +212,8 @@ for i = 1:50
         minD = sum(sumD);
     end
 end
-[~,plotorder] = sort(clustLabel);
-% 
+[clustLabel,plotorder] = reorder_clustLabel(clustLabel,mean(dataToCluster(:,1:20),2));
+
 clustlines = nan(3,nclusters-1);
 for i = 1:nclusters-1
     temp = sum(clustLabel<=i) + 0.5;
