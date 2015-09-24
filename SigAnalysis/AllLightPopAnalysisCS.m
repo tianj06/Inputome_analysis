@@ -1,11 +1,15 @@
-fl = what(pwd);
-fl = fl.mat;
+path1 = pwd;
+path2 = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\newLight\';
+%fl = what(pwd);
+%fl = fl.mat;
+fl = getfiles_OnlyInOnePath (path1,path2);
+%%
 for i = 1:length(fl)
     a = load(fl{i},'area');
     brainArea{i} = a.area;
-end
-for i = 1:length(fl)
-    load(fl{i},'EventSig','newCodingResults')
+    %load(fl{i},'EventSig','newCodingResults')
+    newCodingResults = CompuateValueRelatedResponseNew(fl{i},1);
+    EventSig =  CompuateResponsiveNeurons(fl{i},1);
     ResSig(i,:) = EventSig;
     ValueClass(i,:) = newCodingResults(1,[1 2 3 5 6 7]);
     ValueDir(i,:) = newCodingResults(2,[1 2 3 5 6 7]);
@@ -25,12 +29,24 @@ end
 
 Results = [ResSig ValueDir];
 Results.brainArea = brainArea';
+%% seperate the data by short latency and long latency
+llatency = nan(length(fl),1); % VTA neurons doesn't have latency are nans
+for i = 1:length(fl)
+    load(fl{i},'lightResult')
+    if exist('lightResult','var')
+        llatency(i) = lightResult.latency; 
+    end
+    clear lightResult
+end
 %%
-writetable(Results,'results.txt','Delimiter',',');
+results_short = Results(llatency<=6|isnan(llatency),:);
+results_long = Results(llatency>6|isnan(llatency),:);
+savePath = 'C:\Users\uchidalab\Documents\GitHub\Inputome_analysis\SigAnalysis\';
 
-savePath = 'D:\Dropbox (Uchida Lab)\lab\FunInputome\rabies\allIdentified\Analysis\psthPlottings\check\';
+writetable(results_short,[savePath 'results_short.txt'],'Delimiter',',');
+writetable(results_long,[savePath 'results_long.txt'],'Delimiter',',');
 
-plot_pop_summary_fromAnalyzedPanel(fl(CSsig&(~csValue)&(G==6)),savePath)
+%plot_pop_summary_fromAnalyzedPanel(fl(CSsig&(~csValue)&(G==6)),savePath)
 
 %% reward prediction error coding 
 
