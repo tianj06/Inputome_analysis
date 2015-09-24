@@ -1,5 +1,5 @@
 rm(list = ls())
-matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/us.txt";
+matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/us_nonlight.txt";
 us = read.table(matfn,header = TRUE,sep = ",")
 
 library(tidyr)
@@ -12,6 +12,7 @@ us.perR <- ddply(us.long,.(ResponseType,brainArea),summarise,
 library("ggplot2")
 library("scales")
 library(export)
+savefile = 'USsig_nonlight.pptx'
 theme_set(theme_classic(base_size = 18))
 cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 AreaNames <- c('Dorsal striatum','Ventral striatum','Ventral pallidum',
@@ -25,7 +26,7 @@ ggplot(us.perR[which(us.perR$ResponseType== "sig50Rvs50OM"),] ,
   scale_y_continuous(labels  = percent) + scale_fill_manual(values= cbPalette[1])+
   coord_flip()+theme(legend.position="top",legend.title=element_blank())
 
-graph2ppt(file="USsig.pptx", append=TRUE)
+graph2ppt(file=savefile, append=TRUE)
 # plot percent of reward responsive neurons and pure reward neurons
 
 us.reward = us.perR[us.perR$ResponseType== "sig50Rvs50OM"|us.perR$ResponseType== "pureReward",]
@@ -33,7 +34,7 @@ ggplot(us.reward , aes(x = brainArea, y = ResponseValue.PROP,fill = ResponseType
   geom_bar(stat = "identity",position = "identity") + 
   labs(x="", y= "", title="Reward Response")+scale_y_continuous(labels  = percent) + 
   scale_fill_manual(values= cbPalette[1:2])+coord_flip()+theme(legend.position="top",legend.title=element_blank())
-graph2ppt(file="USsig.pptx", append=TRUE)
+graph2ppt(file=savefile, append=TRUE)
 
 us.rpe = us.perR[us.perR$ResponseType== "mixed"|us.perR$ResponseType== "pureReward"|
                       us.perR$ResponseType== "RPE",]
@@ -45,7 +46,7 @@ ggplot(us.rpe , aes(x = brainArea, y = ResponseValue.PROP,fill = ResponseType, o
   geom_bar(stat = "identity") + labs(x="", y= "", title="Reward Response") +
   scale_y_continuous(labels  = percent)+ scale_fill_manual(values= cbPalette[c(2,3,1)])+coord_flip()+
   theme(legend.position = "top",legend.title=element_blank())
-graph2ppt(file="USsig.pptx", append=TRUE)
+graph2ppt(file=savefile, append=TRUE)
 # plot percent of expectation signal
 us.exp = us.perR[us.perR$ResponseType== "pureExp"|us.perR$ResponseType== "other",]
 us.exp$ResponseType <- factor(us.exp$ResponseType, levels = c("pureExp","other"))
@@ -55,7 +56,7 @@ ggplot(us.exp , aes(x = brainArea, y = ResponseValue.PROP,fill = ResponseType, o
   geom_bar(stat = "identity") + labs(x="", y= "", title="Non Reward Response")+
   scale_y_continuous(labels  = percent,limits = c(0,1)) + scale_fill_manual(values= cbPalette[4:5])+coord_flip()+
   theme(legend.position = "top",legend.title=element_blank())
-graph2ppt(file="USsig.pptx", append=TRUE)
+graph2ppt(file=savefile, append=TRUE)
 
 # plot CS and delay responsive neurons
 
@@ -66,7 +67,7 @@ ggplot(us.all , aes(x = brainArea, y = ResponseValue.PROP,fill = ResponseType, o
   scale_y_continuous(labels  = percent,limits = c(0,1)) + scale_fill_manual(values= cbPalette[c(2,4,1,1)])+coord_flip()+
   theme(legend.position = "top",legend.title=element_blank())
 
-graph2ppt(file="USsig.pptx", append=TRUE)
+graph2ppt(file=savefile, append=TRUE)
 
 # plot percent of RPE neurons
 
@@ -74,5 +75,5 @@ ggplot(us.rpe[-(1:10),] , aes(x = brainArea, y = ResponseValue.PROP,fill = Respo
   geom_bar(stat = "identity") + labs(x="", y= "", title="Reward Response")+
   scale_y_continuous(labels  = percent,limits = c(0,1))+ scale_fill_manual(values= cbPalette[c(3,1)])+coord_flip()+
   theme(legend.position = "top",legend.title=element_blank())
-graph2ppt(file="USsig.pptx", append=TRUE)
+graph2ppt(file=savefile, append=TRUE)
 

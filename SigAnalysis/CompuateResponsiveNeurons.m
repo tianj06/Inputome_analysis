@@ -1,4 +1,4 @@
-function CompuateResponsiveNeurons(fn,saveFlag)
+function EventSig = CompuateResponsiveNeurons(fn,saveFlag)
 if nargin <2
     saveFlag = 1;
 end

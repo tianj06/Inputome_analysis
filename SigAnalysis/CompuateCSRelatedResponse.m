@@ -1,5 +1,7 @@
-function CS = CompuateCSRelatedResponse(fn)
-
+function CS = CompuateCSRelatedResponse(fn,saveFlag)
+if nargin < 2
+    saveFlag = 0;
+end
     %fn = 'Biscuit_2014-11-08_18-22-38_TT7_01_formatted.mat';
     load(fn,'analyzedData');
     rs = analyzedData.raster;
@@ -30,3 +32,7 @@ function CS = CompuateCSRelatedResponse(fn)
         csValue = 0;
     end
    CS = table(csValue);
+   if saveFlag
+    save(fn,'-append','CS');
+   end
+end

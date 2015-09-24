@@ -1,4 +1,7 @@
-function valueAnalyzedUS = CompuateUSrelatedResponse(fn)
+function valueAnalyzedUS = CompuateUSrelatedResponse(fn,saveFlag)
+if nargin < 2
+    saveFlag = 0;
+end
     load(fn,'analyzedData');
     rs = analyzedData.raster;
    
@@ -44,5 +47,7 @@ function valueAnalyzedUS = CompuateUSrelatedResponse(fn)
     Rewardsign =  (meanUS(4)-meanUS(1))>0;
     
     valueAnalyzedUS = table(sig50Rvs50OM,sigExp,sig50OM,sig90Reward,RPEsign,EXPsign,sig50R,OM50sign,Rewardsign);
-        
+    if saveFlag
+    save(fn,'-append','valueAnalyzedUS');
+    end    
 end

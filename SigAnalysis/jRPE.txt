@@ -1,5 +1,5 @@
 CSposRPE,CSposNegRPE,brainArea
-0,0,Central amygdala
+0,0,Dorsal striatum
 0,0,Dorsal striatum
 0,0,Dorsal striatum
 0,0,Dorsal striatum
@@ -42,7 +42,6 @@ CSposRPE,CSposNegRPE,brainArea
 0,0,Lateral hypothalamus
 0,0,Dorsal striatum
 0,0,Dorsal striatum
-0,0,RMTg
 0,0,RMTg
 0,0,RMTg
 0,0,RMTg
@@ -286,5 +285,4 @@ CSposRPE,CSposNegRPE,brainArea
 0,0,PPTg
 0,0,PPTg
 0,0,PPTg
-1,0,PPTg
 1,0,PPTg

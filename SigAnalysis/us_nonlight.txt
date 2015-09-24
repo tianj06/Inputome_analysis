@@ -1,0 +1,1591 @@
+sig50Rvs50OM,sigExp,sig50OM,sig90Reward,RPEsign,EXPsign,sig50R,OM50sign,Rewardsign,pureReward,pureExp,RPE,pureExpDir,pureRPEDir,brainArea,mixed,other
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,1,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Central amygdala,0,1
+1,0,0,0,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Central amygdala,0,0
+1,0,0,0,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Central amygdala,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,1,1,0,0,0,0,1,0,0,0,0,0,0,Central amygdala,1,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Central amygdala,0,0
+0,1,0,1,0,1,1,0,1,0,1,0,1,0,Central amygdala,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,1,0,0,1,0,1,0,1,0,0,1,0,0,Central amygdala,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Central amygdala,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Central amygdala,0,1
+1,0,1,1,2,0,1,-1,0,0,0,0,0,2,Central amygdala,1,0
+1,0,1,0,2,0,1,-1,0,0,0,0,0,2,Central amygdala,1,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Central amygdala,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Central amygdala,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Central amygdala,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,1,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Dorsal striatum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,0,1,0,-1,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Dorsal striatum,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,0,1,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,0,1
+0,1,0,1,0,2,0,0,0,0,1,0,2,0,Dorsal striatum,0,0
+1,1,0,1,2,0,1,0,0,0,0,1,0,0,Dorsal striatum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Dorsal striatum,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Dorsal striatum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Dorsal striatum,0,0
+1,0,0,1,0,2,0,0,0,1,0,0,0,0,Dorsal striatum,0,0
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,0,1
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Dorsal striatum,0,1
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Dorsal striatum,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,1,0
+1,1,0,0,0,0,1,0,0,0,0,0,0,0,Dorsal striatum,1,0
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Dorsal striatum,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Dorsal striatum,0,0
+0,0,1,0,0,0,0,-1,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Dorsal striatum,0,1
+0,0,1,0,0,2,0,1,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Dorsal striatum,0,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Dorsal striatum,0,1
+1,0,0,1,0,1,0,0,1,1,0,0,0,0,Dorsal striatum,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Dorsal striatum,0,1
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,Dorsal striatum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Dorsal striatum,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Dorsal striatum,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Dorsal striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Dorsal striatum,0,1
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,1,0,1,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Dorsal striatum,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,1,0,0,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,0,0,1,0,1,0,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,1,0,1,2,0,1,0,0,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,2,0,1,-1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,1,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,0,2,0,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+0,0,1,1,0,1,0,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,1,1,0,1,0,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,0,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+1,0,1,0,0,2,0,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,1,0,0,0,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,1,1,1,0,0,0,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,0,0,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,1,1,0,2,1,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,1,0,0,0,0,1,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,1,1,0,2,1,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Ventral striatum,0,0
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,PPTg,0,1
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,PPTg,1,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,PPTg,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,PPTg,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,PPTg,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,PPTg,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,PPTg,0,1
+1,0,0,0,2,0,0,0,0,1,0,0,0,0,PPTg,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,PPTg,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,PPTg,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,PPTg,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,1
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,Ventral striatum,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral striatum,1,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,0
+1,1,1,1,0,2,1,1,0,0,0,0,0,0,Ventral striatum,1,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Ventral striatum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,1,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral striatum,1,0
+1,0,0,0,0,2,0,0,0,1,0,0,0,0,Central amygdala,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Central amygdala,0,0
+0,0,0,1,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Central amygdala,0,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Central amygdala,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Central amygdala,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+1,0,0,0,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+1,1,0,0,2,0,1,0,0,0,0,1,0,0,Central amygdala,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+0,1,1,1,0,1,0,-1,1,0,1,0,1,0,Central amygdala,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,1,0,0,2,0,1,0,0,0,0,1,0,0,Central amygdala,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Central amygdala,0,0
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Central amygdala,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Central amygdala,0,1
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,0,1,1,0,0,0,1,1,0,0,0,0,Central amygdala,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Central amygdala,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,Central amygdala,0,0
+1,0,1,0,0,0,0,1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Central amygdala,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Central amygdala,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Central amygdala,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,RMTg,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,RMTg,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,RMTg,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,RMTg,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,RMTg,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,RMTg,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,1,1,1,0,2,0,-1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+1,0,0,0,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,1,1,0,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,1,0,0,0,1,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,1,1,0,0,0,0,1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,1,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Ventral striatum,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral striatum,0,0
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,0
+0,0,1,0,2,0,1,1,0,0,0,0,0,2,Ventral striatum,0,1
+0,1,1,0,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,1,0,0,1,0,1,0,1,0,0,1,0,0,Ventral striatum,0,1
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Ventral striatum,0,1
+0,1,0,1,0,2,1,0,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Ventral striatum,0,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral striatum,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral striatum,1,0
+1,0,0,0,2,0,0,0,0,1,0,0,0,0,Ventral striatum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,0,1
+0,1,0,1,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral striatum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral striatum,0,0
+0,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,1
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+1,0,1,1,0,1,0,-1,1,0,0,0,0,0,Ventral striatum,1,0
+1,1,0,1,2,0,1,0,0,0,0,1,0,0,Ventral striatum,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral striatum,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral pallidum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral pallidum,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,1,0,1,0,1,1,0,1,0,1,0,1,0,Ventral pallidum,0,0
+0,0,1,1,0,0,1,1,0,0,0,0,0,0,Ventral pallidum,0,1
+0,0,1,1,0,0,1,1,0,0,0,0,0,0,Ventral pallidum,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+1,1,1,1,2,0,1,-1,0,0,0,1,0,0,Ventral pallidum,0,0
+0,1,0,1,0,0,1,0,1,0,0,0,0,0,Ventral pallidum,0,1
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,Ventral pallidum,1,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+1,1,0,1,0,1,0,0,1,0,0,0,0,0,Ventral pallidum,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+1,1,1,1,0,0,0,-1,1,0,0,0,0,0,Ventral pallidum,1,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,0,2,0,0,1,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,2,0,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+0,1,0,1,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,0,2,0,0,1,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Dorsal striatum,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Dorsal striatum,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Dorsal striatum,0,1
+0,1,1,1,0,0,0,1,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,RMTg,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,RMTg,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,RMTg,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,RMTg,1,0
+1,0,1,0,0,2,0,-1,0,0,0,0,0,0,RMTg,1,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,RMTg,0,1
+1,0,1,0,2,0,0,-1,0,0,0,0,0,0,RMTg,1,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,RMTg,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,PPTg,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,PPTg,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,PPTg,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,PPTg,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,PPTg,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,PPTg,1,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,PPTg,0,0
+1,1,0,0,2,0,1,0,0,0,0,1,0,0,PPTg,0,0
+1,1,0,0,2,0,1,0,0,0,0,1,0,0,PPTg,0,0
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral pallidum,0,0
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral pallidum,0,0
+1,1,0,0,0,0,1,0,1,0,0,0,0,0,Ventral pallidum,1,0
+1,1,1,1,0,2,1,-1,0,0,0,0,0,0,Ventral pallidum,1,0
+1,1,1,0,1,0,1,1,1,0,0,1,0,0,Ventral pallidum,0,0
+1,0,1,1,2,0,1,-1,0,0,0,0,0,2,Ventral pallidum,1,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Ventral pallidum,0,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Ventral pallidum,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral pallidum,0,1
+1,1,1,1,0,0,0,-1,0,0,0,0,0,0,Ventral pallidum,1,0
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral pallidum,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral pallidum,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Ventral striatum,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+1,1,0,1,0,0,0,0,1,0,0,0,0,0,Ventral striatum,1,0
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Ventral striatum,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral striatum,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,1
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Ventral striatum,0,1
+1,0,1,1,0,1,0,-1,1,0,0,0,0,0,Ventral striatum,1,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,1,1,1,0,0,1,-1,0,0,0,0,0,0,Ventral striatum,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral striatum,1,0
+0,1,1,1,0,0,0,-1,0,0,0,0,0,0,Ventral striatum,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral striatum,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Ventral striatum,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral striatum,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral striatum,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,1,1,1,0,0,1,1,1,0,0,0,0,0,Ventral striatum,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral striatum,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,0,1,1,0,1,0,-1,1,0,1,0,1,0,Ventral pallidum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,RMTg,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,RMTg,1,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,RMTg,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,RMTg,0,0
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,RMTg,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,RMTg,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,RMTg,0,0
+0,1,0,0,1,0,1,0,1,0,0,1,0,0,RMTg,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,RMTg,0,0
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,RMTg,1,0
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,RMTg,1,0
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,RMTg,1,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,RMTg,0,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,RMTg,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,RMTg,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,RMTg,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,RMTg,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,RMTg,0,1
+0,1,1,0,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,1,1,1,0,0,1,1,1,0,0,0,0,0,Ventral striatum,0,1
+1,1,1,1,0,0,0,-1,0,0,0,0,0,0,Ventral striatum,1,0
+0,1,0,1,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,1,0,2,0,1,1,0,0,0,0,0,2,Ventral striatum,0,1
+1,1,1,1,0,0,0,1,0,0,0,0,0,0,Ventral striatum,1,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Ventral striatum,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,0,1,0,2,0,0,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Dorsal striatum,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+1,0,0,0,1,0,0,0,1,1,0,0,0,0,Dorsal striatum,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Dorsal striatum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,0,2,0,1,0,0,1,0,2,0,Dorsal striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,1,0,1,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,1,1,0,0,0,0,1,1,0,0,0,0,0,Dorsal striatum,0,1
+1,0,1,1,0,1,0,-1,1,0,0,0,0,0,Dorsal striatum,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Dorsal striatum,0,0
+0,0,0,1,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Dorsal striatum,0,0
+1,1,0,0,0,0,1,0,0,0,0,0,0,0,Dorsal striatum,1,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Dorsal striatum,0,0
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Dorsal striatum,0,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Dorsal striatum,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Dorsal striatum,0,0
+1,0,0,0,2,0,1,0,0,1,0,0,0,2,Dorsal striatum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,0,1
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Ventral striatum,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral striatum,1,0
+0,0,1,1,0,2,0,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Ventral striatum,0,0
+1,0,1,1,2,0,1,-1,0,0,0,0,0,2,Ventral striatum,1,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Ventral striatum,0,0
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+1,1,1,0,0,0,0,-1,0,0,0,0,0,0,Ventral striatum,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,0,1,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,0
+1,1,0,0,0,0,1,0,1,0,0,0,0,0,Ventral striatum,1,0
+0,1,1,0,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,1
+0,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,1
+1,0,1,0,0,1,0,-1,1,0,0,0,0,0,Ventral striatum,1,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,RMTg,0,1
+1,0,0,0,1,0,0,0,1,1,0,0,0,0,RMTg,0,0
+1,0,1,1,0,2,0,-1,0,0,0,0,0,0,RMTg,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,RMTg,0,1
+0,1,1,0,0,2,0,-1,0,0,0,0,0,0,RMTg,0,1
+0,0,0,0,0,0,1,0,0,0,0,0,0,0,RMTg,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,RMTg,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,RMTg,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,RMTg,0,1
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,RMTg,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,RMTg,0,1
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,RMTg,0,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,RMTg,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,RMTg,0,1
+0,1,0,0,1,0,1,0,1,0,0,1,0,0,RMTg,0,1
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,0,0,1,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+1,0,1,0,0,1,0,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,1,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+1,0,0,0,2,0,0,0,0,1,0,0,0,0,Ventral striatum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Ventral striatum,0,1
+0,0,0,1,1,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,1,0,1,0,0,0,0,0,0,0,0,0,0,Ventral striatum,1,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,1,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral striatum,1,0
+1,1,1,1,0,2,1,1,0,0,0,0,0,0,Ventral striatum,1,0
+0,1,0,1,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,0,1
+0,1,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,1,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,1,0,1,0,-1,1,0,1,0,1,0,Ventral striatum,0,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Ventral striatum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,1,0,1,0,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral striatum,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,Ventral striatum,1,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,0,2,0,0,1,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Dorsal striatum,0,1
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,Dorsal striatum,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Dorsal striatum,0,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Dorsal striatum,0,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Dorsal striatum,0,0
+1,0,0,0,2,0,0,0,0,1,0,0,0,0,Dorsal striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Dorsal striatum,1,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Dorsal striatum,0,0
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Dorsal striatum,1,0
+0,0,0,1,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Dorsal striatum,1,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Dorsal striatum,0,0
+0,0,1,0,0,0,1,1,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,0
+1,0,1,1,0,2,0,-1,0,0,0,0,0,0,Ventral striatum,1,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral pallidum,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,PPTg,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,PPTg,0,0
+1,1,1,1,0,2,1,1,0,0,0,0,0,0,PPTg,1,0
+1,1,0,0,2,0,1,0,0,0,0,1,0,0,PPTg,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,PPTg,0,0
+1,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,0,0,0,0,-1,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,0,0,0,0,1,0,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,0,0,0,0,1,0,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,1,0,0,0,0,-1,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,1,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,1,0,0,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,0,0,1,0,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+1,0,1,0,0,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,PPTg,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,PPTg,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,PPTg,0,1
+1,0,1,0,1,0,0,1,1,0,0,0,0,0,PPTg,1,0
+1,0,0,1,0,1,0,0,1,1,0,0,0,0,PPTg,0,0
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,PPTg,1,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,PPTg,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,PPTg,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,PPTg,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,PPTg,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,PPTg,1,0
+1,0,0,0,2,0,0,0,0,1,0,0,0,0,PPTg,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,1,1,1,0,0,0,1,1,0,0,0,0,0,Ventral striatum,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,0
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,0,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Ventral striatum,0,0
+0,1,0,0,2,0,1,0,0,0,0,1,0,0,Ventral striatum,0,1
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Ventral striatum,0,1
+0,1,1,0,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,1
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,1,0
+0,1,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,1,0
+0,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Ventral striatum,0,0
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,PPTg,1,0
+0,0,1,0,0,0,0,-1,0,0,0,0,0,0,PPTg,0,1
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,PPTg,0,0
+1,0,1,1,2,0,1,-1,0,0,0,0,0,2,PPTg,1,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,PPTg,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,PPTg,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,PPTg,0,1
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Dorsal striatum,0,1
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,0,0,0,1,1,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Dorsal striatum,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Dorsal striatum,0,0
+0,1,0,0,1,0,1,0,1,0,0,1,0,0,Dorsal striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Dorsal striatum,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Dorsal striatum,0,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Dorsal striatum,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,1,0,0,1,0,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,1,1,0,1,1,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,1,1,0,0,0,0,1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,0,1,0,2,1,0,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,1,0,0,0,0,1,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,1,1,0,0,0,0,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,0,1,1,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,1,1,1,2,0,1,1,0,0,0,1,0,0,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,1,0,0,2,0,1,0,0,0,0,1,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,1,0,1,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,1,1,0,0,0,1,1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral pallidum,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Ventral pallidum,0,0
+1,1,0,1,0,2,0,0,0,0,0,0,0,0,Ventral pallidum,1,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Ventral pallidum,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral pallidum,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral pallidum,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral pallidum,0,0
+1,1,1,1,0,0,0,-1,0,0,0,0,0,0,Ventral pallidum,1,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+0,1,1,1,0,2,1,1,0,0,1,0,2,0,Ventral pallidum,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral pallidum,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral pallidum,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral pallidum,0,1
+0,1,0,0,0,0,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral pallidum,0,1
+1,1,1,0,0,0,1,1,0,0,0,0,0,0,Ventral pallidum,1,0
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,Ventral pallidum,1,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral pallidum,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+0,1,0,1,0,2,0,0,0,0,1,0,2,0,Ventral pallidum,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Ventral pallidum,0,0
+1,0,1,0,2,0,1,1,0,0,0,0,0,2,Ventral pallidum,1,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral pallidum,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral pallidum,0,1
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral pallidum,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral pallidum,0,0
+1,1,1,1,0,0,1,-1,0,0,0,0,0,0,Ventral pallidum,1,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Ventral pallidum,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral pallidum,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Ventral pallidum,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Ventral pallidum,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral pallidum,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral pallidum,0,0
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,Ventral pallidum,1,0
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,Ventral pallidum,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral pallidum,0,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Ventral pallidum,0,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral pallidum,1,0
+1,0,1,1,0,1,1,1,1,0,0,0,0,0,Ventral pallidum,1,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Ventral pallidum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Ventral striatum,0,0
+1,0,1,1,0,1,0,-1,1,0,0,0,0,0,Ventral striatum,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,0,1,0,1,-1,1,0,0,1,0,0,Ventral striatum,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral striatum,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral striatum,1,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,0,1,0,2,1,0,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+1,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+0,1,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,1,1,0,0,0,0,1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,1,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,0,1,0,0,2,0,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,1,1,0,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,1,1,2,0,1,-1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,1,0,0,0,0,1,0,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,0,1,0,2,1,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,1,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,0,1,1,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,1,0,0,1,0,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,1,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,0,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,1,1,2,0,1,1,0,0,0,1,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,1,1,0,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,0,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,1,0,0,2,0,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,1,0,1,1,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Central amygdala,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Central amygdala,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,1,0,0,1,0,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Central amygdala,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Central amygdala,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Central amygdala,0,0
+1,0,1,0,1,0,0,-1,1,0,0,0,0,0,Central amygdala,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Central amygdala,0,1
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Central amygdala,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+0,1,0,1,0,1,1,0,1,0,1,0,1,0,Central amygdala,0,0
+1,1,1,0,2,0,1,1,0,0,0,1,0,0,Central amygdala,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Central amygdala,0,0
+1,0,1,0,0,0,0,-1,0,0,0,0,0,0,Central amygdala,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Central amygdala,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Central amygdala,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Central amygdala,0,1
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,Central amygdala,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Central amygdala,0,0
+0,1,1,1,0,2,0,1,0,0,1,0,2,0,Central amygdala,0,0
+1,1,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,1,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,1,0,0,2,0,-1,0,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,0,2,0,1,0,0,0,0,0,0,Central amygdala,1,0
+0,0,1,0,2,0,0,1,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Central amygdala,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Central amygdala,0,0
+0,1,1,0,1,0,0,-1,1,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Central amygdala,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Central amygdala,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,1
+1,0,1,1,0,1,1,1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,1,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Central amygdala,0,0
+0,0,1,1,0,2,0,1,0,0,1,0,2,0,Central amygdala,0,0
+0,1,0,0,1,0,1,0,1,0,0,1,0,0,Central amygdala,0,1
+0,0,1,1,0,2,0,1,0,0,1,0,2,0,PPTg,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,PPTg,0,0
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,PPTg,0,1
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,PPTg,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,PPTg,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,PPTg,0,1
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,PPTg,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,PPTg,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,PPTg,0,1
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,PPTg,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,PPTg,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,PPTg,0,0
+1,0,0,0,0,2,0,0,0,1,0,0,0,0,PPTg,0,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,PPTg,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,PPTg,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,PPTg,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,PPTg,1,0
+0,0,1,1,0,2,0,1,0,0,1,0,2,0,PPTg,0,0
+1,1,0,0,0,0,0,0,0,0,0,0,0,0,PPTg,1,0
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,PPTg,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,PPTg,0,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,PPTg,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,PPTg,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,PPTg,0,1
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,PPTg,1,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,PPTg,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,PPTg,0,0
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,PPTg,0,1
+1,0,0,0,2,0,0,0,0,1,0,0,0,0,Ventral striatum,0,0
+0,1,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,0,1,0,2,0,0,0,0,1,0,2,0,Ventral striatum,0,0
+0,1,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Ventral striatum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,1,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,1,0
+1,1,1,0,0,0,1,1,0,0,0,0,0,0,Ventral striatum,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral striatum,1,0
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,Ventral striatum,1,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,1,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral striatum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,0,1
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,Ventral striatum,1,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral striatum,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral striatum,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral striatum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral striatum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,1,1,0,2,1,1,0,0,1,0,2,0,Ventral striatum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,0,1,0,2,1,0,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,0,0,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+1,0,1,1,2,0,1,-1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,0,1,2,0,1,0,0,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+1,1,0,1,0,2,1,0,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Ventral pallidum,0,0
+1,1,0,0,0,0,0,0,1,0,0,0,0,0,Ventral pallidum,1,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral pallidum,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Ventral pallidum,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Ventral pallidum,1,0
+1,1,1,1,0,2,1,1,0,0,0,0,0,0,Ventral pallidum,1,0
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,Ventral pallidum,1,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,Ventral pallidum,0,0
+1,1,0,1,2,0,1,0,0,0,0,1,0,0,Ventral pallidum,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Ventral pallidum,0,0
+1,0,0,1,1,0,0,0,1,1,0,0,0,0,Ventral pallidum,0,0
+1,1,1,1,0,1,0,1,1,0,0,0,0,0,Ventral pallidum,1,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral pallidum,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral pallidum,0,0
+1,1,1,1,0,2,0,-1,0,0,0,0,0,0,Ventral pallidum,1,0
+0,1,0,1,0,2,1,0,0,0,1,0,2,0,Ventral pallidum,0,0
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral pallidum,1,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+1,0,1,0,0,2,0,1,0,0,0,0,0,0,Ventral pallidum,1,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral striatum,0,1
+0,0,1,0,2,0,0,1,0,0,0,0,0,0,Ventral striatum,0,1
+0,1,0,1,0,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral striatum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral striatum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral striatum,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral pallidum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Ventral pallidum,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral pallidum,0,0
+0,1,1,1,0,0,1,1,1,0,0,0,0,0,Ventral pallidum,0,1
+1,1,0,1,2,0,1,0,0,0,0,1,0,0,Ventral pallidum,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral pallidum,0,0
+0,1,0,0,2,0,1,0,0,0,0,1,0,0,Ventral pallidum,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Ventral pallidum,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral pallidum,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral pallidum,0,0
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Ventral pallidum,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral pallidum,1,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral pallidum,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Ventral pallidum,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral pallidum,0,1
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Ventral pallidum,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+1,0,0,0,1,0,0,0,1,1,0,0,0,0,Ventral pallidum,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral pallidum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Ventral pallidum,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral pallidum,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Ventral pallidum,0,1
+0,1,0,0,0,0,1,0,0,0,0,0,0,0,Ventral pallidum,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral pallidum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,Ventral pallidum,0,0
+1,0,0,0,2,0,0,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,0,1,1,0,2,0,1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,0,0,1,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,0,1,0,0,1,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,0,2,0,1,-1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+1,1,0,0,0,0,1,0,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,0,1,1,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,1,0,0,0,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+1,1,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,0,1,0,1,1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,0,1,0,1,0,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Ventral pallidum,0,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Ventral pallidum,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Ventral pallidum,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral pallidum,0,1
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Ventral pallidum,0,1
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Ventral pallidum,0,0
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral pallidum,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,1,1,1,2,0,1,1,0,0,0,1,0,0,Ventral pallidum,0,1
+0,1,0,1,0,2,0,0,0,0,1,0,2,0,Ventral pallidum,0,0
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral pallidum,1,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Ventral pallidum,0,0
+0,0,1,0,0,0,0,1,1,0,0,0,0,0,Ventral pallidum,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Ventral pallidum,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Ventral pallidum,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Ventral pallidum,0,1
+1,1,0,1,0,2,0,0,0,0,0,0,0,0,Ventral pallidum,1,0
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,Ventral pallidum,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,0,0,1,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,0,2,0,1,1,0,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,0,2,0,1,1,0,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,1,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,1,1,0,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,1,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,1,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+1,0,1,1,2,0,1,-1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,0,1,1,0,2,1,-1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,0,0,0,0,1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,1,0,1,2,0,1,0,0,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+1,1,1,1,1,0,1,1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,0,1,1,2,0,0,1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Ventral striatum,1,0
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Ventral striatum,0,1
+1,1,0,0,0,0,0,0,0,0,0,0,0,0,Ventral striatum,1,0
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,Ventral striatum,0,1
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Ventral striatum,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,PPTg,1,0
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,PPTg,0,0
+1,0,0,0,1,0,0,0,1,1,0,0,0,0,PPTg,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,PPTg,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,PPTg,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,PPTg,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,PPTg,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,PPTg,0,1
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,PPTg,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,PPTg,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,PPTg,0,0
+0,1,1,1,0,1,1,-1,1,0,1,0,1,0,PPTg,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,PPTg,0,0
+0,1,1,1,0,2,0,-1,0,0,1,0,2,0,PPTg,0,0
+1,0,1,0,0,2,0,-1,0,0,0,0,0,0,PPTg,1,0
+1,1,1,0,1,0,1,-1,1,0,0,1,0,0,PPTg,0,0
+1,0,1,1,0,2,0,-1,0,0,0,0,0,0,PPTg,1,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,PPTg,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,PPTg,0,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,0,1,1,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,1,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,1,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,1,1,0,1,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,1,1,0,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,0,0,0,0,1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,0,1,0,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,0,1,1,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,1,0,2,0,1,1,0,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,0,0,1,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,1,1,1,0,0,0,1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+1,0,0,1,0,1,0,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,0,2,0,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,1,0,1,0,0,-1,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,1,0,0,2,0,1,0,0,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Central amygdala,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+0,0,1,1,2,0,0,1,0,0,0,0,0,0,Central amygdala,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,2,0,0,0,1,0,0,0,0,Central amygdala,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Central amygdala,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Central amygdala,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,Central amygdala,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Central amygdala,0,0
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Central amygdala,0,1
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Central amygdala,0,0
+1,0,1,1,0,2,1,-1,0,0,0,0,0,0,Central amygdala,1,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Central amygdala,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+1,1,1,1,0,2,0,-1,0,0,0,0,0,0,Central amygdala,1,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,1
+0,1,1,0,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,1
+0,1,1,0,0,0,0,-1,0,0,0,0,0,0,Central amygdala,0,1
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Central amygdala,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,1,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+0,0,1,0,0,0,0,1,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Central amygdala,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,1
+0,1,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Central amygdala,0,0
+0,1,0,0,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,0,1,1,0,0,0,-1,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+0,1,0,1,0,2,0,0,0,0,1,0,2,0,Central amygdala,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Central amygdala,0,0
+0,1,0,0,0,0,1,0,1,0,0,0,0,0,Central amygdala,0,1
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Central amygdala,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,1,1,0,2,0,1,0,0,0,0,0,0,Central amygdala,1,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Central amygdala,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,1,0,1,0,2,1,0,0,0,0,0,0,0,Central amygdala,1,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Central amygdala,0,1
+1,1,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,1,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,1,0,0,2,0,1,0,0,0,0,1,0,0,Central amygdala,0,1
+0,1,0,0,2,0,1,0,0,0,0,1,0,0,Central amygdala,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Central amygdala,0,0
+0,0,0,0,2,0,1,0,0,0,0,0,0,2,Central amygdala,0,1
+0,1,1,0,0,0,1,1,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Central amygdala,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Central amygdala,1,0
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,Central amygdala,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Central amygdala,0,0
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,Central amygdala,1,0
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,Central amygdala,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Central amygdala,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Central amygdala,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,1,1,0,2,0,1,1,0,0,0,1,0,0,Central amygdala,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Central amygdala,0,1
+1,1,1,1,2,0,1,1,0,0,0,1,0,0,Central amygdala,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Central amygdala,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,Central amygdala,0,1
+1,1,1,0,0,0,1,1,1,0,0,0,0,0,Central amygdala,1,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,1
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,Central amygdala,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+0,1,0,1,0,2,1,0,0,0,1,0,2,0,Central amygdala,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Central amygdala,0,0
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Central amygdala,0,1
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,Central amygdala,0,1
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Central amygdala,0,1
+0,1,0,1,2,0,1,0,0,0,0,1,0,0,Central amygdala,0,1
+0,1,1,0,0,0,0,1,1,0,0,0,0,0,Central amygdala,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Central amygdala,0,1
+1,1,1,1,0,1,1,-1,1,0,0,0,0,0,Central amygdala,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,0,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,1,1,0,1,0,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,Lateral hypothalamus,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,Lateral hypothalamus,0,0
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+0,0,0,0,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+1,0,1,1,0,1,0,-1,1,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,Lateral hypothalamus,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,Lateral hypothalamus,0,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,0,1,0,2,0,1,-1,0,0,0,0,0,2,Lateral hypothalamus,1,0
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,Lateral hypothalamus,0,0
+1,1,0,1,0,2,1,0,0,0,0,0,0,0,Lateral hypothalamus,1,0
+0,0,1,1,0,2,1,1,0,0,1,0,2,0,Lateral hypothalamus,0,0
+1,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,1,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,2,0,1,1,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,0,0,1,2,0,1,0,0,0,0,0,0,2,Lateral hypothalamus,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+0,0,0,1,1,0,1,0,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,Lateral hypothalamus,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,Lateral hypothalamus,0,1
+1,0,1,1,0,1,1,-1,1,0,0,0,0,0,PPTg,1,0
+1,0,1,1,1,0,1,1,1,0,0,0,0,1,PPTg,1,0
+0,1,0,1,0,1,0,0,1,0,1,0,1,0,PPTg,0,0
+0,0,1,0,1,0,1,-1,1,0,0,0,0,1,PPTg,0,1
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,PPTg,0,1
+1,1,1,1,0,2,0,1,0,0,0,0,0,0,PPTg,1,0
+0,0,0,0,0,1,0,0,1,0,0,0,0,0,PPTg,0,1
+1,1,1,1,0,1,1,1,1,0,0,0,0,0,PPTg,1,0
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,PPTg,1,0
+1,1,1,0,0,0,1,-1,0,0,0,0,0,0,PPTg,1,0
+0,1,0,1,0,0,1,0,0,0,0,0,0,0,PPTg,0,1
+1,1,1,0,2,0,1,1,0,0,0,1,0,0,PPTg,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,PPTg,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,PPTg,0,0
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,PPTg,0,0
+1,1,0,1,0,2,1,0,0,0,0,0,0,0,PPTg,1,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,PPTg,0,1
+1,1,1,1,0,1,0,1,1,0,0,0,0,0,PPTg,1,0
+0,0,0,1,0,1,1,0,1,0,1,0,1,0,PPTg,0,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,PPTg,0,0
+1,1,0,0,1,0,1,0,1,0,0,1,0,0,PPTg,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,PPTg,0,0
+0,1,0,1,0,0,0,0,1,0,0,0,0,0,PPTg,0,1
+0,0,0,1,0,1,0,0,1,0,1,0,1,0,PPTg,0,0
+1,0,1,1,0,2,1,1,0,0,0,0,0,0,PPTg,1,0
+1,1,1,0,0,0,0,1,0,0,0,0,0,0,PPTg,1,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,PPTg,0,1
+1,1,1,1,0,0,0,-1,0,0,0,0,0,0,PPTg,1,0
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,PPTg,0,0
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,PPTg,0,0
+0,0,0,1,0,0,0,0,1,0,0,0,0,0,PPTg,0,1
+1,0,0,0,2,0,0,0,0,1,0,0,0,0,PPTg,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,PPTg,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,PPTg,0,0
+0,1,1,1,1,0,1,-1,1,0,0,1,0,0,PPTg,0,1
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,PPTg,0,0
+0,0,1,1,0,1,0,-1,1,0,1,0,1,0,PPTg,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,PPTg,0,1
+1,1,1,0,0,0,0,1,0,0,0,0,0,0,PPTg,1,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,PPTg,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,PPTg,0,1
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,PPTg,0,0
+1,0,0,1,2,0,1,0,0,1,0,0,0,2,PPTg,0,0
+0,1,1,0,0,0,1,-1,0,0,0,0,0,0,PPTg,0,1
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,PPTg,0,1
+1,1,1,1,1,0,1,-1,1,0,0,1,0,0,PPTg,0,0
+1,0,1,1,0,2,1,-1,0,0,0,0,0,0,PPTg,1,0
+0,0,0,1,0,2,0,0,0,0,1,0,2,0,PPTg,0,0
+0,0,0,1,0,2,1,0,0,0,1,0,2,0,PPTg,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,PPTg,0,1
+1,1,0,1,1,0,1,0,1,0,0,1,0,0,PPTg,0,0
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,PPTg,0,1
+1,0,0,1,1,0,1,0,1,1,0,0,0,1,PPTg,0,0
+1,0,0,1,0,1,1,0,1,1,0,0,0,0,PPTg,0,0
+0,0,1,1,0,1,1,-1,1,0,1,0,1,0,PPTg,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,PPTg,0,1
+1,0,1,1,2,0,1,1,0,0,0,0,0,2,PPTg,1,0
+1,0,1,0,0,2,0,-1,0,0,0,0,0,0,PPTg,1,0
+1,1,0,1,2,0,1,0,0,0,0,1,0,0,PPTg,0,0
+1,1,0,1,2,0,1,0,0,0,0,1,0,0,PPTg,0,0
+0,0,0,0,0,2,0,0,0,0,0,0,0,0,PPTg,0,1
+0,1,1,1,0,1,0,-1,1,0,1,0,1,0,PPTg,0,0
+0,0,1,1,1,0,1,-1,1,0,0,0,0,1,PPTg,0,1
+1,0,0,1,0,2,1,0,0,1,0,0,0,0,PPTg,0,0
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,PPTg,0,1
+0,0,0,0,2,0,0,0,0,0,0,0,0,0,PPTg,0,1
