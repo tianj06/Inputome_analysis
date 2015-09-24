@@ -223,7 +223,8 @@ end
 %% plot all input areas side by side
 plotAreas = {'Dopamine','PPTg','RMTg','Lateral hypothalamus',...
     'Central amygdala','Ventral pallidum','Dorsal striatum','Ventral striatum'};
-figure;
+h1=figure;
+h2=figure;
 diversityIdx = [];
 total_var = [];
 for i = 1:length(plotAreas)
@@ -231,6 +232,7 @@ for i = 1:length(plotAreas)
     rocValues = squeeze(rocPSTH(neuronIdx,1,:));
     % sort rocValues by its cue response
     [~,plt_idx] = sort(mean(rocValues(:,11:30),2),'ascend');
+    figure(h1)
     subplot(1,length(plotAreas),i)
     imagesc(rocValues(plt_idx,:),[0 1])
     colormap yellowblue
@@ -239,12 +241,22 @@ for i = 1:length(plotAreas)
     div_data = dataToCluster(neuronIdx,:);
     n_time = size(div_data,2);
     for j = 1:n_time
-        total_var(i,j) = var(div_data(:,j)));
+        total_var(i,j) = var(div_data(:,j));
     end
+    xlim([0.5 50.5])
     %diversityIdx(i) = sum(total_var);
     title(plotAreas{i});
+    figure(h2)
+    subplot(1,length(plotAreas),i)
+    plot(total_var(i,1:31))
+    xlim([-10,41])
+    ylim([0 0.05])
 end
 %table(plotAreas',diversityIdx')
+figure;
+barh(8:-1:1,mean(total_var,2))
+set(gca,'ytickLabel',plotAreas(8:-1:1))
+xlabel('Average variance')
 %%
 figure('Position',[720  86   1693  1227]); 
 xmax = -inf;
