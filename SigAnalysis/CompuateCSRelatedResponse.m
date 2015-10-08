@@ -32,6 +32,16 @@ end
         csValue = 0;
     end
    CS = table(csValue);
+   
+   % pre_reward CS response
+    TimeWin = [1:2000];
+      
+    % extract CS response (subtract by iti baseline)
+    CS_spikes = cellfun(@(x)1000*mean(x(:,TimeWin+1000),2)-1000*mean(x(:,1:1000),2),crs,'UniformOutput',0);
+    sig90vs0_long = signrank(CS_spikes{1});
+    sig50vs0_long = signrank(CS_spikes{2});
+    CS.sig90vsbslong = sig90vs0_long;
+    CS.sig50vsbslong = sig50vs0_long;
    if saveFlag
     save(fn,'-append','CS');
    end

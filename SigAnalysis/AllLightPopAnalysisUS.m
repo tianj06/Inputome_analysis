@@ -1,8 +1,8 @@
-path1 = pwd;
-path2 = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\newLight\';
-%fl = what(pwd);
-%fl = fl.mat;
-fl = getfiles_OnlyInOnePath (path1,path2);
+%path1 = pwd;
+%path2 = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\newLight\';
+fl = what(pwd);
+fl = fl.mat;
+%fl = getfiles_OnlyInOnePath (path1,path2);
 %%
 for i = 1:length(fl)
     a = load(fl{i},'area');
@@ -11,7 +11,6 @@ for i = 1:length(fl)
     CS(i,:) = CompuateCSRelatedResponse(fl{i});    
 end
 
-[G,areaName]=grp2idx(brainArea);
 %% change  the name of brain areas
 oldnames = {'Striatum','LH','VS','PPTg','RMTg','VP','St','DA','VTA3','VTA2','Ce'};
 newnames = {'Dorsal striatum','Lateral hypothalamus','Ventral striatum',...
@@ -22,6 +21,7 @@ for i = 1:length(oldnames)
     idx = ismember(oldbrain,oldnames{i});
     brainArea(idx) = newnames(i);
 end
+[G,areaName]=grp2idx(brainArea);
 
 %% seperate the latency by short and long
 llatency = nan(length(fl),1); % VTA neurons doesn't have latency are nans
@@ -49,6 +49,7 @@ savePath = ['C:\Users\uchidalab\Documents\GitHub\Inputome_analysis\SigAnalysis\'
 Tus.pureReward = Tus.sig50Rvs50OM&(~Tus.sigExp)&(~Tus.sig50OM);
 Tus.pureExp = Tus.sig90Reward&(~Tus.sig50Rvs50OM)&Tus.EXPsign;
 Tus.RPE = Tus.sig50R&Tus.sigExp&Tus.RPEsign;
+Tus.pureRewardWithCue = Tus.pureReward&(CS.sig50vs0_long>0.05)&(CS.sig90vs0_long>0.05);
 
 Tus.pureExpDir = double(Tus.sig90Reward&(~Tus.sig50Rvs50OM)).*Tus.EXPsign;
 Tus.pureRPEDir = double(Tus.sig50R&(~Tus.sigExp)).*Tus.RPEsign;
@@ -56,11 +57,11 @@ Tus.brainArea = brainArea';
 Tus.mixed = Tus.sig50Rvs50OM&(~Tus.pureReward)&(~Tus.RPE);
 Tus.other = (~Tus.sig50Rvs50OM)&(~Tus.pureExp);
 Tus.brainArea = brainArea';
-writetable(Tus,[savePath 'us_nonlight.txt'],'Delimiter',',');
+%writetable(Tus,[savePath 'us_nonlight.txt'],'Delimiter',',');
 
 Tus_short = Tus(llatency<=6|isnan(llatency),:);
 Tus_long = Tus(llatency>6|isnan(llatency),:);
-writetable(Tus_short,[savePath 'us_.txt'],'Delimiter',',');
+writetable(Tus_short,[savePath 'us_short.txt'],'Delimiter',',');
 writetable(Tus_long,[savePath 'us_long.txt'],'Delimiter',',');
 
 % with CS and positive RPE
@@ -69,7 +70,7 @@ Tus.RPEsign = Tus.RPEsign.*Tus.RPE;
 Tus.RPEsign(Tus.RPEsign==2) = -1;
 PosRPE = double(Tus.RPEsign.*CS.csValue >0);
 
-% with CS and positive RPE, negative RPE
+%% with CS and positive RPE, negative RPE
 
 AllRPE = double((Tus.RPEsign.*CS.csValue >0)&(Tus.OM50sign.*CS.csValue >0));
 CSposNegRPE = AllRPE;
@@ -79,14 +80,14 @@ JoinedRPE.brainArea = brainArea';
 writetable(JoinedRPE,[savePath 'jRPE.txt'],'Delimiter',',');
 
 %% make average PSTH response for specific groups
-inputG = G<=7|G==10;
+inputG = G<=6|G==10;
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&inputG&Tus.Rewardsign)) %,savePath
 plotAveragePSTH_analyzed_filelist(fl(Tus.RPE&inputG&Tus.Rewardsign)) %,savePath
 
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==1&inputG)) %,savePath
 
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==2&inputG)) %,savePath
-
+plotAveragePSTH_analyzed_filelist(fl(Tus.pureRewardWithCue&inputG)) %,savePath
 
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&(G<=7|G==10)))
 idx = find(Tus.sigReward&(~Tus.sigExp)&(~Tus.sig50OM));

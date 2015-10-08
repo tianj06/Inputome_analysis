@@ -1,3 +1,4 @@
+
 fl = what(pwd);
 fl = fl.mat;
 N = length(fl);
@@ -162,7 +163,11 @@ for i = 1:10
     set(gca,'xtick',1:5)
     title(orderAreas{i})
 end
-
+% stacked version of the plot
+figure;
+barh(nor_tbl','stacked')
+set(gca,'yticklabels',orderAreas)
+legend({'cluster1','cluster2','cluster3','cluster4','cluster5'},'Location','EastOutside')
 %%
 psthValue = permute(rawPSTH(:,[1 2 7 4 9],:),[2 1 3] );
 lickValue = permute(lickPSTH(:,[1 2 7 4 9],:),[2 1 3] );
@@ -220,7 +225,7 @@ for i = 3:length(newnames)
     set(gcf,'units','normalized','outerposition',[0 0 1 1],'PaperPositionMode','auto');
     saveas(gcf,[savePath newnames{i} 'Input_cluster'],'tif')
 end
-%% plot all input areas side by side
+%% plot all input areas and diversity measurement side by side
 plotAreas = {'Dopamine','PPTg','RMTg','Lateral hypothalamus',...
     'Central amygdala','Ventral pallidum','Dorsal striatum','Ventral striatum'};
 h1=figure;
@@ -230,6 +235,20 @@ total_var = [];
 for i = 1:length(plotAreas)
     neuronIdx = strcmp(brainArea,plotAreas{i});
     rocValues = squeeze(rocPSTH(neuronIdx,1,:));
+    %r = squeeze(rawPSTH(neuronIdx,1,:)) 
+    tempROC = rocPSTH(neuronIdx,[1:3 5:7],11:30);
+    temp_div_data_roc = reshape(permute(tempROC,[1 3 2]),sum(neuronIdx),[]);
+    tempPSTH = rawPSTH(neuronIdx,[1:3 5:7],1001:3000);
+    norm_psth = [];
+    for k = 1:sum(neuronIdx)
+        a = [];
+        for j = 1:size(tempPSTH,2)
+            a(j,:) = smooth(tempPSTH(k,j,:),100);
+        end
+        a = reshape(a',1,[]);
+        norm_psth(k,:) = (a - min(a))/(max(a)-min(a));
+    end
+    div_data = norm_psth;
     % sort rocValues by its cue response
     [~,plt_idx] = sort(mean(rocValues(:,11:30),2),'ascend');
     figure(h1)
@@ -238,25 +257,25 @@ for i = 1:length(plotAreas)
     colormap yellowblue
     set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
     n = sum(neuronIdx);
-    div_data = dataToCluster(neuronIdx,:);
     n_time = size(div_data,2);
     for j = 1:n_time
-        total_var(i,j) = var(div_data(:,j));
+        total_var(i,j) = sqrt(var(div_data(:,j))); %/(max(div_data(:,j))-min(div_data(:,j)))
     end
     xlim([0.5 50.5])
     %diversityIdx(i) = sum(total_var);
     title(plotAreas{i});
     figure(h2)
     subplot(1,length(plotAreas),i)
-    plot(total_var(i,1:31))
-    xlim([-10,41])
-    ylim([0 0.05])
+    plot(total_var(i,1:3001))
+    %xlim([-10,41])
+    %ylim([0 0.05])
 end
 %table(plotAreas',diversityIdx')
 figure;
-barh(8:-1:1,mean(total_var,2))
+barh(8:-1:1,nanmean(total_var,2))
 set(gca,'ytickLabel',plotAreas(8:-1:1))
 xlabel('Average variance')
+
 %%
 figure('Position',[720  86   1693  1227]); 
 xmax = -inf;

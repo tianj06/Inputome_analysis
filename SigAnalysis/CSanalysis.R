@@ -1,9 +1,9 @@
-matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/Results_short.txt";
+matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/Results_nonlight.txt";
 Inputome = read.table(matfn,header = TRUE,sep = ",")
 # preprocess data
 # add brainAreaGrouped, which groups type2 and type3
 Inputome$brainAreaGrouped <- Inputome$brainArea
-savefile = "CSsig_short.pptx"
+savefile = "CSsig_nonlight.pptx"
 CS <- Inputome[c("CSsig","Expsig","EarlyExpsig","csValue","delayValue","EarlydelayValue","brainArea")]
 CS[,4:6] <- abs(CS[,4:6]) 
 for (i in 1:3) {
@@ -28,14 +28,14 @@ theme_set(theme_classic(base_size = 18))
 ggplot(CS.perR[which(CS.perR$ResponseType== "CSsig"),] ,       
        aes(x = brainArea, y = ResponseValue.PROP,fill = ResponseType)) +
   geom_bar(stat = "identity") + labs(x="", y= "", title="Cue Response")+
-  scale_y_continuous(labels  = percent) + scale_fill_manual(values= cbPalette[1])+coord_flip()+
+  scale_y_continuous(labels  = percent,limits = c(0, 1)) + scale_fill_manual(values= cbPalette[1])+coord_flip()+
   theme(legend.position = "top",legend.title=element_blank())
 graph2ppt(file=savefile, append=TRUE)
 
 ggplot(CS.perR[CS.perR$ResponseType== "CSsig"|CS.perR$ResponseType== "csValue",] ,       
        aes(x = brainArea, y = ResponseValue.PROP,fill = ResponseType,order = ResponseType)) +
   geom_bar(stat = "identity",position = "identity") + labs(x="", y= "", title="Cue Response")+
-  scale_y_continuous(labels  = percent) + scale_fill_manual(values= cbPalette[1:2])+coord_flip()+
+  scale_y_continuous(labels  = percent,limits = c(0, 1)) + scale_fill_manual(values= cbPalette[1:2])+coord_flip()+
   theme(legend.position = "top",legend.title=element_blank())
 graph2ppt(file=savefile, append=TRUE)
 
@@ -67,7 +67,7 @@ CS.dirProp$brainArea <- factor(CS.dirProp$brainArea, AreaNames)
 ggplot(CS.dirProp[CS.dirProp$Epoch== "csValue"& (CS.dirProp$Type != "non-response"),] ,      
        aes(x = brainArea, y = Response.Prop ,fill = Type,order = Type)) +
   geom_bar(stat = "identity") + labs(x="", y= "", title="Cue Response")+
-  scale_y_continuous(labels  = percent) + scale_fill_manual(values= cbPalette[c(5,3,1)])+coord_flip()+
+  scale_y_continuous(labels  = percent,limits = c(0, 1)) + scale_fill_manual(values= cbPalette[c(5,3,1)])+coord_flip()+
   theme(legend.position = "top",legend.title=element_blank())
 graph2ppt(file=savefile, append=TRUE)
 
@@ -76,7 +76,7 @@ CS.dirProp$Epoch <- factor(CS.dirProp$Epoch, c("csValue","EarlydelayValue","dela
 ggplot(CS.dirProp[(CS.dirProp$Type != "non-response"),] ,      
        aes(x = brainArea, y = Response.Prop ,fill = Type,order = Type)) +
   geom_bar(stat = "identity") + labs(x="", y= "", title="Cue Response")+
-  scale_y_continuous(labels  = percent) + scale_fill_manual(values= cbPalette[c(5,3,1)]) +coord_flip()+
+  scale_y_continuous(labels  = percent,limits = c(0, 1)) + scale_fill_manual(values= cbPalette[c(5,3,1)]) +coord_flip()+
    facet_wrap(~Epoch) + theme(legend.position = "top")
 graph2ppt(file=savefile, append=TRUE)
 
@@ -84,7 +84,7 @@ graph2ppt(file=savefile, append=TRUE)
 ggplot(CS.dirProp[(CS.dirProp$Type != "non-response"),] ,      
        aes(x = Epoch, y = Response.Prop ,fill = Type,order = Type)) +
   geom_bar(stat = "identity") + labs(x = "",y= "Percent neuron")+
-  scale_y_continuous(labels  = percent) + scale_fill_manual(values= cbPalette[c(5,3,1)]) +
+  scale_y_continuous(labels  = percent,limits = c(0, 1)) + scale_fill_manual(values= cbPalette[c(5,3,1)]) +
   facet_wrap(~brainArea) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   scale_x_discrete(labels=c("Cue","Early delay","Late delay"))
 graph2ppt(file=savefile, append=TRUE)

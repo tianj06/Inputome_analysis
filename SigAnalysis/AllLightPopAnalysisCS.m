@@ -7,9 +7,9 @@ fl = getfiles_OnlyInOnePath (path1,path2);
 for i = 1:length(fl)
     a = load(fl{i},'area');
     brainArea{i} = a.area;
-    %load(fl{i},'EventSig','newCodingResults')
-    newCodingResults = CompuateValueRelatedResponseNew(fl{i},1);
-    EventSig =  CompuateResponsiveNeurons(fl{i},1);
+    load(fl{i},'EventSig','newCodingResults')
+    %newCodingResults = CompuateValueRelatedResponseNew(fl{i},1);
+    %EventSig =  CompuateResponsiveNeurons(fl{i},1);
     ResSig(i,:) = EventSig;
     ValueClass(i,:) = newCodingResults(1,[1 2 3 5 6 7]);
     ValueDir(i,:) = newCodingResults(2,[1 2 3 5 6 7]);
@@ -42,6 +42,7 @@ end
 results_short = Results(llatency<=6|isnan(llatency),:);
 results_long = Results(llatency>6|isnan(llatency),:);
 savePath = 'C:\Users\uchidalab\Documents\GitHub\Inputome_analysis\SigAnalysis\';
+writetable(Results,[savePath 'results_nonlight.txt'],'Delimiter',',');
 
 writetable(results_short,[savePath 'results_short.txt'],'Delimiter',',');
 writetable(results_long,[savePath 'results_long.txt'],'Delimiter',',');
