@@ -11,6 +11,12 @@ for i = 1:length(lihgtfiles)
     rocPSTH_r(i,:,:) = analyzedData.rocPSTH;
 end
 
+for i = 1:length(lihgtfiles)
+    load([homepath 'formatted\' lihgtfiles{i}],'rabiesDate')  
+    rabies_dates(i) = rabiesDate;
+    clear rabiesDate
+end
+
 fl_aav = what([homepath 'controlVTA\']);
 fl_aav = fl_aav.mat;
 raster_a = cell(length(fl_aav),14);
@@ -141,9 +147,11 @@ clusterID = 1;
 resp_spikes = cell(3,2);
 for k = 1:2
     if k==1
-        neuronIdx = rabies_label'&(clustLabel==clusterID);
+        %neuronIdx = rabies_label'&(clustLabel==clusterID);
+        neuronIdx = rabies_label'&(clustLabel==clusterID)&rdate<=11;
     else
-        neuronIdx = (~rabies_label')&(clustLabel==clusterID);
+        %neuronIdx = (~rabies_label')&(clustLabel==clusterID);
+        neuronIdx = rabies_label'&(clustLabel==clusterID)&rdate>11;
     end
     for j = 1:length(sigpair)
         timeWin = windowpair{j}(1):windowpair{j}(2);
@@ -180,7 +188,7 @@ for i = 1:3
     group = [(2*i-1)*ones(length(resp_spikes{i,1}),1);2*i*ones(length(resp_spikes{i,2}),1)];
     boxplot(data,group)
     ylabel([labels(i,1) '-' labels(i,2)])
-    set(gca,'xtick',[1,2],'xticklabels',{'rabies','AAV'});
+    set(gca,'xtick',[1,2],'xticklabels',{'rabies early','rabies late'}); %{'rabies','AAV'}
     sigstar({[1,2]},p_box(i))
 end
 % make bar plot to show no quanlitative difference between rabies and vta
@@ -189,7 +197,7 @@ for i = 1:3
     subplot(1,3,i)
     bar(100*percentSig(i,:))
     ylabel([labels(i,1) '-' labels(i,2)])
-    set(gca,'xtick',[1,2],'xticklabels',{'rabies','AAV'});
+    set(gca,'xtick',[1,2],'xticklabels',{'rabies early','rabies late'}); {'rabies','AAV'}
     ylim([0 100])
 end
 suptitle('Percent significant')
@@ -218,6 +226,45 @@ for i = 1:2
         neuronIdx = rabies_label'&(clustLabel==clusterID);
     else
         neuronIdx = (~rabies_label')&(clustLabel==clusterID);
+    end
+    for k = 1:3
+        a = squeeze(psthAll(neuronIdx,k,:));
+        %a = a(find(idx==1),:); % remove empty trials
+        if min(size(a))>1
+            averagePSTH = nanmean(a);
+        else
+            averagePSTH = a;
+        end
+        plot(smooth(averagePSTH,100),'Color',colorset(k,:),'LineWidth',1);hold on
+        if maxy < max(smooth(averagePSTH,100))
+            maxy = max(smooth(averagePSTH,100));
+        end
+    end
+    
+    title(sprintf('%s Cluster %d n=%d ',ExpText{i},clusterID,size(a,1)));
+    xlabel('Time (s)');
+    xlim([101 4800])
+    %ylim([0 maxy+5])
+    set(gca,'XTick',[1000:1000:5000],'XTickLabel',{'0','1','2','3'})
+    ylabel('Firing Rate (spk/s)'); 
+end
+
+
+%% plot psth rabies type1 early days vs late
+colorset= [  0 	0 	255;%blue  
+             30 	144 	255;%light blue  
+             0 0 0]/255; % grey
+maxy = 0;
+clusterID = 1;
+figure;
+ExpText = {'rabies early','rabies late'};
+rdate = [rabies_dates';nan(length(fl_aav),1)];
+for i = 1:2
+    subplot(2,1,i)
+    if i==1
+        neuronIdx = rabies_label'&(clustLabel==clusterID)&rdate<=11;
+    else
+        neuronIdx = rabies_label'&(clustLabel==clusterID)&rdate>11;
     end
     for k = 1:3
         a = squeeze(psthAll(neuronIdx,k,:));
