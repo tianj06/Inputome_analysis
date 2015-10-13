@@ -9,7 +9,7 @@ for i = 1:length(fl)
         k = k+1;
     end
 end
-averagePSTH = squeeze(mean(psth));
+averagePSTH = squeeze(nanmean(psth));
 CueColor= [  0 	0 	255;%blue  
              30 	144 	255;%light blue  
              128 	128 128;
@@ -26,7 +26,7 @@ legend('90% W','50% W','0% W','free W');
 prettyP([-0.9 3.8],'','','','l')
 xlabel('Time - Odor (ms)')
 ylabel('Spikes/s')
-title(['n=' num2str(k)])
+title(['n=' num2str(k-1)])
 
 figure;
 for i = 1:3
