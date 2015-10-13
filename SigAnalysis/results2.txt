@@ -37,7 +37,7 @@ CSsig,Expsig,Rewardsig,EarlyExpsig,csValue,delayValue,EarlydelayValue,usReward,o
 1,1,0,1,-1,1,0,0,0,0,Ventral striatum
 1,1,0,1,0,1,1,0,-1,0,Ventral striatum
 1,1,0,1,1,-1,0,0,0,0,Ventral striatum
-0,0,0,0,0,0,0,0,0,0,Ventral pallidum
+0,0,0,0,0,0,0,0,0,0,Ventral striatum
 1,0,1,0,1,0,0,0,1,1,Lateral hypothalamus
 1,0,0,0,1,0,0,0,0,0,Lateral hypothalamus
 0,0,0,0,0,-1,0,0,0,0,Dorsal striatum
@@ -48,7 +48,6 @@ CSsig,Expsig,Rewardsig,EarlyExpsig,csValue,delayValue,EarlydelayValue,usReward,o
 0,0,0,0,0,0,0,0,0,0,RMTg
 1,1,0,1,1,1,1,0,0,0,RMTg
 1,0,1,1,-1,-1,-1,0,-1,0,RMTg
-1,1,1,1,-1,-1,-1,0,0,0,RMTg
 1,1,1,1,-1,-1,-1,0,0,0,RMTg
 1,0,1,0,-1,0,-1,0,-1,0,PPTg
 0,0,0,0,0,0,0,0,0,0,PPTg
@@ -140,8 +139,6 @@ CSsig,Expsig,Rewardsig,EarlyExpsig,csValue,delayValue,EarlydelayValue,usReward,o
 0,0,1,0,0,0,0,0,-1,0,Dorsal striatum
 1,1,0,0,1,1,0,0,-1,0,Dorsal striatum
 0,1,0,0,1,0,1,1,0,0,Dorsal striatum
-1,1,1,0,0,1,0,0,0,0,Dorsal striatum
-1,0,0,1,0,0,0,0,0,-1,Dorsal striatum
 1,1,0,1,1,0,0,0,0,0,Ventral striatum
 1,1,1,1,1,1,1,0,-1,0,RMTg
 1,1,0,1,1,0,0,0,-1,1,RMTg
@@ -212,10 +209,10 @@ CSsig,Expsig,Rewardsig,EarlyExpsig,csValue,delayValue,EarlydelayValue,usReward,o
 1,1,0,1,1,0,0,0,-1,1,PPTg
 0,1,1,1,0,-1,-1,0,0,0,PPTg
 0,0,0,0,0,0,0,0,0,0,PPTg
-0,0,0,0,0,0,0,0,0,0,Dorsal striatum
-0,0,0,0,0,0,0,0,0,0,Dorsal striatum
-1,1,0,1,0,1,1,0,0,0,Dorsal striatum
-1,0,0,0,0,0,0,0,-1,0,Dorsal striatum
+0,0,0,0,0,0,0,0,0,0,Ventral striatum
+0,0,0,0,0,0,0,0,0,0,Ventral striatum
+1,1,0,1,0,1,1,0,0,0,Ventral striatum
+1,0,0,0,0,0,0,0,-1,0,Ventral striatum
 0,1,1,1,0,-1,-1,0,1,0,Lateral hypothalamus
 0,1,1,1,1,-1,0,0,1,1,Lateral hypothalamus
 1,0,1,1,1,0,0,0,1,1,Ventral pallidum
@@ -228,13 +225,13 @@ CSsig,Expsig,Rewardsig,EarlyExpsig,csValue,delayValue,EarlydelayValue,usReward,o
 0,1,0,1,0,1,1,0,-1,1,Lateral hypothalamus
 0,1,1,1,0,0,1,0,0,0,Lateral hypothalamus
 0,0,1,0,0,0,0,0,0,0,Lateral hypothalamus
-0,0,0,0,0,0,0,0,1,0,Central amygdala
-0,0,0,0,0,0,0,0,1,0,Central amygdala
-1,0,0,1,1,1,0,0,0,0,Central amygdala
-1,1,1,1,1,0,0,0,-1,1,Central amygdala
-1,0,1,1,0,1,1,0,-1,0,Central amygdala
-0,1,1,1,0,0,0,0,-1,1,Central amygdala
-1,1,1,1,1,0,1,0,-1,0,Central amygdala
+0,0,0,0,0,0,0,0,1,0,Subthalamic
+0,0,0,0,0,0,0,0,1,0,Subthalamic
+1,0,0,1,1,1,0,0,0,0,Subthalamic
+1,1,1,1,1,0,0,0,-1,1,Subthalamic
+1,0,1,1,0,1,1,0,-1,0,Subthalamic
+0,1,1,1,0,0,0,0,-1,1,Subthalamic
+1,1,1,1,1,0,1,0,-1,0,Subthalamic
 1,1,0,1,0,1,1,0,-1,0,PPTg
 0,0,0,0,0,0,0,0,0,0,PPTg
 1,1,1,1,1,1,1,0,-1,0,Lateral hypothalamus
@@ -280,11 +277,10 @@ CSsig,Expsig,Rewardsig,EarlyExpsig,csValue,delayValue,EarlydelayValue,usReward,o
 0,1,0,0,0,0,0,0,-1,0,PPTg
 1,1,0,1,1,0,0,-1,0,0,PPTg
 1,1,0,1,0,-1,0,0,0,-1,PPTg
-1,1,0,1,1,1,1,0,-1,1,PPTg
-0,1,1,1,0,-1,-1,-1,0,0,PPTg
-0,1,1,0,0,0,0,0,0,1,PPTg
-0,1,1,1,0,0,1,1,0,0,PPTg
-0,1,1,1,0,-1,-1,0,1,0,PPTg
-1,1,1,1,0,1,1,0,-1,1,PPTg
-1,1,1,1,1,0,0,0,-1,1,PPTg
-1,1,1,1,1,0,0,0,-1,1,PPTg
+1,1,0,1,1,1,1,0,-1,1,RMTg
+0,1,1,1,0,-1,-1,-1,0,0,RMTg
+0,1,1,0,0,0,0,0,0,1,RMTg
+0,1,1,1,0,0,1,1,0,0,RMTg
+0,1,1,1,0,-1,-1,0,1,0,RMTg
+1,1,1,1,0,1,1,0,-1,1,RMTg
+1,1,1,1,1,0,0,0,-1,1,RMTg

@@ -38,8 +38,8 @@ end
       
     % extract CS response (subtract by iti baseline)
     CS_spikes = cellfun(@(x)1000*mean(x(:,TimeWin+1000),2)-1000*mean(x(:,1:1000),2),crs,'UniformOutput',0);
-    sig90vs0_long = signrank(CS_spikes{1});
-    sig50vs0_long = signrank(CS_spikes{2});
+    sig90vs0_long = ranksum(CS_spikes{1},CS_spikes{3});
+    sig50vs0_long = ranksum(CS_spikes{2},CS_spikes{3});
     CS.sig90vsbslong = sig90vs0_long;
     CS.sig50vsbslong = sig50vs0_long;
    if saveFlag

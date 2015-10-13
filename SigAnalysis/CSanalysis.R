@@ -1,9 +1,9 @@
-matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/Results_nonlight.txt";
+matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/results2.txt";
 Inputome = read.table(matfn,header = TRUE,sep = ",")
 # preprocess data
 # add brainAreaGrouped, which groups type2 and type3
 Inputome$brainAreaGrouped <- Inputome$brainArea
-savefile = "CSsig_nonlight.pptx"
+savefile = "CSsig2.pptx"
 CS <- Inputome[c("CSsig","Expsig","EarlyExpsig","csValue","delayValue","EarlydelayValue","brainArea")]
 CS[,4:6] <- abs(CS[,4:6]) 
 for (i in 1:3) {
@@ -17,7 +17,7 @@ library(plyr)
 CS.perR <- ddply(CS.long,.(ResponseType,brainArea),summarise,
                  ResponseValue.PROP = mean(sig))
 AreaNames <- c('Dorsal striatum','Ventral striatum','Ventral pallidum',
-               'Central amygdala','Lateral hypothalamus','RMTg','PPTg','VTA type3','VTA type2','Dopamine')
+                'Subthalamic','Lateral hypothalamus','RMTg','PPTg','VTA type3','VTA type2','Dopamine')
 
 CS.perR$brainArea <- factor(CS.perR$brainArea, AreaNames)
 

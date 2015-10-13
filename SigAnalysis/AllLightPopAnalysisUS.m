@@ -11,11 +11,21 @@ for i = 1:length(fl)
     CS(i,:) = CompuateCSRelatedResponse(fl{i});    
 end
 
+%% merge some areas
+% PPTg: PPTg (all animals other than PPTg_an), PPTg_an('Laurel', 'Kittentail')
+% LH: LH_po ('Waterlily','Rice') LH_psth('Aubonpain') LH_an (all others)
+% areaSetting1: PPTg only posterior; LH only anterior
+brainArea(ismember(brainArea,{'LH_an'})) = {'LH'};
+
+% areaSetting2: PPTg all; LH all
+brainArea(ismember(brainArea,{'LH_an','LH_psth','LH_po'})) = {'LH'};
+brainArea(ismember(brainArea,{'PPTg_an','PPTg'})) = {'PPTg'};
+
 %% change  the name of brain areas
-oldnames = {'Striatum','LH','VS','PPTg','RMTg','VP','St','DA','VTA3','VTA2','Ce'};
+oldnames = {'Striatum','LH','VS','PPTg','RMTg','VP','DA','VTA3','VTA2','STh'};
 newnames = {'Dorsal striatum','Lateral hypothalamus','Ventral striatum',...
-    'PPTg','RMTg','Ventral pallidum','Dorsal striatum','Dopamine','VTA type3',...
-    'VTA type2','Central amygdala'};
+    'PPTg','RMTg','Ventral pallidum','Dopamine','VTA type3',...
+    'VTA type2','Subthalamic'};
 oldbrain = brainArea;
 for i = 1:length(oldnames)
     idx = ismember(oldbrain,oldnames{i});
@@ -35,7 +45,9 @@ end
 [G L] = grp2idx(brainArea');
 shortcount = grpstats(llatency<=6,G,'sum');
 longcount = grpstats(llatency>6,G,'sum');
-idx = [1 2 3 4 5 6  10];
+
+vtaAreaIdx = ismember(areaName,{'Dopamine','VTA type2','VTA type3'});
+idx = ~vtaAreaIdx;
 bardata = [-shortcount(idx),longcount(idx)];
 figure
 barh(longcount(idx),'BaseValue',0)
@@ -49,7 +61,7 @@ savePath = ['C:\Users\uchidalab\Documents\GitHub\Inputome_analysis\SigAnalysis\'
 Tus.pureReward = Tus.sig50Rvs50OM&(~Tus.sigExp)&(~Tus.sig50OM);
 Tus.pureExp = Tus.sig90Reward&(~Tus.sig50Rvs50OM)&Tus.EXPsign;
 Tus.RPE = Tus.sig50R&Tus.sigExp&Tus.RPEsign;
-Tus.pureRewardWithCue = Tus.pureReward&(CS.sig50vs0_long>0.05)&(CS.sig90vs0_long>0.05);
+Tus.pureRewardWithCue = Tus.pureReward&(CS.sig90vsbslong>0.05)&(CS.sig50vsbslong>0.05);
 
 Tus.pureExpDir = double(Tus.sig90Reward&(~Tus.sig50Rvs50OM)).*Tus.EXPsign;
 Tus.pureRPEDir = double(Tus.sig50R&(~Tus.sigExp)).*Tus.RPEsign;
@@ -57,12 +69,12 @@ Tus.brainArea = brainArea';
 Tus.mixed = Tus.sig50Rvs50OM&(~Tus.pureReward)&(~Tus.RPE);
 Tus.other = (~Tus.sig50Rvs50OM)&(~Tus.pureExp);
 Tus.brainArea = brainArea';
-%writetable(Tus,[savePath 'us_nonlight.txt'],'Delimiter',',');
+writetable(Tus,[savePath 'us_light2.txt'],'Delimiter',',');
 
 Tus_short = Tus(llatency<=6|isnan(llatency),:);
 Tus_long = Tus(llatency>6|isnan(llatency),:);
-writetable(Tus_short,[savePath 'us_short.txt'],'Delimiter',',');
-writetable(Tus_long,[savePath 'us_long.txt'],'Delimiter',',');
+writetable(Tus_short,[savePath 'us_short2.txt'],'Delimiter',',');
+writetable(Tus_long,[savePath 'us_long2.txt'],'Delimiter',',');
 
 % with CS and positive RPE
 Tus.RPE = Tus.sig50R&Tus.sigExp&Tus.RPEsign;
@@ -77,10 +89,12 @@ CSposNegRPE = AllRPE;
 CSposRPE = PosRPE;
 JoinedRPE = table(CSposRPE,CSposNegRPE);
 JoinedRPE.brainArea = brainArea';
-writetable(JoinedRPE,[savePath 'jRPE.txt'],'Delimiter',',');
+writetable(JoinedRPE,[savePath 'jRPE2.txt'],'Delimiter',',');
+JoinedRPE_short = JoinedRPE(llatency<=6|isnan(llatency),:);
+writetable(JoinedRPE_short,[savePath 'jRPE_short2.txt'],'Delimiter',',');
 
 %% make average PSTH response for specific groups
-inputG = G<=6|G==10;
+inputG = ~ismember(G,find(vtaAreaIdx));
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&inputG&Tus.Rewardsign)) %,savePath
 plotAveragePSTH_analyzed_filelist(fl(Tus.RPE&inputG&Tus.Rewardsign)) %,savePath
 
@@ -88,10 +102,15 @@ plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==1&inputG)) %,savePath
 
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==2&inputG)) %,savePath
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureRewardWithCue&inputG)) %,savePath
+ plot_pop_summary_fromAnalyzed(fl(Tus.pureRewardWithCue&inputG))
+plot_pop_summary_fromAnalyzedPanel(fl(Tus.pureRewardWithCue&inputG),savePath)
 
 plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&(G<=7|G==10)))
+
 idx = find(Tus.sigReward&(~Tus.sigExp)&(~Tus.sig50OM));
 plot_pop_summary_fromAnalyzedPanel( fl(idx),savePath)
+
+ plot_pop_summary_fromAnalyzed(fl(CSposRPE&inputG))
 
 %%
 otherMixed = Tus.sigReward&Tus.sigExp&(~RPE);

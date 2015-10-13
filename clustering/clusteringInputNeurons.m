@@ -2,6 +2,7 @@
 fl = what(pwd);
 fl = fl.mat;
 N = length(fl);
+
 for i = 1:length(fl)
     load(fl{i},'analyzedData')
     %analyzedData = getPSTHSingleUnit(fl{i}); 
@@ -9,21 +10,29 @@ for i = 1:length(fl)
     rocPSTH(i,:,:) = analyzedData.rocPSTH(1:10,:);
     lickPSTH(i,:,:) = analyzedData.rawLick(1:10,:);
     rawPSTH(i,:,:) = analyzedData.rawPSTH(1:10,:);
+    load(fl{i},'area');
+    brainArea{i} = area;
 end
 proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
 dataToCluster = squeeze(reshape(proc,N,1,[]));
 %plotRSS_clusterNum(dataToCluster)
 [eigvect,proj,eigval] = princomp(dataToCluster);
+%% merge some areas
+% PPTg: PPTg (all animals other than PPTg_an), PPTg_an('Laurel', 'Kittentail')
+% LH: LH_po ('Waterlily','Rice') LH_psth('Aubonpain') LH_an (all others)
+
+% areaSetting1: PPTg only posterior; LH only anterior
+brainArea(ismember(brainArea,{'LH_an'})) = {'LH'};
+
+% areaSetting2: PPTg all; LH all
+brainArea(ismember(brainArea,{'LH_an','LH_psth','LH_po'})) = {'LH'};
+brainArea(ismember(brainArea,{'PPTg_an','PPTg'})) = {'PPTg'};
 %%
-for i = 1:length(fl)
-    a = load(fl{i},'area');
-    brainArea{i} = a.area;
-end
 % change  the name of brain areas
-oldnames = {'Striatum','LH','VS','PPTg','RMTg','VP','St','DA','VTA3','VTA2','Ce'};
+oldnames = {'Striatum','LH','VS','PPTg','RMTg','VP','DA','VTA3','VTA2','STh'};
 newnames = {'Dorsal striatum','Lateral hypothalamus','Ventral striatum',...
-    'PPTg','RMTg','Ventral pallidum','Dorsal striatum','Dopamine','VTA type3',...
-    'VTA type2','Central amygdala'};
+    'PPTg','RMTg','Ventral pallidum','Dopamine','VTA type3',...
+    'VTA type2','Subthalamic'};
 oldbrain = brainArea;
 for i = 1:length(oldnames)
     idx = ismember(oldbrain,oldnames{i});
@@ -136,13 +145,14 @@ for j = 1:nclusters
     ylabel('Lick Rate (spk/s)'); 
 end
 %% calculate the number of neurons for each region in each cluster
-orderAreas = {'Dopamine','VTA type2','VTA type3','PPTg','RMTg','Central amygdala',...
+orderAreas = {'Dopamine','VTA type2','VTA type3','PPTg','RMTg','Subthalamic',...
     'Lateral hypothalamus','Ventral pallidum','Dorsal striatum','Ventral striatum'
     };
 
 oldbrain = brainArea;
+grp = nan(1,length(brainArea));
 for i = 1:length(orderAreas)
-    idx = ismember(oldbrain,orderAreas{i});
+    idx = ismember(brainArea,orderAreas{i});
     grp(idx) = i;
 end
 % merge cluster 5,6,7, which are all type2
@@ -227,7 +237,7 @@ for i = 3:length(newnames)
 end
 %% plot all input areas and diversity measurement side by side
 plotAreas = {'Dopamine','PPTg','RMTg','Lateral hypothalamus',...
-    'Central amygdala','Ventral pallidum','Dorsal striatum','Ventral striatum'};
+    'Subthalamic','Ventral pallidum','Dorsal striatum','Ventral striatum'};
 h1=figure;
 h2=figure;
 diversityIdx = [];

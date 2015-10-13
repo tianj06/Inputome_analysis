@@ -1,32 +1,40 @@
-path1 = pwd;
-path2 = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\newLight\';
-%fl = what(pwd);
-%fl = fl.mat;
-fl = getfiles_OnlyInOnePath (path1,path2);
+%path1 = pwd;
+%path2 = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\newLight\';
+fl = what(pwd);
+fl = fl.mat;
+%fl = getfiles_OnlyInOnePath (path1,path2);
 %%
 for i = 1:length(fl)
     a = load(fl{i},'area');
     brainArea{i} = a.area;
     load(fl{i},'EventSig','newCodingResults')
-    %newCodingResults = CompuateValueRelatedResponseNew(fl{i},1);
-    %EventSig =  CompuateResponsiveNeurons(fl{i},1);
     ResSig(i,:) = EventSig;
     ValueClass(i,:) = newCodingResults(1,[1 2 3 5 6 7]);
     ValueDir(i,:) = newCodingResults(2,[1 2 3 5 6 7]);
 end
 [G,areaName]=grp2idx(brainArea);
 
-%%
-oldnames = {'Striatum','LH','VS','PPTg','RMTg','VP','St','DA','VTA3','VTA2','Ce'};
+%% merge some areas
+% PPTg: PPTg (all animals other than PPTg_an), PPTg_an('Laurel', 'Kittentail')
+% LH: LH_po ('Waterlily','Rice') LH_psth('Aubonpain') LH_an (all others)
+% areaSetting1: PPTg only posterior; LH only anterior
+brainArea(ismember(brainArea,{'LH_an'})) = {'LH'};
+
+% areaSetting2: PPTg all; LH all
+brainArea(ismember(brainArea,{'LH_an','LH_psth','LH_po'})) = {'LH'};
+brainArea(ismember(brainArea,{'PPTg_an','PPTg'})) = {'PPTg'};
+
+%% change  the name of brain areas
+oldnames = {'Striatum','LH','VS','PPTg','RMTg','VP','DA','VTA3','VTA2','STh'};
 newnames = {'Dorsal striatum','Lateral hypothalamus','Ventral striatum',...
-    'PPTg','RMTg','Ventral pallidum','Dorsal striatum','Dopamine','VTA type3',...
-    'VTA type2','Central amygdala'};
+    'PPTg','RMTg','Ventral pallidum','Dopamine','VTA type3',...
+    'VTA type2','Subthalamic'};
 oldbrain = brainArea;
 for i = 1:length(oldnames)
     idx = ismember(oldbrain,oldnames{i});
     brainArea(idx) = newnames(i);
 end
-
+[G,areaName]=grp2idx(brainArea);
 Results = [ResSig ValueDir];
 Results.brainArea = brainArea';
 %% seperate the data by short latency and long latency
@@ -42,10 +50,10 @@ end
 results_short = Results(llatency<=6|isnan(llatency),:);
 results_long = Results(llatency>6|isnan(llatency),:);
 savePath = 'C:\Users\uchidalab\Documents\GitHub\Inputome_analysis\SigAnalysis\';
-writetable(Results,[savePath 'results_nonlight.txt'],'Delimiter',',');
+writetable(Results,[savePath 'results2.txt'],'Delimiter',',');
 
-writetable(results_short,[savePath 'results_short.txt'],'Delimiter',',');
-writetable(results_long,[savePath 'results_long.txt'],'Delimiter',',');
+writetable(results_short,[savePath 'results_short2.txt'],'Delimiter',',');
+writetable(results_long,[savePath 'results_long2.txt'],'Delimiter',',');
 
 %plot_pop_summary_fromAnalyzedPanel(fl(CSsig&(~csValue)&(G==6)),savePath)
 
