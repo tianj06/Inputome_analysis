@@ -1,5 +1,5 @@
 rm(list = ls())
-matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/us_light2.txt";
+matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/us_late.txt";
 us = read.table(matfn,header = TRUE,sep = ",")
 
 library(tidyr)
