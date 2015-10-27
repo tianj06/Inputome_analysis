@@ -192,10 +192,20 @@ for i = 1:3
     sigstar({[1,2]},p_box(i))
 end
 % make bar plot to show no quanlitative difference between rabies and vta
+
+% compute errorbar on rabies
+nNeuron = [44 79];
+
 figure;
 for i = 1:3
     subplot(1,3,i)
-    bar(100*percentSig(i,:))
+    errorSig(i,:) = 100*sqrt(percentSig(i,:).*(1-percentSig(i,:))./nNeuron); 
+    s = percentSig(i,1)*nNeuron(1);
+    n = nNeuron(1);
+    p = myBinomTest(s,n,percentSig(i,2),'Two')
+    bar([1,2],100*percentSig(i,:))
+    hold on;
+    errorbar([1,2],100*percentSig(i,:),errorSig(i,:),'k.')
     ylabel([labels(i,1) '-' labels(i,2)])
     set(gca,'xtick',[1,2],'xticklabels',{'rabies early','rabies late'}); {'rabies','AAV'}
     ylim([0 100])
