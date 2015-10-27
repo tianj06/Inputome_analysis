@@ -17,6 +17,7 @@ proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
 dataToCluster = squeeze(reshape(proc,N,1,[]));
 %plotRSS_clusterNum(dataToCluster)
 [eigvect,proj,eigval] = princomp(dataToCluster);
+
 %% merge some areas
 % PPTg: PPTg (all animals other than PPTg_an), PPTg_an('Laurel', 'Kittentail')
 % LH: LH_po ('Waterlily','Rice') LH_psth('Aubonpain') LH_an (all others)
@@ -85,6 +86,7 @@ for j = 1:5
     set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
     ylabel('Neuron'); xlabel('Time (s)');
     title(titleText{j});
+        set(gca,'Box','off','TickDir','out','TickLength',[0.02 0.025])
 end
 colorset= [  0 	0 	255;%blue  
              30 	144 	255;%light blue  
@@ -119,8 +121,8 @@ for j = 1:nclusters
     %ylim([0 maxy+5])
     set(gca,'XTick',[1000:1000:5000],'XTickLabel',{'0','1','2','3'})
     ylabel('Firing Rate (spk/s)'); 
-    
-    
+    set(gca,'Box','off','TickDir','out','TickLength',[0.02 0.025])
+
     p(3,j).select()
     maxy = 0;
     for k = 1:4
@@ -143,6 +145,7 @@ for j = 1:nclusters
     %ylim([0 maxy+5])
     set(gca,'XTick',[1000:1000:5000],'XTickLabel',{'0','1','2','3'})
     ylabel('Lick Rate (spk/s)'); 
+    set(gca,'Box','off','TickDir','out','TickLength',[0.02 0.025])
 end
 %% calculate the number of neurons for each region in each cluster
 orderAreas = {'Dopamine','VTA type2','VTA type3','PPTg','RMTg','Subthalamic',...
@@ -157,11 +160,11 @@ for i = 1:length(orderAreas)
 end
 % merge cluster 5,6,7, which are all type2
 mergeClustLabel = clustLabel;
-mergeClustLabel(ismember(clustLabel,5:7)) = 5;
+%mergeClustLabel(ismember(clustLabel,5:7)) = 5;
 
 [tbl,chi2,p,labels] = crosstab(mergeClustLabel,grp);
 totalNeuronPerArea = sum(tbl,1);
-nor_tbl = tbl./repmat(totalNeuronPerArea,5,1);
+nor_tbl = tbl./repmat(totalNeuronPerArea,7,1); %5
 c =color_select(5);
 figure;
 for i = 1:10
@@ -177,7 +180,7 @@ end
 figure;
 barh(nor_tbl','stacked')
 set(gca,'yticklabels',orderAreas)
-legend({'cluster1','cluster2','cluster3','cluster4','cluster5'},'Location','EastOutside')
+legend({'cluster1','cluster2','cluster3','cluster4','cluster5','cluster6','cluster7'},'Location','EastOutside')
 %%
 psthValue = permute(rawPSTH(:,[1 2 7 4 9],:),[2 1 3] );
 lickValue = permute(lickPSTH(:,[1 2 7 4 9],:),[2 1 3] );
@@ -244,47 +247,56 @@ diversityIdx = [];
 total_var = [];
 for i = 1:length(plotAreas)
     neuronIdx = strcmp(brainArea,plotAreas{i});
-    rocValues = squeeze(rocPSTH(neuronIdx,1,:));
+    rocValues = squeeze(rocPSTH(neuronIdx,2,:));
     %r = squeeze(rawPSTH(neuronIdx,1,:)) 
-    tempROC = rocPSTH(neuronIdx,[1:3 5:7],11:30);
-    temp_div_data_roc = reshape(permute(tempROC,[1 3 2]),sum(neuronIdx),[]);
-    tempPSTH = rawPSTH(neuronIdx,[1:3 5:7],1001:3000);
-    norm_psth = [];
-    for k = 1:sum(neuronIdx)
-        a = [];
-        for j = 1:size(tempPSTH,2)
-            a(j,:) = smooth(tempPSTH(k,j,:),100);
-        end
-        a = reshape(a',1,[]);
-        norm_psth(k,:) = (a - min(a))/(max(a)-min(a));
-    end
-    div_data = norm_psth;
+%     tempROC = rocPSTH(neuronIdx,[1:3 5:7],11:30);
+%     temp_div_data_roc = reshape(permute(tempROC,[1 3 2]),sum(neuronIdx),[]);
+%     tempPSTH = rawPSTH(neuronIdx,[1:3 5:7],1001:3000);
+%     norm_psth = [];
+%     for k = 1:sum(neuronIdx)
+%         a = [];
+%         for j = 1:size(tempPSTH,2)
+%             a(j,:) = smooth(tempPSTH(k,j,:),100);
+%         end
+%         a = reshape(a',1,[]);
+%         norm_psth(k,:) = (a - min(a))/(max(a)-min(a));
+%     end
+%    div_data = norm_psth;
     % sort rocValues by its cue response
     [~,plt_idx] = sort(mean(rocValues(:,11:30),2),'ascend');
     figure(h1)
-    subplot(1,length(plotAreas),i)
+    subplot(2,length(plotAreas),i)
     imagesc(rocValues(plt_idx,:),[0 1])
     colormap yellowblue
-    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
-    n = sum(neuronIdx);
-    n_time = size(div_data,2);
-    for j = 1:n_time
-        total_var(i,j) = sqrt(var(div_data(:,j))); %/(max(div_data(:,j))-min(div_data(:,j)))
-    end
+    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'},...
+        'TickDir','out','TickLength',[0.02 0.025],'Box','off')
+        title(plotAreas{i});
+
+    rocValues = squeeze(rocPSTH(neuronIdx,6,:));
+    subplot(2,length(plotAreas),i+length(plotAreas))
+    imagesc(rocValues(plt_idx,:),[0 1])
+    colormap yellowblue
+    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'},...
+        'TickDir','out','TickLength',[0.02 0.025],'Box','off')
+%    n = sum(neuronIdx);
+%    n_time = size(div_data,2);
+%     for j = 1:n_time
+%         total_var(i,j) = sqrt(var(div_data(:,j))); %/(max(div_data(:,j))-min(div_data(:,j)))
+%     end
     xlim([0.5 50.5])
     %diversityIdx(i) = sum(total_var);
     title(plotAreas{i});
-    figure(h2)
-    subplot(1,length(plotAreas),i)
-    plot(total_var(i,1:3001))
+%     figure(h2)
+%     subplot(1,length(plotAreas),i)
+%     plot(total_var(i,1:3001))
     %xlim([-10,41])
     %ylim([0 0.05])
 end
 %table(plotAreas',diversityIdx')
-figure;
-barh(8:-1:1,nanmean(total_var,2))
-set(gca,'ytickLabel',plotAreas(8:-1:1))
-xlabel('Average variance')
+% figure;
+% barh(8:-1:1,nanmean(total_var,2))
+% set(gca,'ytickLabel',plotAreas(8:-1:1))
+% xlabel('Average variance')
 
 %%
 figure('Position',[720  86   1693  1227]); 
@@ -341,3 +353,29 @@ tText = {'90% W','50% W','0% W'};%,'80% Puff'
 for i = 1:length(tText)
     text(tPos(i),0.2,tText{i})
 end
+
+%%
+plotAreas = {'Dopamine','PPTg','RMTg','Lateral hypothalamus',...
+    'Subthalamic','Ventral pallidum','Dorsal striatum','Ventral striatum'};
+all_eigval = [];
+meanCorr = [];
+for i = 1:length(plotAreas)
+    neuronIdx = strcmp(brainArea,plotAreas{i});
+    proc = permute (rocPSTH(neuronIdx,[1 2 5 6 7],10:40), [1,3,2]);
+    proc = squeeze(reshape(proc,sum(neuronIdx),1,[]));
+    c = corr(proc');
+    ind = find(triu(c,1));
+    meanCorr(i) = nanmean(c(ind));
+    [eigvect,proj,eigval] = princomp(proc);
+    all_eigval(:,i) = eigval;
+end 
+
+% figure;
+% barh(all_eigval(1,:)./sum(all_eigval,1))
+% set(gca,'yticklabels',plotAreas)
+
+figure;
+barh(meanCorr)
+set(gca,'yticklabels',plotAreas)
+xlabel('Mean pairwise correlation')
+prettyP('','','','','a')
