@@ -3,16 +3,21 @@ fl_rabies = [homepath 'analysis\vta_light.mat'];
 load(fl_rabies)
 rocPSTH_r = [];
 rawPSTH_r = [];
+
+strangeFile = 'Woodchuck_2012-05-15_15-33-10_TT4_3_formatted.mat';
+ind = find(strcmp(lihgtfiles,strangeFile));
+lihgtfiles(ind) = [];
 for i = 1:length(lihgtfiles)
     %analyzedData = getPSTHSingleUnit(lihgtfiles{i}); 
     %save(lihgtfiles{i},'-append','analyzedData');
-    load([homepath 'formatted\' lihgtfiles{i}],'analyzedData')
+    load([homepath 'formatted\' lihgtfiles{i}],'analyzedData');
+    analyzedData = remove_too_few_trials(analyzedData,5);
     rawPSTH_r(i,:,:) = analyzedData.rawPSTH;
     rocPSTH_r(i,:,:) = analyzedData.rocPSTH;
 end
 
 for i = 1:length(lihgtfiles)
-    load([homepath 'formatted\' lihgtfiles{i}],'rabiesDate')  
+    load([homepath 'formatted\' lihgtfiles{i}],'rabiesDate');
     rabies_dates(i) = rabiesDate;
     clear rabiesDate
 end
@@ -24,6 +29,7 @@ for i = 1:length(fl_aav)
     %analyzedData = getPSTHSingleUnit(fl_aav{i}); 
     %save(fl_aav{i},'-append','analyzedData');
     load([homepath 'controlVTA\' fl_aav{i}],'analyzedData')
+    analyzedData = remove_too_few_trials(analyzedData,5)
     rawPSTH_a(i,:,:) = analyzedData.rawPSTH;
     rocPSTH_a(i,:,:) = analyzedData.rocPSTH;
 end
@@ -89,7 +95,8 @@ for j = 1:3
      xlines = cat(1,repmat(xlim',[1,nclusters-1]), nan(1,nclusters-1));
      xlines = xlines(:);
      plot(xlines,clustlines,'r');
-    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
+    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'},'TickDir','out',...
+        'TickLength',[0.02 0.025])
     ylabel('Neuron'); xlabel('Time (s)');
     title(titleText{j});
 end
@@ -106,7 +113,7 @@ aav_clustLabel = clustLabel(Nr+1:end);
 rabies_label = 1:size(dataToCluster,1)<= Nr; % first Nr neurons are rabies
 
 sigpair = {[11 13],[1,2],[5 7]};
-windowpair = {[1000 1600],[3000 3400],[3000 4000]};
+windowpair = {[1000 1500],[3000 3500],[3000 4000]};
 for i = 1:length(lihgtfiles)
     load([homepath 'formatted\' lihgtfiles{i}],'analyzedData')
     r = analyzedData.raster;
@@ -141,18 +148,21 @@ end
 b = squeeze(mean(mean(psthAll(:,11:14,1:1000),3),2));
 b1 = b;
 %% scatter plot for all pairs of events
+rdate = [rabies_dates';nan(length(fl_aav),1)];
 labels = {'90% cue', '0% cue'; '90%W','50%W';'OM 90%W','OM 0%W'};
 figure;
 clusterID = 1;
 resp_spikes = cell(3,2);
+nNeuron = [];
 for k = 1:2
     if k==1
-        %neuronIdx = rabies_label'&(clustLabel==clusterID);
-        neuronIdx = rabies_label'&(clustLabel==clusterID)&rdate<=11;
+        neuronIdx = rabies_label'&(clustLabel==clusterID)&b<10&rdate>9;
+        %neuronIdx = rabies_label'&(clustLabel==clusterID)&rdate<=11;
     else
-        %neuronIdx = (~rabies_label')&(clustLabel==clusterID);
-        neuronIdx = rabies_label'&(clustLabel==clusterID)&rdate>11;
+        neuronIdx = (~rabies_label')&(clustLabel==clusterID)&b<10;
+        %neuronIdx = rabies_label'&(clustLabel==clusterID)&rdate>11;
     end
+    nNeuron(k) = sum(neuronIdx);
     for j = 1:length(sigpair)
         timeWin = windowpair{j}(1):windowpair{j}(2);
         responses = squeeze(mean(psthAll(neuronIdx,sigpair{j},timeWin),3)) - ...
@@ -177,6 +187,7 @@ for k = 1:2
         title(['percent significant:' num2str(percentSig(j,k))])
     end
 end
+%%
 % make a box plot to show quantitative difference between rabies and vta
 group = [];
 data = [];
@@ -188,13 +199,14 @@ for i = 1:3
     group = [(2*i-1)*ones(length(resp_spikes{i,1}),1);2*i*ones(length(resp_spikes{i,2}),1)];
     boxplot(data,group)
     ylabel([labels(i,1) '-' labels(i,2)])
-    set(gca,'xtick',[1,2],'xticklabels',{'rabies early','rabies late'}); %{'rabies','AAV'}
+    set(gca,'xtick',[1,2],'xticklabels',{'rabies late','rabies AAV'}); %{'rabies','AAV'}
     sigstar({[1,2]},p_box(i))
+    prettyP('','','','','a')
 end
 % make bar plot to show no quanlitative difference between rabies and vta
 
 % compute errorbar on rabies
-nNeuron = [44 79];
+
 
 figure;
 for i = 1:3
@@ -207,35 +219,50 @@ for i = 1:3
     hold on;
     errorbar([1,2],100*percentSig(i,:),errorSig(i,:),'k.')
     ylabel([labels(i,1) '-' labels(i,2)])
-    set(gca,'xtick',[1,2],'xticklabels',{'rabies early','rabies late'}); {'rabies','AAV'}
-    ylim([0 100])
+    set(gca,'xtick',[1,2],'xticklabels',{'rabies late','AAV'});  %{'rabies early','rabies late'}
+    prettyP('',[0 100],'',[0 50 100],'a')
 end
 suptitle('Percent significant')
+
+for i = 1:3
+    prabies(i) = signrank(resp_spikes{i,1});
+    paav(i) = signrank(resp_spikes{i,2});
+end
 %%
 figure;
-b1 = b(rabies_label&(clustLabel'==1));
-b2 = b(~rabies_label&(clustLabel'==1));
+b1 = b(rabies_label&(clustLabel'==1)&b'<10);
+b2 = b(~rabies_label&(clustLabel'==1)&b'<10);
 boxplot([b1;b2],[ones(length(b1),1); 2*ones(length(b2),1)])
 set(gca,'xtick',[1,2],'xticklabel',{'rabies','AAV'})
 title('Baseline')
 ylabel('Spikes/s')
 %xlim([0.5 2.5])
 sigstar({[1,2]},ranksum(b1,b2))
+prettyP('',[0 13],'','','a')
+%% plot cue response vs baseline
+cue = squeeze(mean(psthAll(:,11,1000+[0:500]),3)) -b;
+figure;
+scatter(b1,cue(rabies_label&(clustLabel'==1)))
+hold on;
+scatter(b2,cue(~rabies_label&(clustLabel'==1)),'r')
 
 %% plot psth rabies type1 vs AAV type1 
 colorset= [  0 	0 	255;%blue  
              30 	144 	255;%light blue  
              0 0 0]/255; % grey
 maxy = 0;
-clusterID = 2;
+clusterID = 1;
 figure;
-ExpText = {'rabies','AAV'};
-for i = 1:2
-    subplot(2,1,i)
+ExpText = {'rabies early 6-9 days','rabies late 10-15 days','AAV'};
+daythres = 9;
+for i = 1:3
+    subplot(3,1,i)
     if i==1
-        neuronIdx = rabies_label'&(clustLabel==clusterID);
+        neuronIdx = rabies_label'&(clustLabel==clusterID)&b<10&rdate<=daythres;
+    elseif i==2
+        neuronIdx = rabies_label'&(clustLabel==clusterID)&b<10&rdate>daythres;
     else
-        neuronIdx = (~rabies_label')&(clustLabel==clusterID);
+        neuronIdx = (~rabies_label')&(clustLabel==clusterID)&b<10;
     end
     for k = 1:3
         a = squeeze(psthAll(neuronIdx,k,:));
@@ -257,8 +284,12 @@ for i = 1:2
     %ylim([0 maxy+5])
     set(gca,'XTick',[1000:1000:5000],'XTickLabel',{'0','1','2','3'})
     ylabel('Firing Rate (spk/s)'); 
+    prettyP('','','','','a')
 end
 
+savePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\';
+ind = rabies_label'&(clustLabel==clusterID)&b<10&rdate<=11;
+%plot_pop_summary_fromAnalyzedPanel(lihgtfiles(ind),savePath,'vta early type1')
 
 %% plot psth rabies type1 early days vs late
 colorset= [  0 	0 	255;%blue  
