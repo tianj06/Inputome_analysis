@@ -201,6 +201,41 @@ prettyP('','','','','a')
 
 %% make average PSTH response for specific groups
 % areas that miss free reward responses
+missReward = zeros(length(fl),1);
+missRewardOmission = zeros(length(fl),1);
+for i = 1:length(fl)
+    load(fl{i},'analyzedData')
+    trialNum = cellfun(@(x)size(x,1),analyzedData.raster);
+    minTrialNum = 5;
+    removeTrials = trialNum < minTrialNum;
+    missReward(i) = removeTrials(9);
+    missOmission(i) =  removeTrials(5);
+end
+figure;
+grps    missReward
+
+
+inputG = ~ismember(G,find(vtaAreaIdx));
+% postive pure reward
+plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&inputG&Tus.Rewardsign)) %,savePath
+% negative pure reward
+plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&inputG&~Tus.Rewardsign)) %,savePath
+% pure expectation positive
+plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==1&inputG)) %,savePath
+% pure expectation negative
+plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==2&inputG)) %,savePath
+% perfect RPE 
+plotAveragePSTH_analyzed_filelist(fl(AllRPE&inputG)) %,savePath
+% partial RPE
+plotAveragePSTH_analyzed_filelist(fl(Tus.RPE&inputG)) %,savePath
+% mixed all
+mixed = Tus.sig50Rvs50OM&(~Tus.pureReward);
+plotAveragePSTH_analyzed_filelist(fl(mixed&inputG)) %,savePath
+% mixed without RPE 
+plotAveragePSTH_analyzed_filelist(fl(Tus.mixed&inputG)) %,savePath
+
+
+
 plot_pop_summary_fromAnalyzed(fl(Tus.pureRewardWithCue&inputG))
 plot_pop_summary_fromAnalyzedPanel(fl(Tus.pureRewardWithCue&inputG),savePath)
 

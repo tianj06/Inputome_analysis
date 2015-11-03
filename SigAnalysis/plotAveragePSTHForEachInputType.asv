@@ -1,0 +1,54 @@
+%% areas that miss free reward responses
+missReward = zeros(length(fl),1);
+missOmission = zeros(length(fl),1);
+for i = 1:length(fl)
+    load(fl{i},'analyzedData')
+    trialNum = cellfun(@(x)size(x,1),analyzedData.raster);
+    minTrialNum = 5;
+    removeTrials = trialNum < minTrialNum;
+    missReward(i) = removeTrials(9);
+    missOmission(i) =  removeTrials(5);
+end
+figure;
+barh(grpstats(missReward,G,'mean'))
+set(gca,'yTicklabels',L)
+title('Percent neurons miss free reward')
+figure;
+barh(grpstats(missOmission,G,'mean'))
+set(gca,'yTicklabels',L)
+title('Percent neurons miss omission 90% reward')
+
+%% make average PSTH response for specific groups
+inputG = ~ismember(G,find(vtaAreaIdx));
+% postive pure reward
+free = 0;
+if free
+    reward_name = '';
+else
+    reward_name = 'include free';
+end
+savePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\writing\Figures\average response\';
+ax = plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&inputG&Tus.Rewardsign), free) %,savePath
+ylim = [-0.5 18]; set(ax(1),'ylim',ylim); set(ax(2),'ylim',ylim); 
+export_fig([savePath 'pure reward positive' reward_name],'-pdf')
+% negative pure reward
+plotAveragePSTH_analyzed_filelist(fl(Tus.pureReward&inputG&~Tus.Rewardsign)) %,savePath
+ylim = [-0.5 25.5]; set(ax(1),'ylim',ylim); set(ax(2),'ylim',ylim); 
+export_fig([savePath 'pure reward negative' reward_name],'-pdf')
+% pure expectation positive
+plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==1&inputG)) %,savePath
+ylim = [-0.5 14.5]; set(ax(1),'ylim',ylim); set(ax(2),'ylim',ylim); 
+export_fig([savePath 'pure expectation positive' reward_name],'-pdf')
+% pure expectation negative
+plotAveragePSTH_analyzed_filelist(fl(Tus.pureExpDir==2&inputG)) %,savePath
+ylim = [-0.5 2.5]; set(ax(1),'ylim',ylim); set(ax(2),'ylim',ylim); 
+export_fig([savePath 'pure expectation negative' reward_name],'-pdf')
+% perfect RPE 
+plotAveragePSTH_analyzed_filelist(fl(AllRPE&inputG)) %,savePath
+% partial RPE
+plotAveragePSTH_analyzed_filelist(fl(Tus.RPE&inputG)) %,savePath
+% mixed all
+mixed = Tus.sig50Rvs50OM&(~Tus.pureReward);
+plotAveragePSTH_analyzed_filelist(fl(mixed&inputG)) %,savePath
+% mixed without RPE 
+plotAveragePSTH_analyzed_filelist(fl(Tus.mixed&inputG)) %,savePath
