@@ -4,10 +4,10 @@ function analyzedData = getPSTHSingleUnit(filename)
     rocBin = 100;
     binNum = (pretrigger + posttrigger)/rocBin;
     load(filename)
-    trigger = {events.odorOn(events.trialType==1)
-        events.odorOn(events.trialType==3)
-        events.odorOn(events.trialType==5)
-        events.odorOn(events.trialType==7)
+    trigger = {events.rewardOn(events.trialType==1)-2000
+        events.rewardOn(events.trialType==3)-2000
+        events.rewardOn(events.trialType==5)-2000
+        events.airpuffOn(events.trialType==7)-2000
         events.odorOn(events.trialType==2)
         events.odorOn(events.trialType==4)
         events.odorOn(events.trialType==6)
@@ -59,3 +59,4 @@ function analyzedData = getPSTHSingleUnit(filename)
     [~, r, psths] = plotPSTH(responses.lick, trigger, pretrigger, posttrigger, ...
           'plotflag', 'none','smooth','n');        
     analyzedData.rawLick = psths;
+    analyzedData.rasterLick = r;
