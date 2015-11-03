@@ -359,6 +359,8 @@ plotAreas = {'Dopamine','PPTg','RMTg','Lateral hypothalamus',...
     'Subthalamic','Ventral pallidum','Dorsal striatum','Ventral striatum'};
 all_eigval = [];
 meanCorr = [];
+bins = -1:0.1:1; 
+hist_corr = zeros(length(plotAreas),length(bins));
 for i = 1:length(plotAreas)
     neuronIdx = strcmp(brainArea,plotAreas{i});
     proc = permute (rocPSTH(neuronIdx,[1 2 5 6 7],10:40), [1,3,2]);
@@ -366,6 +368,7 @@ for i = 1:length(plotAreas)
     c = corr(proc');
     ind = find(triu(c,1));
     meanCorr(i) = nanmean(c(ind));
+    hist_corr(i,:) = hist(c(ind),bins)/length(ind);
     [eigvect,proj,eigval] = princomp(proc);
     all_eigval(:,i) = eigval;
 end 
@@ -379,3 +382,15 @@ barh(meanCorr)
 set(gca,'yticklabels',plotAreas)
 xlabel('Mean pairwise correlation')
 prettyP('','','','','a')
+
+figure;
+imagesc(flipud(hist_corr))
+hold on; vline(11)
+colormap gray
+set(gca,'yticklabels',fliplr(plotAreas))
+set(gca,'xtick',1:5:21,'xticklabel',{'-1','-0.5','0','0.5','1'})
+set(gcf,'Color','w')
+set(findall(gcf,'-property','FontName'),'FontName','Arial')
+set(gca,'Box','off','FontSize',14,'FontName','Arial')
+set(gca,'TickDir','out')
+set(gca,'TickLength',[0.02 0.025])
