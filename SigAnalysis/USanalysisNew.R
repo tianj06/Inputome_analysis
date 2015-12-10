@@ -1,5 +1,5 @@
 rm(list = ls())
-matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/us_late.txt";
+matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/us_nonlight.txt";
 us = read.table(matfn,header = TRUE,sep = ",")
 
 library(tidyr)
@@ -12,11 +12,13 @@ us.perR <- ddply(us.long,.(ResponseType,brainArea),summarise,
 library("ggplot2")
 library("scales")
 library(export)
-savefile = 'USsig.pptx'
+savefile = 'USsig_nonlight.pptx'
 theme_set(theme_classic(base_size = 18))
 cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-AreaNames <- c('Dorsal striatum','Ventral striatum','Ventral pallidum',
-  'Subthalamic','Lateral hypothalamus','RMTg','PPTg','VTA type3','VTA type2','Dopamine')
+AreaNames <- c('Ventral striatum','Dorsal striatum','Ventral pallidum',
+  'Subthalamic','Lateral hypothalamus','RMTg','PPTg','VTA type3','VTA type2','Dopamine',
+  'r VTA Type3', 'rVTA Type2','rdopamine')
+AreaNames <- rev(AreaNames)
 us.perR$brainArea <- factor(us.perR$brainArea, AreaNames) 
 
 # plot percent of reward responsive neurons
@@ -45,3 +47,4 @@ ggplot(us.reward , aes(x = brainArea, y = ResponseValue.PROP,fill = ResponseType
   labs(x="", y= "", title="Reward Response")+scale_y_continuous(labels  = percent) + 
   scale_fill_manual(values= cbPalette[1:3])+coord_flip()+theme(legend.position="top",legend.title=element_blank())
 graph2ppt(file=savefile, append=TRUE)
+

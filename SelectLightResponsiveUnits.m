@@ -93,7 +93,7 @@ for i = 1:length(ind)
 end
 
 %% criteria for light responses:
-lightIdx = (llowSalt<lowSaltCR)&(lhightSalt< highsalt)&(lwvcorr>wvcorrCR)&(p>0.05);
+lightIdx = (llowSalt<lowSaltCR)&(lhightSalt< highsalt)&(lwvcorr>wvcorrCR)&(p>0.05)&llatency<7;
 lightfiles = flall(lightIdx);
 lightlatency = llatency(lightIdx);
 lightjitter = ljitter(lightIdx);

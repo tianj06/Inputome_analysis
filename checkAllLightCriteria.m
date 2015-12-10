@@ -1,10 +1,12 @@
-homepath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VTA\';
-fl_rabies = [homepath 'analysis\vta_light.mat'];
-load(fl_rabies)
-for i = 1:length(lihgtfiles)
+homepath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\newLight\';
+fl = what(homepath);
+fl = fl.mat;
+brainArea = {};
+for i = 1:length(fl)
     %analyzedData = getPSTHSingleUnit(lihgtfiles{i}); 
     %save(lihgtfiles{i},'-append','analyzedData');
-    load([homepath 'formatted\' lihgtfiles{i}],'lightResult','checkLaser')
+    load([homepath fl{i}],'lightResult','checkLaser','area')
+    brainArea{i} = area;
     llatency(i) = lightResult.latency; 
     llowSalt(i) = lightResult.lowSaltP; 
     lhightSalt(i) = lightResult.highSaltP; 
@@ -12,16 +14,18 @@ for i = 1:length(lihgtfiles)
     ljitter(i) = nanstd(checkLaser.LaserEvokedPeak);
     p(i) = checkLaser.p_inhibit;
 end
+RMTgIdx = strcmp(brainArea,'RMTg');
+
 figure;
-hist(llatency(lhightSalt<0.05))
+hist(llatency(RMTgIdx))
 title('latency')
 
 figure;
-hist(llowSalt)
+hist(llowSalt(RMTgIdx))
 title('low salt')
 
 figure;
-hist(lhightSalt)
+hist(lhightSalt(RMTgIdx))
 title('high salt')
 
 figure;
@@ -31,8 +35,5 @@ title('wave correlation')
 figure;
 hist(p)
 
-for i = 1:length(lihgtfiles)
-    [name,~,~] = extractAnimalFolderFromFormatted(lihgtfiles{i});
-    animalNames{i} = name;
-end
-unique(animalNames)
+plot_pop_summary_fromAnalyzed(fl(RMTgIdx&lhightSalt<0.01))
+plot_pop_summary_fromAnalyzed(fl(RMTgIdx))

@@ -1,13 +1,13 @@
 % ind = find(strcmp('cant find psth and light result files',...
 %     errorProcess(:,2)));
 % dataFile = errorProcess(ind,1);
-ProcessedDataPath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_RMTg\uniqueUnits\';
+ProcessedDataPath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\new units 2015Nov\';
 cd(ProcessedDataPath);
 fl = what(ProcessedDataPath);
 dataFile = fl.mat;
 savePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\Plottings\';
 %rawPath = {'K:\St\','M:\rabies\','N:\rabies\','D:\VP_LPO\'};
-rawPath = {'H:\rabiesRMTg\'};
+rawPath = {'F:\VP_LPO\'};
 
 if ~iscell(dataFile)
     dataFile = {dataFile};

@@ -1,4 +1,4 @@
-function quickPSTHPlotting_formatted_new(filename)
+function quickPSTHPlotting_formatted_2(filename)
 load(filename)
 plotTrialType = [1 2 7];
             %than the biggest data point.
@@ -15,11 +15,11 @@ for i = 1:length(plotTrialType)
     averagePSTH = [];
     % smooth the PSTH using box smoothing method, you should choose
     % your own favoriate
-    averagePSTH = 1000*smoothPSTH(r, 'box', 300);
+    averagePSTH = 1000*smoothPSTH(r, 'box', 200);
     errPSTH(i,:) = std(averagePSTH)/sqrt(size(r,1));
     meanPSTH(i,:) = mean(averagePSTH);
     % make the plotting
-    errorbar_patch(-0.9:0.01:4,meanPSTH(i,1:10:end),errPSTH(i,1:10:end),colorSet(i,:));
+    errorbar_patch(-0.9:0.01:3.9,meanPSTH(i,100:10:end-100),errPSTH(i,100:10:end-100),colorSet(i,:));
 end
 % make the plot beautiful
 xlim([-0.9 3.9])
@@ -37,18 +37,20 @@ set(gca,'LineWidth',1)
 xlabel('Time - odor (s)')
 %%
 subplot(1,2,2)
-plotTrialType = [5 6 7];
+plotTrialType = [2 6];
 for i = 1:length(plotTrialType)
     r = analyzedData.raster{plotTrialType(i)};
     N = size(r,1);
     averagePSTH = [];
     % smooth the PSTH using box smoothing method, you should choose
     % your own favoriate
-    averagePSTH = 1000*smoothPSTH(r, 'box', 300);
+    averagePSTH = 1000*smoothPSTH(r, 'box', 200);
     errPSTH(i,:) = std(averagePSTH)/sqrt(N);
     meanPSTH(i,:) = mean(averagePSTH);
     % make the plotting
-    errorbar_patch(-1:0.01:4,meanPSTH(i,1:10:end),errPSTH(i,1:10:end),colorSet(i,:));
+    plot(-0.9:0.01:3.9,meanPSTH(i,100:10:end-100),'color',colorSet(i,:));
+
+    hold on;
 end
 % make the plot beautiful
 xlim([-0.9 3.9])

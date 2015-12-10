@@ -2,16 +2,16 @@ function CopyUniqueUnitsFromExcel
 homepath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_PPTg\';
 desFormattedDataPath = [homepath 'uniqueUnits\'];
 desPlotPath = [homepath 'unique units plotting\'];
-SourcePlottingPath = [homepath 'plotting\'];
-SourceFormattedDataPath = [homepath 'formatted\'];
+SourcePlottingPath = 'C:\analysis\plottings\'; %[homepath 'plotting\'];
+SourceFormattedDataPath = ['C:\analysis\formatted\']%[homepath 'formatted\'];
 dataFiles = rdir([SourceFormattedDataPath '*.mat']);
 dataFiles = {dataFiles.name};
 plotFiles = rdir([SourcePlottingPath '*.tif']);
 plotFiles = {plotFiles.name};
 %% read excelsheet about units infor
-excelDoc = ['C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\JuPPTg2015summer.xlsx'];
+excelDoc = ['C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\Ryan thesis\CyrusFinal.xlsx'];
 [~,sheets] = xlsfinfo( excelDoc );
-for i =length(sheets)
+for i =1%length(sheets)
     [num txt all] = xlsread(excelDoc,sheets{i});
     % num: 1st colum Tetrode 3rd colum unit ID
     % txt: 1st row, variable name; 2colum date

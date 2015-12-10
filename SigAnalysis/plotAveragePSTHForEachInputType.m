@@ -54,6 +54,7 @@ ax = plotAveragePSTH_analyzed_filelist(fl(AllRPE&inputG), free); %,savePath
 ylim = [-0.5 40.5]; set(ax(1),'ylim',ylim); set(ax(2),'ylim',ylim); 
 export_fig([savePath 'perfect RPE' reward_name],'-pdf')
 % partial RPE
+% Tus.RPE = Tus.sig50R&Tus.sigExp&Tus.RPEsign;
 ax = plotAveragePSTH_analyzed_filelist(fl(Tus.RPE&inputG), free); %,savePath
 ylim = [-0.5 40.5]; set(ax(1),'ylim',ylim); set(ax(2),'ylim',ylim); 
 export_fig([savePath 'partial RPE (only reward)' reward_name],'-pdf')
@@ -63,6 +64,16 @@ ax = plotAveragePSTH_analyzed_filelist(fl(mixed&inputG), free); %,savePath
 ylim = [-0.5 35.5]; set(ax(1),'ylim',ylim); set(ax(2),'ylim',ylim); 
 export_fig([savePath 'mixed all' reward_name],'-pdf')
 % mixed without RPE 
+% Tus.mixed = Tus.sig50Rvs50OM&(~Tus.pureReward)&(~Tus.RPE);
 ax = plotAveragePSTH_analyzed_filelist(fl(Tus.mixed&inputG), free); %,savePath
 ylim = [-0.5 25.5]; set(ax(1),'ylim',ylim); set(ax(2),'ylim',ylim); 
 export_fig([savePath 'mixed no reward RPE' reward_name],'-pdf')
+
+
+fnn = fl(AllRPE&inputG);
+for i = 1:length(fnn)
+    quickPSTHPlotting_formatted_3(fnn{i})
+    load(fnn{i},'area');
+    title(area)
+end
+

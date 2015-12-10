@@ -1,5 +1,5 @@
-figurePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\rabies_VS\unitSummary\';
-a = rdir([figurePath '*summary.tif']);
+figurePath = 'C:\analysis\unitsummary\';
+a = rdir([figurePath '*.jpg']);
 a = {a.name};
 [~,figureName,~] = cellfun(@fileparts,a,'UniformOutput', false);
 for i = 1:length(figureName)
@@ -10,7 +10,7 @@ for i = 1:length(figureName)
     if ~exist(newPath)
         mkdir(newPath)
     end
-    movefile([figurePath figureName{i} '.tif'],[newPath  figureName{i} '.tif'])
+    movefile([figurePath figureName{i} '.jpg'],[newPath  figureName{i} '.jpg'])
 end
 
 %%

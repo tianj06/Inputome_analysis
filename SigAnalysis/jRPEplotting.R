@@ -1,4 +1,4 @@
-matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/jRPE.txt";
+matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/jRPE_nonlight.txt";
 jRPE = read.table(matfn,header = TRUE,sep = ",")
 library(reshape2)
 library(plyr)
@@ -6,12 +6,15 @@ library(ggplot2)
 library(scales)
 library(export)
 
-savefile = "USsig.pptx"
+savefile = "USsig_nonlight.pptx"
 theme_set(theme_classic(base_size = 18))
 RPE <- ddply(jRPE,"brainArea",summarize,rewardRPE = mean(RewardRPE),posRPE=mean(CSposRPE),allRPE= mean(CSposNegRPE))
 RPE.l <- melt(RPE,id.vars = "brainArea", variable.name = "RPEtype",value.name = "Response.Prop")
-AreaNames <- c('Dorsal striatum','Ventral striatum','Ventral pallidum',
-               'Subthalamic','Lateral hypothalamus','RMTg','PPTg','VTA type3','VTA type2','Dopamine')
+AreaNames <- c('Ventral striatum','Dorsal striatum','Ventral pallidum',
+               'Subthalamic','Lateral hypothalamus','RMTg','PPTg','VTA type3','VTA type2','Dopamine',
+               'r VTA Type3', 'rVTA Type2','rdopamine')
+AreaNames <- rev(AreaNames)
+
 RPE.l$brainArea <- factor(RPE.l$brainArea,AreaNames)
 
 # ggplot(RPE.l[RPE.l$RPEtype=="posRPE",],aes(x = brainArea, y = Response.Prop,fill = RPEtype)) +

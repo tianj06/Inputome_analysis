@@ -1,6 +1,6 @@
 function quickPSTHPlotting_formatted(filename)
 load(filename)
-plotTrialType = [1 2 7 4];
+plotTrialType = [1 2 7];
             %than the biggest data point.
 figure;
 % color for 90% water, 50% water, nothing, and airpuff; will modify later
@@ -15,7 +15,7 @@ for i = 1:length(plotTrialType)
     averagePSTH = [];
     % smooth the PSTH using box smoothing method, you should choose
     % your own favoriate
-    averagePSTH = 1000*smoothPSTH(r, 'box', 300);
+    averagePSTH = 1000*smoothPSTH(r, 'box', 200);
     errPSTH(i,:) = std(averagePSTH)/sqrt(size(r,1));
     meanPSTH(i,:) = mean(averagePSTH);
     % make the plotting

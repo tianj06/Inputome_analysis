@@ -1,6 +1,9 @@
-function valueAnalyzedUS = CompuateUSrelatedResponse(fn,saveFlag)
-if nargin < 2
-    saveFlag = 0;
+function valueAnalyzedUS = CompuateUSrelatedResponse(fn,saveFlag,TimeWin)
+if nargin < 3
+    TimeWin = 1:500;
+    if nargin < 2
+        saveFlag = 0;
+    end
 end
     load(fn,'analyzedData');
     rs = analyzedData.raster;
@@ -10,7 +13,6 @@ end
     urs = rs([7 6 2 1 ]); % 0, 50% omission, 50 reward, 90 reward
   
 % extract US response (subtract by iti baseline)
-    TimeWin = 1:500;
     US_spikes = cellfun( @(x)1000*mean(x(:,TimeWin+3000),2),urs,'UniformOutput',0);
     [~,sig50Rvs50OM] = ranksum(US_spikes{2}, US_spikes{3});
     [~,sigExp] = ranksum(US_spikes{3}, US_spikes{4});

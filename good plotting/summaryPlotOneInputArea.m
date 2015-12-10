@@ -19,7 +19,7 @@ for i = 1:length(filelist)
     rawPSTH(i,:,:) = analyzedData.rawPSTH(1:10,:);
     %
 end
-%{
+
 %% plot average psth for all neurons and identified neurons
 temp = isnan( squeeze(rawPSTH(:,9,1)));
 validT = ~temp;
@@ -198,7 +198,7 @@ xlabel('Number of clusters')
 ylabel('1-RSS or variance explained')
 ylim([0 1])
 export_fig(gcf,[saveFolder brainArea 'KmeanClusteringRSS.pdf'])
-%}
+
 %% clustering analysis
 proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
 dataToCluster = squeeze(reshape(proc,length(filelist),1,[]));
