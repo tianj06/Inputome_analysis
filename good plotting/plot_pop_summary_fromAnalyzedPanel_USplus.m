@@ -7,10 +7,15 @@ function plot_pop_summary_fromAnalyzedPanel_USplus(fl,savePath,figureName)
     end
     psthAll = [];
     auROCall = [];
+    k = 1;
     for i = 1:length(fl)
         load(fl{i},'analyzedData')
-        psthAll(i,:,:) = analyzedData.smoothPSTH;
-        auROCall(i,:,:) = analyzedData.rocPSTH;
+        analyzedData = remove_too_few_trials(analyzedData,minTrialNum);
+        if ~isnan(analyzedData.rocPSTH(:,5)) 
+            psthAll(k,:,:) = analyzedData.smoothPSTH;
+            auROCall(k,:,:) = analyzedData.rocPSTH;
+            k = k+1;
+        end
     end
     
     totalFile = length(fl);

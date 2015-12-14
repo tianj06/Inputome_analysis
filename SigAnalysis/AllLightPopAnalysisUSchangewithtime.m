@@ -5,6 +5,7 @@ fl = fl.mat;
 for i = 1:length(fl)
     a = load(fl{i},'area');
     brainArea{i} = a.area;
+    Tus_before(i,:) = CompuateUSrelatedResponse(fl{i},0,-499:0);
     Tus(i,:) = CompuateUSrelatedResponse(fl{i},0,1:500);
     Tuslate(i,:) = CompuateUSrelatedResponse(fl{i},0,501:1000);
 end
@@ -26,9 +27,12 @@ Tus.Timewin = repmat({'early'},N,1);
 Tus.brainArea = brainArea';
 Tuslate.Timewin = repmat({'late'},N,1);
 Tuslate.brainArea = brainArea';
+Tus_before.Timewin = repmat({'before'},N,1);
+Tus_before.brainArea = brainArea';
 TusFinal = vertcat(Tus, Tuslate);
+TusFinal = vertcat(Tus_before,TusFinal);
+beep
 %%
-
 TusFinal.pureReward = TusFinal.sig50Rvs50OM&(~TusFinal.sigExp)&(~TusFinal.sig50OM);
 TusFinal.pureExp = TusFinal.sig90Reward&(~TusFinal.sig50Rvs50OM)&TusFinal.EXPsign;
 TusFinal.RPE = TusFinal.sig50R&TusFinal.sigExp&TusFinal.RPEsign;
@@ -41,5 +45,8 @@ TusFinal.other = (~TusFinal.sig50Rvs50OM)&(~TusFinal.pureExp);
 TusFinal.RPE = TusFinal.sig50R&TusFinal.sigExp&TusFinal.RPEsign;
 TusFinal.RPEsign = TusFinal.RPEsign.*TusFinal.RPE;
 TusFinal.RPEsign(TusFinal.RPEsign==2) = -1;
-savePath = 'C:\Users\uchidalab\Documents\GitHub\Inputome_analysis\SigAnalysis\';
-writetable(TusFinal,[savePath 'us_time.txt'],'Delimiter',',');
+savePath = 'C:\Users\ju\Documents\GitHub\Inputome_analysis\SigAnalysis\';
+writetable(TusFinal,[savePath 'us_time_all.txt'],'Delimiter',',');
+%%
+ind = find(ustimenew.RPE==1&strcmp(ustimenew.Timewin, 'before'));
+plot_pop_summary_fromAnalyzedPanel(fl(ind),savePath,'rpe_before')

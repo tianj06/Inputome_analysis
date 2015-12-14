@@ -52,8 +52,8 @@ end
 %%
 results_short = Results(llatency<=6|isnan(llatency),:);
 results_long = Results(llatency>6|isnan(llatency),:);
-savePath = 'C:\Users\uchidalab\Documents\GitHub\Inputome_analysis\SigAnalysis\';
-writetable(Results,[savePath 'CSresults.txt'],'Delimiter',',');
+savePath = 'C:\Users\ju\Documents\GitHub\Inputome_analysis\SigAnalysis\';
+writetable(Results,[savePath 'CSresults_all.txt'],'Delimiter',',');
 
 writetable(results_short,[savePath 'results_short2.txt'],'Delimiter',',');
 writetable(results_long,[savePath 'results_long2.txt'],'Delimiter',',');

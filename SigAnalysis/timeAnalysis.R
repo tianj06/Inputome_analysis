@@ -2,12 +2,11 @@ library(tidyr)
 library(plyr)
 library("ggplot2")
 library("scales")
-library(export)
 
 
 rm(list = ls())
 # read us
-matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/us_time.txt";
+matfn = "C:/Users/ju/Documents/GitHub/Inputome_analysis/SigAnalysis/us_time_all.txt";
 us = read.table(matfn,header = TRUE,sep = ",")
 us <- us[c('Timewin','brainArea','pureReward','Rewardsign','pureExp','pureExpDir','RPE','pureRPEDir','mixed')]
 tempIdx <- (us[ "pureReward"]==1) & (us[ "Rewardsign"]==0)
@@ -27,7 +26,7 @@ us.perR['responseDir']<-interaction(us.perR[["responseDir"]], us.perR[["response
 
 
 # read cs
-matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/CSresults.txt";
+matfn = "C:/Users/ju/Documents/GitHub/Inputome_analysis/SigAnalysis/CSresults_all.txt";
 Inputome = read.table(matfn,header = TRUE,sep = ",")
 CS <- Inputome[c("csValue","delayValue","EarlydelayValue","brainArea")]
 
@@ -47,7 +46,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 #us.perR$brainArea <- factor(us.perR$brainArea, AreaNames) 
 csus = rbind(cs.perR, us.perR[c('brainArea','Timewin','responseDir','per')])
 csus$Timewin <- factor(csus$Timewin, 
-                levels = c("csValue","EarlydelayValue","delayValue","early","late"))
+                levels = c("csValue","EarlydelayValue","delayValue","before","early","late"))
 
 # remove rabies VTA neurons
 tempIdx = is.element(csus$brainArea, c('r VTA Type3', 'rVTA Type2','rdopamine'))
@@ -58,9 +57,9 @@ ggplot(csus,
   geom_bar(stat = "identity") + labs(x = "",y= "Percent neuron")+ scale_fill_manual(values= cbPalette)+
   scale_y_continuous(labels  = percent,limits = c(0, 1))  +
   facet_wrap(~brainArea) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  scale_x_discrete(labels=c("Cue","Early delay","Late delay","early","late"))
+  scale_x_discrete(labels=c("Cue","Early delay","Late delay","Late delay","early","late"))
 
 
 
-graph2ppt(file=savefile, append=TRUE)
+#graph2ppt(file=savefile, append=TRUE)
 
