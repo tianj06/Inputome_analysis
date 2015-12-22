@@ -13,11 +13,14 @@ for i = 1:length(fl)
     load(fl{i},'area');
     brainArea{i} = area;
 end
-proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
-dataToCluster = squeeze(reshape(proc,N,1,[]));
-%plotRSS_clusterNum(dataToCluster)
-[eigvect,proj,eigval] = princomp(dataToCluster);
-
+%% remove VTA rabies units
+VTAind = ismember(brainArea,{'rVTA Type2','r VTA Type3','rdopamine'});
+fl = fl(~VTAind);
+rocPSTH = rocPSTH(~VTAind,:,:);
+lickPSTH = lickPSTH(~VTAind,:,:);
+rawPSTH = rawPSTH(~VTAind,:,:);
+brainArea = brainArea(~VTAind);
+N = length(fl);
 %% merge some areas
 % PPTg: PPTg (all animals other than PPTg_an), PPTg_an('Laurel', 'Kittentail')
 % LH: LH_po ('Waterlily','Rice') LH_psth('Aubonpain') LH_an (all others)
@@ -39,10 +42,38 @@ for i = 1:length(oldnames)
     idx = ismember(oldbrain,oldnames{i});
     brainArea(idx) = newnames(i);
 end
+inputareas = {'Dorsal striatum','Lateral hypothalamus','Ventral striatum',...
+    'PPTg','RMTg','Ventral pallidum','Subthalamic'}; % ,'Dopamine','VTA type3', 'VTA type2'
+inputA = ismember(brainArea, inputareas);
+
+%% kmeans clustering
+%proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
+%dataToCluster = squeeze(reshape(proc,N,1,[]));
+neuronResponse = mean(rocPSTH(:,1,11:30),3);
+
+%% compare clustering using first 3 PCs
+a = rawPSTH(:,[1 2 7],1:4000);
+for i = 1:size(a,1)
+    for j = 1:size(a,2)
+        a(i,j,:) = smooth(a(i,j,:),100); % -mean(a(i,j,1:1000))
+    end
+end
+
+proc = permute(a(:,:,10:10:end-10),[1,3,2]);
+
+temp = squeeze(reshape(proc,size(a,1),1,[]));
+for i = 1:size(temp,1)
+    temp(i,:) = temp(i,:)/max(temp(i,:)); 
+end
+
+[eigvect,proj,eigval] = princomp(temp);
+dataToCluster = proj(:,1:3);
+plotRSS_clusterNum(dataToCluster)
+
 %%
 nclusters =7;
 minD = inf;
-for i = 1:50
+for i = 1:100
     seeds = kmeansinit(dataToCluster,nclusters);
     [ind, ~, sumD] = kmeans(dataToCluster,nclusters, 'Start',seeds);
     if sum(sumD)<minD
@@ -51,11 +82,9 @@ for i = 1:50
     end
 end
 % remap the clusterID by the mean response in each cluster
-[clustLabel,plotorder] = reorder_clustLabel(clustLabel,mean(dataToCluster(:,1:20),2));
-% 
-%[~,plotorder] = sort(clustLabel);
+[clustLabel,plotorder] = reorder_clustLabel(clustLabel,neuronResponse);
 
-%% 
+%%
 clustlines = nan(3,nclusters-1);
 for i = 1:nclusters-1
     temp = sum(clustLabel<=i) + 0.5;
@@ -147,8 +176,54 @@ for j = 1:nclusters
     ylabel('Lick Rate (spk/s)'); 
     set(gca,'Box','off','TickDir','out','TickLength',[0.02 0.025])
 end
+%% project the clusters to PCs
+%[eigvect,proj,eigval] = princomp(dataToCluster);
+%proj(:,1) = - proj(:,1);
+figure;
+c =color_select(7,'hsv');
+c(4,:) = [0 1 1];
+c = flipud(c);
+h = gscatter(proj(:,1),proj(:,2),clustLabel);
+xlabel('PC1')
+ylabel('PC2')
+for i = 1:length(h)
+    h(i).Color = c(i,:);
+end
+hold on; vline(0); hline(0)
+figure;
+h = gscatter(proj(:,1),proj(:,3),clustLabel);
+xlabel('PC1')
+ylabel('PC3')
+for i = 1:length(h)
+    h(i).Color = c(i,:);
+end
+hold on; vline(0); hline(0)
+%%
+%plot the major PCs
+%[eigvect,proj,eigval] = princomp(dataToCluster(inputA,:));
+nPC = 3;
+PCs = eigvect(:,1:nPC);
+PCs = reshape(PCs,[],3,nPC);
+colorset= [  0 	0 	255;%blue  
+             30 	144 	255;%light blue  
+             128 	128 128;]/255; % grey
+figure;
+for i = 1:nPC
+    subplot(1,nPC,i)
+    for j = 1:3
+        plot(squeeze(PCs(:,j,i)),'color',colorset(j,:))
+        hold on;
+    end
+    %set(gca,'xtick',[1:10:30],'xticklabel',{'0','1','2'})
+    title(sprintf('PC %d var: %0.1f%%', i,100*eigval(i)/sum(eigval)))
+    xlabel('Time - odor (s)')
+end
+
 %% calculate the number of neurons for each region in each cluster
-orderAreas = {'Dopamine','VTA type2','VTA type3','PPTg','RMTg','Subthalamic',...
+orderAreas = {{'Dopamine','VTA type2','VTA type3'},'PPTg','RMTg','Subthalamic',...
+    'Lateral hypothalamus','Ventral pallidum','Dorsal striatum','Ventral striatum'
+    };
+orderAreasNames = {'VTA','PPTg','RMTg','Subthalamic',...
     'Lateral hypothalamus','Ventral pallidum','Dorsal striatum','Ventral striatum'
     };
 
@@ -165,22 +240,189 @@ mergeClustLabel = clustLabel;
 [tbl,chi2,p,labels] = crosstab(mergeClustLabel,grp);
 totalNeuronPerArea = sum(tbl,1);
 nor_tbl = tbl./repmat(totalNeuronPerArea,7,1); %5
-c =color_select(5);
 figure;
 for i = 1:10
     subplot(3,4,i);
-    for j = 1:5
+    for j = 1:length(unique(mergeClustLabel))
         bar(j,nor_tbl(j,i),'FaceColor',c(j,:))
         hold on;
     end
     set(gca,'xtick',1:5)
-    title(orderAreas{i})
+    title(orderAreasNames{i})
 end
-% stacked version of the plot
+%% stacked version of the plot
 figure;
-barh(nor_tbl','stacked')
-set(gca,'yticklabels',orderAreas)
+h = barh(nor_tbl','stacked')
+set(gca,'yticklabels',orderAreasNames)
+for i = 1:nclusters
+    h(i).FaceColor = c(i,:);
+end
 legend({'cluster1','cluster2','cluster3','cluster4','cluster5','cluster6','cluster7'},'Location','EastOutside')
+%% plot the average response for each input area in each cluster
+m = 1;
+figure;
+for i = 1:7
+    clusterInd = clustLabel==i;
+    for j = 1:length(orderAreas)
+        areaName = orderAreas{j};
+        areaInd = strcmp(brainArea,orderAreas{j});
+        plotInd = clusterInd&areaInd';
+        subplot(7,length(orderAreas),m)
+        m = m + 1;
+        maxy = 0;
+        for k = 1:3
+            a = squeeze(psthValue(k,plotInd,:));
+            %a = a(find(idx==1),:); % remove empty trials
+            if min(size(a))>1
+                averagePSTH = nanmean(a);
+            else
+                averagePSTH = a;
+            end
+            tempTrace = smooth(averagePSTH,100);
+            plot(tempTrace(1:10:end),'Color',colorset(k,:),'LineWidth',1);hold on
+            if maxy < max(tempTrace)
+                maxy = max(tempTrace);
+            end
+        end
+
+        title(sprintf('n=%d ',sum(plotInd)));
+        xlim([10 480])
+        %ylim([0 maxy+5])
+        set(gca,'XTick',[100:100:500],'XTickLabel',{})
+        set(gca,'Box','off','TickDir','out','TickLength',[0.02 0.025])
+    end
+end
+%% plot each area top pcs
+nPC = 4;
+
+colorset= [  0 	0 	255;%blue  
+             30 	144 	255;%light blue  
+             128 	128 128;
+             255 0 0]/255; % grey
+
+a = rawPSTH(:,[1 2 7],1:4000);
+for i = 1:size(a,1)
+    for j = 1:size(a,2)
+        a(i,j,:) = smooth(a(i,j,:),100); % -mean(a(i,j,1:1000))
+    end
+end
+proc = permute(a(:,:,10:10:end-10),[1,3,2]);
+
+dataToCluster = squeeze(reshape(proc,size(a,1),1,[]));
+for i = 1:size(dataToCluster,1)
+    dataToCluster(i,:) = dataToCluster(i,:)/max(dataToCluster(i,:)); 
+end
+
+[eigvect,proj,eigval] = princomp(dataToCluster);
+nPC = 4;
+PCs = eigvect(:,1:nPC);
+PCs = reshape(PCs,size(proc,2),size(proc,3),nPC);
+figure;
+PCs(:,:,1) = -PCs(:,:,1);
+
+for i = 1:nPC
+    subplot(1,nPC,i)
+    for j = 1:3
+        plot(squeeze(PCs(:,j,i)),'color',colorset(j,:))
+        hold on;
+    end
+    xlim([1,size(proc,2)])
+    title(sprintf('PC%d var %0.1f%%',i,100*eigval(i)/sum(eigval)))
+end
+%%
+% proc = permute (rocPSTH(:,[1 2 7 4],10:40), [1,3,2]);
+% dataToCluster = squeeze(reshape(proc,N,1,[]));
+oldbrainArea = brainArea;
+brainArea(ismember(brainArea,{'Dopamine','VTA type2','VTA type3'})) = {'VTA'};
+oldorderAreas = orderAreas;
+orderAreas = [{'VTA'},orderAreas(4:end)];
+figure;
+for m = 1:length(orderAreas)
+    areaName = orderAreas{m};
+    areaInd = strcmp(brainArea,orderAreas{m});
+    [eigvect,proj,eigval] = princomp(dataToCluster(areaInd,:));
+    PCs = eigvect(:,1:nPC);
+    PCs = reshape(PCs,size(proc,2),size(proc,3),nPC);
+    for i = 1:nPC
+        subplot(nPC,length(orderAreas),(i-1)*length(orderAreas)+m) 
+        if i==1
+            PCs(:,:,i) = -PCs(:,:,i);
+        end
+        for j = 1:3
+            plot(squeeze(PCs(:,j,i)),'color',colorset(j,:))
+            hold on;
+        end
+        %set(gca,'xtick',[0:10:30],'xticklabel',{'0','1','2','3'})
+        %xlim([0 30])
+        set(gca,'xtick',[0:100:300],'xticklabel',{'0','1','2','3'})
+        xlim([0 400])
+        title(sprintf('var %0.1f%%',100*eigval(i)/sum(eigval)))
+    end
+end
+
+%% for each area, plot baseline seperated by cluster label
+c =color_select(7,'hsv');
+c(4,:) = [0 1 1];
+c = flipud(c);
+bl = squeeze(mean(rawPSTH(:,:,1:1000),3));
+bl = mean(bl(:,[1,7]),2);
+figure;
+for m = 1:length(orderAreas)+1
+    if m == length(orderAreas)+1
+        areaName = 'all';
+        tempbl = bl;
+        templabel = clustLabel;
+    else
+        areaName = orderAreas{m};
+        areaInd = strcmp(brainArea,orderAreas{m});
+        tempbl = bl(areaInd);
+        templabel = clustLabel(areaInd);
+    end
+    uniqueLabels = unique(templabel);
+    binSize = round(max(tempbl)/10);
+    maxBl = 10*round(max(tempbl)/10);
+    bins = 0:binSize:maxBl;
+    plotdata = zeros(length(uniqueLabels),length(bins));
+    for i = 1:length(uniqueLabels)
+        plotdata(i,:) = hist(tempbl(templabel==uniqueLabels(i)),bins);
+    end
+    subplot(3,4,m)
+    h = bar(bins,plotdata','stacked');
+    for i = 1:length(h)
+        h(i).FaceColor = c(uniqueLabels(i),:);
+    end
+    set(gcf,'Color','w')
+    set(gca,'Box','off','TickDir','out','TickLength',[0.02 0.025])
+    title(areaName)
+    xlim([-binSize, maxBl+binSize])
+end
+subplot(3,4,m+1)
+for i = 1:7
+    bar(1,0,'FaceColor',c(i,:))
+    hold on
+end
+legend({'cluster1','cluster2','cluster3','cluster4','cluster5',...
+    'cluster6','cluster7'},'Location','EastOutside')
+%% compare low firing rate neurons in dorsal, ventral striatum and ventral pallidum
+areasIn = {'Dorsal striatum','Ventral striatum','Ventral pallidum'};
+N_area = length(areasIn);
+figure;
+for i = 1:N_area
+    areaInd = strcmp(brainArea,areasIn{i});
+    blInd = bl < 15;
+    clustInd = clustLabel == 2;
+    plotroc = squeeze(rocPSTH(areaInd'&clustInd&blInd,1,:));
+    subplot(1,N_area,i)
+    imagesc(plotroc,[0 1])
+    colormap yellowblue
+    title(areasIn{i})
+    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
+end
+
+% fplot = fl(strcmp(brainArea','Ventral striatum')&clustLabel == 2);
+% for i = 1:length(fplot)
+%     quickPSTHPlotting_formatted_new(fplot{i})
+% end
 %%
 psthValue = permute(rawPSTH(:,[1 2 7 4 9],:),[2 1 3] );
 lickValue = permute(lickPSTH(:,[1 2 7 4 9],:),[2 1 3] );

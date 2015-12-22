@@ -19,7 +19,7 @@ for i = 1:length(plotTrialType)
     errPSTH(i,:) = std(averagePSTH)/sqrt(size(r,1));
     meanPSTH(i,:) = mean(averagePSTH);
     % make the plotting
-    errorbar_patch(-0.9:0.01:4,meanPSTH(i,1:10:end),errPSTH(i,1:10:end),colorSet(i,:));
+    errorbar_patch(-1:0.01:4,meanPSTH(i,1:10:end),errPSTH(i,1:10:end),colorSet(i,:));
 end
 % make the plot beautiful
 xlim([-0.9 3.9])

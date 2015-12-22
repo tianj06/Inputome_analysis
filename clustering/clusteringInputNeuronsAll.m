@@ -13,6 +13,10 @@ for i = 1:length(fl)
     load(fl{i},'area');
     brainArea{i} = area;
 end
+%% add indicator for light responsive unit
+fll = what('C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\rabies\analysis2015Fall\newLight');
+fll = fll.mat;
+lightInd = ismember(fl,fll);
 %% remove VTA rabies units
 VTAind = ismember(brainArea,{'rVTA Type2','r VTA Type3','rdopamine'});
 fl = fl(~VTAind);
@@ -290,40 +294,25 @@ colorset= [  0 	0 	255;%blue
              128 	128 128;
              255 0 0]/255; % grey
 figure;
-
-a = rawPSTH(:,[1 2 7],1000:4000);
-for i = 1:size(a,1)
-    for j = 1:size(a,2)
-        a(i,j,:) = smooth(a(i,j,:),100);
-    end
-end
-proc = permute(a,[1,3,2]);
-dataToCluster = squeeze(reshape(proc,size(a,1),1,[]));
-for i = 1:size(dataToCluster,1)
-    dataToCluster(i,:) = dataToCluster(i,:)/max(dataToCluster(i,:)); 
-end
-%%
-% proc = permute (rocPSTH(:,[1 2 7 4],10:40), [1,3,2]);
-% dataToCluster = squeeze(reshape(proc,N,1,[]));
+proc = permute (rocPSTH(:,[1 2 7 4],10:40), [1,3,2]);
+dataToCluster = squeeze(reshape(proc,N,1,[]));
 n = 1;
-for m = 1:length(orderAreas)
-    for i = 1:nPC
+for i = 1:nPC
+    for m = 1:length(orderAreas)
         areaName = orderAreas{m};
         areaInd = strcmp(brainArea,orderAreas{m});
         [eigvect,proj,eigval] = princomp(dataToCluster(areaInd,:));
         PCs = eigvect(:,1:nPC);
-        PCs = reshape(PCs,size(proc,2),size(proc,3),nPC);
+        PCs = reshape(PCs,31,4,nPC);
             subplot(nPC,length(orderAreas),n)
         n = n+1;
         
-        for j = 1:3
+        for j = 1:4
             plot(squeeze(PCs(:,j,i)),'color',colorset(j,:))
             hold on;
         end
-        %set(gca,'xtick',[0:10:30],'xticklabel',{'0','1','2','3'})
-        %xlim([0 30])
-        set(gca,'xtick',[0:1000:3000],'xticklabel',{'0','1','2','3'})
-        xlim([0 3000])
+        set(gca,'xtick',[0:10:30],'xticklabel',{'0','1','2','3'})
+        xlim([0 30])
         title(sprintf('var %0.1f%%',100*eigval(i)/sum(eigval)))
     end
 end
