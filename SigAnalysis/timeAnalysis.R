@@ -6,7 +6,7 @@ library("scales")
 
 rm(list = ls())
 # read us
-matfn = "C:/Users/ju/Documents/GitHub/Inputome_analysis/SigAnalysis/us_time_all.txt";
+matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/us_time_all1.txt";
 us = read.table(matfn,header = TRUE,sep = ",")
 us <- us[c('Timewin','brainArea','pureReward','Rewardsign','pureExp','pureExpDir','RPE','pureRPEDir','mixed')]
 tempIdx <- (us[ "pureReward"]==1) & (us[ "Rewardsign"]==0)
@@ -26,7 +26,7 @@ us.perR['responseDir']<-interaction(us.perR[["responseDir"]], us.perR[["response
 
 
 # read cs
-matfn = "C:/Users/ju/Documents/GitHub/Inputome_analysis/SigAnalysis/CSresults_all.txt";
+matfn = "C:/Users/uchidalab/Documents/GitHub/Inputome_analysis/SigAnalysis/CSresults_all.txt";
 Inputome = read.table(matfn,header = TRUE,sep = ",")
 CS <- Inputome[c("csValue","delayValue","EarlydelayValue","brainArea")]
 
