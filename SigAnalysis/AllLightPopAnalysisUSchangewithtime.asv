@@ -64,6 +64,4 @@ ind = TusFinal.RPE&strcmp(TusFinal.Timewin,'before');
 filelist = fl(ind);
 for i = 1:length(filelist)
     quickPSTHPlotting_formatted_new(filelist{i})
-    t_text = filelist{i}(1:end-14);
-    title(t_text)
 end
