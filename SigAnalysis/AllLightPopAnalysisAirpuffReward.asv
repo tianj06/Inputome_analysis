@@ -72,11 +72,6 @@ for i = 1:length(areaName)
     disp(areaName{i})
     disp(sum(G==i))
 end
-
-ind = ismember(brainArea,{'Dopamine','VTA type3',...
-    'VTA type2'});
-brainArea(ind) = {'VTA'};
-
 % reward responsive units
 sigReward = Tus.sig50Rvs50OM & Tus.sig50R;
 direReward = Tus.Rewardsign;% 1, >0 else 0
@@ -98,8 +93,8 @@ for i = 1:4
 end
 
 figure;
-for i = 1:length(areaName)
-    subplot(3,3,i)
+for i = 1:10
+    subplot(3,4,i)
     res(:,1,1) = tempIdx(:,1)&direReward==1;
     res(:,1,2) = tempIdx(:,1)&direReward==0;
     res(:,2,1) = tempIdx(:,2)&direReward==1;
@@ -114,21 +109,6 @@ for i = 1:length(areaName)
     set(gca,'xtickLabel',titleText)
 end
 
-
-tempIdx = [];
-tempIdx(:,1) = sigReward&(direReward==1); % reward pos
-tempIdx(:,2) = sigReward&(direReward==0); % reward neg
-tempIdx(:,3) = sigPuff&(direPuff==1); % airpuff pos
-tempIdx(:,4) = sigPuff&(direPuff==0); % airpuff neg
-figure;
-titleText = {'reward pos','reward neg','airpuff pos','airpuff neg'};
-
-[G,areaName]=grp2idx(brainArea);
-for i = 1:4
-    subplot(2,2,i)
-    barh(grpstats(tempIdx(:,i),G')); set(gca,'ytickLabel',areaName);xlim([0 1])
-    title(titleText{i})
-end
 %% CS analysis
 tempIdx = [];
 tempIdx(:,1) = sigRCS&sigACS&(direACS==direRCS); %RewadPuffSame
@@ -157,8 +137,8 @@ end
 
 figure;
 res = [];
-for i = 1:length(areaName)
-    subplot(3,3,i)
+for i = 1:10
+    subplot(3,4,i)
     res(:,1,1) = tempIdx(:,1)&direRCS==1;
     res(:,1,2) = tempIdx(:,1)&direRCS==0;
     res(:,2,1) = tempIdx(:,2)&direRCS==1;
@@ -171,19 +151,4 @@ for i = 1:length(areaName)
     legend('pos','neg')
     title(areaName{i});ylim([0 1]);xlim([0 5])
     set(gca,'xtickLabel',titleText)
-end
-
-tempIdx = [];
-tempIdx(:,1) = RCSvalue&(direRCS==1); % reward pos
-tempIdx(:,2) = RCSvalue&(direRCS==0); % reward neg
-tempIdx(:,3) = sigACS&(direACS==1); % airpuff pos
-tempIdx(:,4) = sigACS&(direACS==0); % airpuff neg
-figure;
-titleText = {'reward pos','reward neg','airpuff pos','airpuff neg'};
-
-[G,areaName]=grp2idx(brainArea);
-for i = 1:4
-    subplot(2,2,i)
-    barh(grpstats(tempIdx(:,i),G')); set(gca,'ytickLabel',areaName);xlim([0 1])
-    title(titleText{i})
 end
