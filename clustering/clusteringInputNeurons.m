@@ -47,10 +47,16 @@ inputareas = {'Dorsal striatum','Lateral hypothalamus','Ventral striatum',...
 inputA = ismember(brainArea, inputareas);
 
 %% kmeans clustering
-%proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
-%dataToCluster = squeeze(reshape(proc,N,1,[]));
+proc = permute (rocPSTH(:,[1 2 7],10:40), [1,3,2]);
+temp = squeeze(reshape(proc,N,1,[]));
+[eigvect,proj,eigval] = princomp(temp);
+dataToCluster = proj(:,1:3);
 neuronResponse = mean(rocPSTH(:,1,11:30),3);
-
+rocPCs.eigvect = eigvect;
+rocPCs.proj = proj;
+rocPCs.eigval = eigval;
+rocPCs.fl = fl;
+rocPCs.brainArea = brainArea;
 %% compare clustering using first 3 PCs
 a = rawPSTH(:,[1 2 7],1:4000);
 for i = 1:size(a,1)
@@ -83,6 +89,11 @@ for i = 1:100
 end
 % remap the clusterID by the mean response in each cluster
 [clustLabel,plotorder] = reorder_clustLabel(clustLabel,neuronResponse);
+% swap cluster 4 and 5
+oldclustLabel = clustLabel;
+clustLabel(oldclustLabel==4) = 5;
+clustLabel(oldclustLabel==5) = 4;
+rocPCs.clustLabel = clustLabel;
 
 %%
 clustlines = nan(3,nclusters-1);
@@ -220,10 +231,10 @@ for i = 1:nPC
 end
 
 %% calculate the number of neurons for each region in each cluster
-orderAreas = {{'Dopamine','VTA type2','VTA type3'},'PPTg','RMTg','Subthalamic',...
+orderAreas = {'Dopamine','VTA type2','VTA type3','PPTg','RMTg','Subthalamic',...
     'Lateral hypothalamus','Ventral pallidum','Dorsal striatum','Ventral striatum'
     };
-orderAreasNames = {'VTA','PPTg','RMTg','Subthalamic',...
+orderAreasNames = {'Dopamine','VTA type2','VTA type3','PPTg','RMTg','Subthalamic',...
     'Lateral hypothalamus','Ventral pallidum','Dorsal striatum','Ventral striatum'
     };
 
