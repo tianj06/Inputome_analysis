@@ -72,6 +72,11 @@ for i = 1:length(areaName)
     disp(areaName{i})
     disp(sum(G==i))
 end
+
+ind = ismember(brainArea,{'Dopamine','VTA type3',...
+    'VTA type2'});
+brainArea(ind) = {'VTA'};
+
 % reward responsive units
 sigReward = Tus.sig50Rvs50OM & Tus.sig50R;
 direReward = Tus.Rewardsign;% 1, >0 else 0
@@ -93,8 +98,8 @@ for i = 1:4
 end
 
 figure;
-for i = 1:10
-    subplot(3,4,i)
+for i = 1:length(areaName)
+    subplot(3,3,i)
     res(:,1,1) = tempIdx(:,1)&direReward==1;
     res(:,1,2) = tempIdx(:,1)&direReward==0;
     res(:,2,1) = tempIdx(:,2)&direReward==1;
@@ -109,6 +114,21 @@ for i = 1:10
     set(gca,'xtickLabel',titleText)
 end
 
+
+tempIdx = [];
+tempIdx(:,1) = sigReward&(direReward==1); % reward pos
+tempIdx(:,2) = sigReward&(direReward==0); % reward neg
+tempIdx(:,3) = sigPuff&(direPuff==1); % airpuff pos
+tempIdx(:,4) = sigPuff&(direPuff==0); % airpuff neg
+figure;
+titleText = {'reward pos','reward neg','airpuff pos','airpuff neg'};
+
+[G,areaName]=grp2idx(brainArea);
+for i = 1:4
+    subplot(2,2,i)
+    barh(grpstats(tempIdx(:,i),G')); set(gca,'ytickLabel',areaName);xlim([0 1])
+    title(titleText{i})
+end
 %% CS analysis
 tempIdx = [];
 tempIdx(:,1) = sigRCS&sigACS&(direACS==direRCS); %RewadPuffSame
@@ -137,8 +157,8 @@ end
 
 figure;
 res = [];
-for i = 1:10
-    subplot(3,4,i)
+for i = 1:length(areaName)
+    subplot(3,3,i)
     res(:,1,1) = tempIdx(:,1)&direRCS==1;
     res(:,1,2) = tempIdx(:,1)&direRCS==0;
     res(:,2,1) = tempIdx(:,2)&direRCS==1;
@@ -152,3 +172,80 @@ for i = 1:10
     title(areaName{i});ylim([0 1]);xlim([0 5])
     set(gca,'xtickLabel',titleText)
 end
+
+tempIdx = [];
+tempIdx(:,1) = RCSvalue&(direRCS==1); % reward pos
+tempIdx(:,2) = RCSvalue&(direRCS==0); % reward neg
+tempIdx(:,3) = sigACS&(direACS==1); % airpuff pos
+tempIdx(:,4) = sigACS&(direACS==0); % airpuff neg
+figure;
+titleText = {'reward pos','reward neg','airpuff pos','airpuff neg'};
+
+[G,areaName]=grp2idx(brainArea);
+for i = 1:4
+    subplot(2,2,i)
+    barh(grpstats(tempIdx(:,i),G')); set(gca,'ytickLabel',areaName);xlim([0 1])
+    title(titleText{i})
+end
+%%
+puffOMlen = [];
+pufflen = [];
+for i = 1:length(fl)
+    load(fl{i},'analyzedData')
+    puffOMlen(i) = size(analyzedData.raster{8},1);
+    pufflen(i) = size(analyzedData.raster{4},1);
+end
+%% 
+for i = 1:length(fl)
+    brainArea{i} = a.area;
+    load(fl{i}, 'analyzedData')
+    if ~exist('analyzedData', 'var')
+        analyzedData = getPSTHSingleUnit(fl{i}); 
+        save(fl{i},'-append','analyzedData')
+    end
+    % comopute airpuff response
+    rs = analyzedData.raster;
+    urs = rs([4 7]); 
+    % compute airpuff delay response
+    TimeWin = 1:500;
+    US_spikes_delay = cellfun( @(x)1000*mean(x(:,TimeWin+2500),2),urs,'UniformOutput',0);
+    [~,sigDelayPuff(i)] = ranksum(US_spikes_delay{1}, US_spikes_delay{2}); 
+    % compute airpuff and omission response
+    urs = rs([4 7 8]); 
+    US_spikes = cellfun( @(x)1000*mean(x(:,TimeWin+3000),2),urs,'UniformOutput',0);
+    [~,sigPuff(i)] = ranksum(US_spikes{1}, US_spikes{2}); 
+    [~,sigPuffvsDelay(i)] = ranksum(US_spikes{1}, US_spikes_delay{1}); 
+    if ~isempty(US_spikes{3})
+        [~,sigPuffOM(i)] = ranksum(US_spikes{3}, US_spikes{1}); 
+    else
+        sigPuffOM(i) = 0;
+    end
+end
+%% evaluate marginally airpuff expectation response: 1) delay time response 2) omission response
+n(1) = sum(sigPuff&sigDelayPuff);
+n(2) = sum(sigPuff&~sigDelayPuff);
+n(3) = sum(~sigPuff&sigDelayPuff);
+figure;
+bar(n)
+set(gca,'xticklabel',{'US and delay','US but not delay','no US only delay'})
+ylabel('# neuron')
+%% use different way to compute airpuff response: 1) compare puff vs om, om not different from delay
+n(1) = sum(sigPuff&sigPuffvsDelay);
+n(2) = sum(sigPuff&~sigPuffvsDelay);
+n(3) = sum(~sigPuff&sigPuffvsDelay);
+figure;
+bar(n)
+set(gca,'xticklabel',{'cond1','cond2','cond3'})
+ylabel('# neuron')
+
+%   A0, A   Desired and actual circle areas
+%               A = [A1 A2] or [A1 A2 A3]
+%   I0, I   Desired and actual intersection areas
+%               I = I12 or [I12 I13 I23 I123]
+A = [sum(sigPuff) sum(sigPuffvsDelay) sum(sigPuffOM)];
+I = [sum(sigPuff&sigPuffvsDelay) sum(sigPuff&sigPuffOM) ...
+    sum(sigPuffvsDelay&sigPuffOM) sum(sigPuff&sigPuffvsDelay&sigPuffOM)];
+figure; venn(A,I)
+legend('')
+%% 2) compare puff vs delay, sig different
+

@@ -187,3 +187,67 @@ for i = 1:4
     barh(grpstats(tempIdx(:,i),G')); set(gca,'ytickLabel',areaName);xlim([0 1])
     title(titleText{i})
 end
+%%
+puffOMlen = [];
+pufflen = [];
+for i = 1:length(fl)
+    load(fl{i},'analyzedData')
+    puffOMlen(i) = size(analyzedData.raster{8},1);
+    pufflen(i) = size(analyzedData.raster{4},1);
+end
+%% 
+for i = 1:length(fl)
+    brainArea{i} = a.area;
+    load(fl{i}, 'analyzedData')
+    if ~exist('analyzedData', 'var')
+        analyzedData = getPSTHSingleUnit(fl{i}); 
+        save(fl{i},'-append','analyzedData')
+    end
+    % comopute airpuff response
+    rs = analyzedData.raster;
+    urs = rs([4 7]); 
+    % compute airpuff delay response
+    TimeWin = 1:500;
+    US_spikes_delay = cellfun( @(x)1000*mean(x(:,TimeWin+2500),2),urs,'UniformOutput',0);
+    [~,sigDelayPuff(i)] = ranksum(US_spikes_delay{1}, US_spikes_delay{2}); 
+    % compute airpuff and omission response
+    urs = rs([4 7 8]); 
+    US_spikes = cellfun( @(x)1000*mean(x(:,TimeWin+3000),2),urs,'UniformOutput',0);
+    [~,sigPuff(i)] = ranksum(US_spikes{1}, US_spikes{2}); 
+    [~,sigPuffvsDelay(i)] = ranksum(US_spikes{1}, US_spikes_delay{1}); 
+    if ~isempty(US_spikes{3})
+        [~,sigPuffOM(i)] = ranksum(US_spikes{3}, US_spikes{1});
+        [~,sigPuffOMvsNothing(i)] = ranksum(US_spikes{2}, US_spikes{3});        
+    else
+        sigPuffOM(i) = 0;
+        sigPuffOMvsNothing(i) = 0;
+    end
+end
+%% evaluate marginally airpuff expectation response: 1) delay time response 2) omission response
+n(1) = sum(sigPuff&sigPuffOMvsNothing);
+n(2) = sum(sigPuff&~sigPuffOMvsNothing);
+n(3) = sum(~sigPuff&sigPuffOMvsNothing);
+figure;
+bar(n)
+set(gca,'xticklabel',{'US and delay','US but not delay','no US only delay'})
+ylabel('# neuron')
+%% use different way to compute airpuff response: 1) compare puff vs om, om not different from delay
+n(1) = sum(sigPuff&sigPuffvsDelay);
+n(2) = sum(sigPuff&~sigPuffvsDelay);
+n(3) = sum(~sigPuff&sigPuffvsDelay);
+figure;
+bar(n)
+set(gca,'xticklabel',{'cond1','cond2','cond3'})
+ylabel('# neuron')
+
+%   A0, A   Desired and actual circle areas
+%               A = [A1 A2] or [A1 A2 A3]
+%   I0, I   Desired and actual intersection areas
+%               I = I12 or [I12 I13 I23 I123]
+A = [sum(sigPuff) sum(sigPuffvsDelay) sum(sigPuffOM)];
+I = [sum(sigPuff&sigPuffvsDelay) sum(sigPuff&sigPuffOM) ...
+    sum(sigPuffvsDelay&sigPuffOM) sum(sigPuff&sigPuffvsDelay&sigPuffOM)];
+figure; venn(A,I)
+legend('puff us vs nothing us','puff us vs delay puff','puff us vs omission')
+%% 2) compare puff vs delay, sig different
+
