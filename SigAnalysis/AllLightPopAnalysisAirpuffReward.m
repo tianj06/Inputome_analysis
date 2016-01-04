@@ -68,10 +68,6 @@ for i = 1:length(oldnames)
     brainArea(idx) = newnames(i);
 end
 [G,areaName]=grp2idx(brainArea);
-for i = 1:length(areaName)
-    disp(areaName{i})
-    disp(sum(G==i))
-end
 
 ind = ismember(brainArea,{'Dopamine','VTA type3',...
     'VTA type2'});
@@ -214,7 +210,8 @@ for i = 1:length(fl)
     urs = rs([4 7 8]); 
     US_spikes = cellfun( @(x)1000*mean(x(:,TimeWin+3000),2),urs,'UniformOutput',0);
     [~,sigPuff(i)] = ranksum(US_spikes{1}, US_spikes{2}); 
-    [~,sigPuffvsDelay(i)] = ranksum(US_spikes{1}, US_spikes_delay{1}); 
+    % 2) compare puff vs delay, sig different
+    [~,sigPuffvsDelay(i)] = signrank(US_spikes{1}, US_spikes_delay{1}); 
     if ~isempty(US_spikes{3})
         [~,sigPuffOM(i)] = ranksum(US_spikes{3}, US_spikes{1});
         [~,sigPuffOMvsNothing(i)] = ranksum(US_spikes{2}, US_spikes{3});        
@@ -239,7 +236,7 @@ figure;
 bar(n)
 set(gca,'xticklabel',{'cond1','cond2','cond3'})
 ylabel('# neuron')
-
+prettyP('','','','','a')
 %   A0, A   Desired and actual circle areas
 %               A = [A1 A2] or [A1 A2 A3]
 %   I0, I   Desired and actual intersection areas
@@ -249,5 +246,95 @@ I = [sum(sigPuff&sigPuffvsDelay) sum(sigPuff&sigPuffOM) ...
     sum(sigPuffvsDelay&sigPuffOM) sum(sigPuff&sigPuffvsDelay&sigPuffOM)];
 figure; venn(A,I)
 legend('puff us vs nothing us','puff us vs delay puff','puff us vs omission')
-%% 2) compare puff vs delay, sig different
 
+A = [sum(sigPuff) sum(sigPuffvsDelay) sum(sigPuffOMvsNothing)];
+I = [sum(sigPuff&sigPuffvsDelay) sum(sigPuff&sigPuffOMvsNothing) ...
+    sum(sigPuffvsDelay&sigPuffOMvsNothing) sum(sigPuff&sigPuffvsDelay&sigPuffOMvsNothing)];
+figure; venn(A,I)
+legend('puff us vs nothing us','puff us vs delay puff','puff us vs omission')
+%%
+for i = 1:length(fl)
+    a = load(fl{i},'area');
+    brainArea{i} = a.area;
+    load(fl{i}, 'analyzedData')
+    puff = analyzedData.raster{4};
+    puffom = analyzedData.raster{8};
+    nothing = analyzedData.raster{7};
+    pretrigger = 1000;
+    posttrigger = 4000;
+    rocBin = 100;
+    binNum = (pretrigger + posttrigger)/rocBin;
+    for k = 1:binNum
+        p = sum(puff(:,rocBin*(k-1)+1:rocBin*k),2);
+        o = sum(puffom(:,rocBin*(k-1)+1:rocBin*k),2);
+        n = sum(nothing(:,rocBin*(k-1)+1:rocBin*k),2);
+        try 
+            puff_nothing_roc(i,k) = auROC(p,n);
+            puff_om_roc(i,k) = auROC(p,o);
+            puffom_nothing_roc(i,k) = auROC(o,n);
+        catch
+            puff_nothing_roc(i,k) = nan;
+            puff_om_roc(i,k) = nan;
+            puffom_nothing_roc(i,k) = nan;
+        end
+    end 
+    puffbl(i,:) = analyzedData.rocPSTH(4,:);
+    puffombl(i,:) = analyzedData.rocPSTH(8,:);
+    nothingbl(i,:) = analyzedData.rocPSTH(7,:);
+end
+%%
+orderAreas = {'Dopamine','VTA type2','VTA type3','PPTg','RMTg','Subthalamic',...
+    'Lateral hypothalamus','Ventral pallidum','Dorsal striatum','Ventral striatum'
+    };
+orderAreasNames = {'Dopamine','VTA type2','VTA type3','PPTg','RMTg','Subthalamic',...
+    'Lateral hypothalamus','Ventral pallidum','Dorsal striatum','Ventral striatum'
+    };
+
+oldbrain = brainArea;
+grp = nan(1,length(brainArea));
+for i = 1:length(orderAreas)
+    idx = ismember(brainArea,orderAreas{i});
+    grp(idx) = i;
+end
+[~,plot_order] = sort(grp);
+clustlines = nan(3,length(unique(grp))-1);
+for i = 1:10-1
+    temp = sum(grp<=i) + 0.5;
+    clustlines(1:2,i) = [temp;temp];
+end
+clustlines = clustlines(:); %now verticalize
+
+
+figure;
+data_plot = {puffbl,puffombl,nothingbl};
+titleTexts = {'airpuff','airpuff omission','nothing'};
+for i = 1:3
+    subplot(1,3,i)
+    imagesc(data_plot{i}(plot_order,:),[0 1]);
+    xlines = cat(1,repmat(xlim',[1,10-1]), nan(1,10-1));
+    xlines = xlines(:);
+    hold on;plot(xlines,clustlines,'r');
+    colormap yellowblue
+    axis(gca,'tight','ij');
+    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
+    ylabel('Neuron'); xlabel('Time (s)');
+    title(titleTexts{i});
+    set(gca,'Box','off','TickDir','out','TickLength',[0.02 0.025])
+end
+
+figure;
+data_plot = {puff_om_roc, puff_nothing_roc,puffom_nothing_roc};
+titleTexts = {'airpuff vs airpuff omission','airpuff vs nothing','airpuff omission vs nothing'};
+for i = 1:3
+    subplot(1,3,i)
+    imagesc(data_plot{i}(plot_order,:),[0 1]);
+    xlines = cat(1,repmat(xlim',[1,10-1]), nan(1,10-1));
+    xlines = xlines(:);
+    hold on;plot(xlines,clustlines,'r');
+    colormap yellowblue
+    axis(gca,'tight','ij');
+    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
+    ylabel('Neuron'); xlabel('Time (s)');
+    title(titleTexts{i});
+    set(gca,'Box','off','TickDir','out','TickLength',[0.02 0.025])
+end
