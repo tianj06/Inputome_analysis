@@ -27,3 +27,4 @@ for i = 1:length(dataFile)
     subplot(2,1,2)
     plot(-plotrange:plotrange, smooth(psth,2))
 end
+
