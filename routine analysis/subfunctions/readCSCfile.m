@@ -1,9 +1,13 @@
-function [filtWV, intTS, sampfreq] = readCSCfile(CSCfile, timeWin)
+function [filtWV, intTS, sampfreq] = readCSCfile(CSCfile, timeWin,filterFlag)
 % read CSCfile and return interploted timestamps
 % filtered waveform, and sampling frequency
 % readCSCfile(CSCfile, timeWin)
 % input timeWin = [start1 stop1;
 %                            start2 stop2] %ms
+
+if nargin<3
+    filterFlag = 1;
+end
 if  strcmp(CSCfile(end-2:end), 'ncs')
     intan = 0;
 elseif strcmp(CSCfile(end-2:end), 'dat')
@@ -81,6 +85,10 @@ clear timestamps
 %% filter the waveforms
 % for now just use Ju's lowpass_signal.m and highpass_signal.m, which uses
 % 5th order and 10th order butterworth filters, respectively.
-filtWV = lowpass_signal(WV,sampfreq,9000);
-filtWV = highpass_signal(filtWV,sampfreq,300);
+if filterFlag
+    filtWV = lowpass_signal(WV,sampfreq,9000);
+    filtWV = highpass_signal(filtWV,sampfreq,300);
+else
+    filtWV = WV;
+end
 %filtWV = WV;
