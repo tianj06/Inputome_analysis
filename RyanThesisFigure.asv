@@ -189,11 +189,5 @@ CSposRPE = double(Tus.RPEsign.*TCS.csValue >0);
 JoinedRPE = table(CSposRPE,CSposNegRPE,RewardRPE);
 
 groups = {1:length(fl), rabieslight,AAVlight};
-groupTitles = {'All','Inputs','VGlut2'};
 figure;
-r = Tus{:,{'pureRewardWithCue','pureReward','pureExp','mixed'}};
-bardata = zeros(length(groups),4);
-for i = 1:length(groups)
-    bardata(i,:) = mean(r(groups{i},:));
-end
-bar(bardata)
+Tus.pureRewardWithCue
