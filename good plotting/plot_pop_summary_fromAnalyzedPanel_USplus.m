@@ -20,11 +20,11 @@ end
     rowNum = 5;
     pagePicNum = colNum*rowNum;
     % color for 90% water, 50% water, nothing, and airpuff; will modify later
-    colorSet = [%0 	0 	255;%blue  
-                   %30 	144 	255;%light blue  
+    colorSet = [0 	0 	255;%blue  
+                   30 	144 	255;%light blue  
                    128 	128 128; % grey
-                   255 0 0
-                   0 0 0]/255; % black;
+                   %255 0 0
+                   ]/255; % black;
     for n = 1:totalFile
         pageIdx = floor((n-1)/pagePicNum)+1;
         tempn = n-(pageIdx-1)*pagePicNum;
@@ -42,7 +42,7 @@ end
         rowIdx = floor((tempn-1)/colNum)+1;
         p(rowIdx,colIdx).select()
         
-        plotTrialType = [7 4 8];
+        plotTrialType = [1 2 7];
         for i = 1:length(plotTrialType)
             plot(-1:0.001:4,smooth(squeeze(psthAll(n,plotTrialType(i),:)),10),'color',colorSet(i,:)); hold on;
             xlim([-0.9 3.9])

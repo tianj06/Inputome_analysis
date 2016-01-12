@@ -18,13 +18,13 @@ RCSvalue = zeros(N,1);
 TimeWin = 1:500;
 resOffset = 1000;
 bin = 50;
-step = 10;
-N_step = 1000/step;
+step = 5;
+N_step = 500/step;
 Rcslatency = zeros(N,1);
 Acslatency = zeros(N,1);
 for i = 1:length(fl)
     a = load(fl{i},'area');
-    brainArea{i} = a.area;
+    %brainArea{i} = a.area;
     load(fl{i}, 'analyzedData')
     if ~exist('analyzedData', 'var')
         analyzedData = getPSTHSingleUnit(fl{i}); 
@@ -50,7 +50,7 @@ for i = 1:length(fl)
         bw = mean(r_temp{2}(:,tw),2);
         p_binWin(k) = ranksum(rw,bw);
     end
-    ind = strfind(p_binWin<0.05,[1 1 1 1 1]);
+    ind = strfind(p_binWin<0.05,[1 1 1 1]);
     if ~isempty(ind)
         Rcslatency(i) = (ind(1)-1)*step+25;
     else
@@ -66,7 +66,7 @@ for i = 1:length(fl)
         bw = mean(r_temp{2}(:,tw),2);
         p_binWin(k) = ranksum(rw,bw);
     end
-    ind = strfind(p_binWin<0.05,[1 1 1 1 1]);
+    ind = strfind(p_binWin<0.05,[1 1 1 1]);
     if ~isempty(ind)
         Acslatency(i) = (ind(1)-1)*step+25;
     else
@@ -164,9 +164,18 @@ plotAreas = {'Ventral striatum','Dorsal striatum','Ventral pallidum','Subthalami
 %plotAreas = fliplr(plotAreas);
 G = orderAreaGroup(brainArea, plotAreas);
 ind = find(RCSvalue);
-bin = 0:50:1000;
+bin = 0:20:500;
+figure;
 plotHistByGroup(Rcslatency(ind),bin,G(ind),plotAreas)
+% among all RCSvalue neurons, 96.1% have latency smaller than 500
+sum(Rcslatency(ind)<500)/length(ind)
+% among all non RCSvalue neurons, 42.0% have latency smaller than 500
+sum(Rcslatency(~RCSvalue)<500)/sum(~RCSvalue)
 
-ind = find(sigACS&(direACS==0));
+
+
+figure;
+ind = find(sigACS&(direACS==1)); % &(direACS==0)
 plotHistByGroup(Acslatency(ind),bin,G(ind),plotAreas)
 
+sum(Acslatency(ind)<500)/length(ind)
