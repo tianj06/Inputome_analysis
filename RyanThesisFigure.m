@@ -1,7 +1,7 @@
 fl = what(pwd);
 fl = fl.mat;
 % light identification
-formattedpath = 'D:\Dropbox (Uchida Lab)\lab\Ryan thesis\PPTgAllunits';
+formattedpath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\Ryan thesis\PPTgAllunits';
 lowsalt = 0.01;
 highsalt = 0.01;
 plotflag = 1;
@@ -168,10 +168,7 @@ n1 = hist3(proj(rabieslight,[1,2]),'Edges',edges)/sum(rabieslight);
 imagesc('XData',edges{1},'YData',edges{2},'CData',n1,[0 0.12])
 colormap(hot);xlim([-3 3]);ylim([-2 2])
 xlabel('PC1');ylabel('PC2');title('rabeis')
-%% plot mean response
-plotAveragePSTH_analyzed_filelist(fl(AAVlight))
-plotAveragePSTH_analyzed_filelist(fl(rabieslight))
-plotAveragePSTH_analyzed_filelist(fl)
+
 
 %% plot pure reward, mixed and pure expectation
 Tus.pureReward = Tus.sig50Rvs50OM&(~Tus.sigExp)&(~Tus.sig50OM);
@@ -204,7 +201,7 @@ figure;
 bar(bardata')
 set(gca,'xticklabel',{'pureRewardNoCue','pureReward','pureExp','mixed'})
 legend(groupTitles)
-
+prettyP('','','','','a')
 
 r = JoinedRPE{:,{'RewardRPE','CSposRPE','CSposNegRPE'}};
 bardata = zeros(length(groups),3);
@@ -215,3 +212,74 @@ figure;
 bar(bardata')
 set(gca,'xticklabel',{'reward RPE','reward+CS RPE','complete'})
 legend(groupTitles)
+prettyP('','','','','a')
+
+%%
+% early CS value
+r = TCS.csValue;
+bardata = zeros(length(groups),3);
+for i = 1:length(groups)
+    bardata(i,1) = mean(r(groups{i})==1);
+    bardata(i,2) = mean(r(groups{i})==-1);
+end
+figure;
+bar(bardata,'stacked')
+set(gca,'xticklabel',groupTitles)
+legend({'Cue Pos','Cue Neg'})
+ylim([0 1])
+prettyP('','','','','a')
+
+%% plot mean response
+for i = 1:length(groups)
+    ax = plotAveragePSTH_analyzed_filelist(fl(groups{i}));
+    title(groupTitles{i})
+    set(ax(1),'ylim',[0 30])
+    set(ax(2),'ylim',[0 30])
+end
+
+%% time course value coding before reward
+for i = 1:length(fl)
+    load(fl{i},'newCodingResults')
+    if ~exist('newCodingResults','var')
+        newCodingResults = CompuateValueRelatedResponseNew(fl{i},1);
+    end
+    CSvalue(i,:) = newCodingResults(1,[1 2 3]);
+    CSdir(i,:) = newCodingResults(2,[1 2 3]);
+    clear newCodingResults
+end
+
+%%
+figure;
+for i = 1:length(groups)
+    valueKeys = {'csValue','EarlydelayValue','delayValue'};
+    r = CSdir{groups{i},valueKeys};
+    bardata = zeros(3,2);
+    bardata(:,1) =  mean(r==1);
+    bardata(:,2) =  mean(r==-1);
+    subplot(2,3,i)
+    bar(bardata,'stacked')
+    set(gca,'xticklabel',valueKeys)
+    title(groupTitles{i})
+    legend({'Cue Pos','Cue Neg'})
+    ylim([0 1])
+    prettyP('','','','','a')
+end
+
+figure;
+for i = 1:length(groups)
+    valueKeys = {'csValue','EarlydelayValue','delayValue'};
+    r = CSdir{groups{i},valueKeys};
+    bardata = [];
+    bardata(1) =  mean((r(:,1)==1)); % first positive
+    bardata(2) =  mean((r(:,1)==1)& (r(:,2)==1)); % stay positive
+    bardata(3) =  mean((r(:,1)==1)& (r(:,2)==-1)); % becomes negative
+
+    subplot(1,5,i)
+    bar(bardata)
+    set(gca,'xticklabel',{'Pos first','stay Pos','Pos to Neg'})
+    title(groupTitles{i})
+    %legend({'All Pos','Pos to Neg'})
+    ylim([0 1])
+    prettyP('','','','','a')
+end
+
