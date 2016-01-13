@@ -1,7 +1,7 @@
 fl = what(pwd);
 fl = fl.mat;
 % light identification
-formattedpath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\Ryan thesis\PPTgAllunits';
+formattedpath = 'D:\Dropbox (Uchida Lab)\lab\Ryan thesis\PPTgAllunits';
 lowsalt = 0.01;
 highsalt = 0.01;
 plotflag = 1;
@@ -10,6 +10,7 @@ plotflag = 1;
 
 finalLight = lightfiles(lightlatency<6);
 lightLabel = ismember(fl,finalLight);
+longlightLabel = ismember(fl,lightfiles);
 % AAV vs Rabies label
 for i = 1:length(fl)
     animals{i} = extractAnimalFolderFromFormatted(fl{i});
@@ -34,6 +35,10 @@ end
 % fl = fl(~cyrusLabel);
 
 AAVlabel = ismember(animals,{'ATG','Bruno','Cyrus'});
+AAVlight = lightLabel&AAVlabel';
+rabieslight = lightLabel&(~AAVlabel');
+AAVlightL = longlightLabel&AAVlabel';
+rabieslightL = longlightLabel&(~AAVlabel');
 %% plotting sorted roc
 filelist = fl;
 smoothPSTH = zeros(length(filelist),10,5001);
@@ -56,8 +61,7 @@ auROCvalue = permute(auROCvalue,[2 1 3]);
 cueResponse = nanmean(squeeze(rocPSTH(:,1,11:30)),2);
 [~,plotorder] = sort(cueResponse);
 
-AAVlight = lightLabel&AAVlabel';
-rabieslight = lightLabel&(~AAVlabel');
+
 
 figure('Position',[200 200 1000 787]);
 subplot(1,6,1)
@@ -187,13 +191,27 @@ RewardRPE = Tus.RPE;
 CSposNegRPE = double((Tus.RPEsign.*TCS.csValue >0)&(Tus.OM50sign.*TCS.csValue >0));
 CSposRPE = double(Tus.RPEsign.*TCS.csValue >0);
 JoinedRPE = table(CSposRPE,CSposNegRPE,RewardRPE);
+%%
+groups = {1:length(fl), rabieslight,AAVlight, rabieslightL,AAVlightL};
+groupTitles = {'All neurons','InputsS','VGlut2S','Inputs','VGlut2'};
 
-groups = {1:length(fl), rabieslight,AAVlight};
-groupTitles = {'All','Inputs','VGlut2'};
-figure;
 r = Tus{:,{'pureRewardWithCue','pureReward','pureExp','mixed'}};
 bardata = zeros(length(groups),4);
 for i = 1:length(groups)
     bardata(i,:) = mean(r(groups{i},:));
 end
-bar(bardata)
+figure;
+bar(bardata')
+set(gca,'xticklabel',{'pureRewardNoCue','pureReward','pureExp','mixed'})
+legend(groupTitles)
+
+
+r = JoinedRPE{:,{'RewardRPE','CSposRPE','CSposNegRPE'}};
+bardata = zeros(length(groups),3);
+for i = 1:length(groups)
+    bardata(i,:) = mean(r(groups{i},:));
+end
+figure;
+bar(bardata')
+set(gca,'xticklabel',{'reward RPE','reward+CS RPE','complete'})
+legend(groupTitles)
