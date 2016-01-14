@@ -17,8 +17,8 @@ averagePSTH = squeeze(nanmean(psth));
 CueColor= [  0 	0 	255;%blue  
              30 	144 	255;%light blue  
              128 	128 128;
-             0 0 0]/255; % grey
-trialType = [1 2 7 9];
+             255 0 0]/255; % grey
+trialType = [1 2 7 4];
 
         
 figure;
@@ -26,13 +26,13 @@ ax(1) = subplot(1,2,1);
 if freeReward
     totalTrialTypes = 4;
 else
-    totalTrialTypes = 3;
+    totalTrialTypes = length(trialType);
 end 
 for i = 1:totalTrialTypes
         plot(-1:0.001:4,averagePSTH(trialType(i),:),'color',CueColor(i,:),'LineWidth',1.5)
         hold on
 end
-h = legend('90% W','50% W','0% W','free W');
+h = legend('90% W','50% W','0% W','80% Puff');
 set(h,'Location','NorthWest','box','off')
 prettyP([-0.9 3.8],'','','','l')
 xlabel('Time - Odor (ms)')
@@ -40,7 +40,7 @@ ylabel('Spikes/s')
 title(['n=' num2str(k-1)])
 
 ax(2) = subplot(1,2,2);
-for i = 1:3
+for i = 1:totalTrialTypes
         plot(-1:0.001:4,averagePSTH(i+4,:),'color',CueColor(i,:),'LineWidth',1.5)
         hold on
 end

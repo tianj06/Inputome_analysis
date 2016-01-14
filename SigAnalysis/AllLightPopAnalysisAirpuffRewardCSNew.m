@@ -23,10 +23,16 @@ N_step = 500/step;
 Rcslatency = zeros(N,1);
 Acslatency = zeros(N,1);
 for i = 1:length(fl)
-    a = load(fl{i},'area');
+    if rem(i,100)==0
+        disp(sprintf('%0.2f%%',100*i/length(fl)))
+    end
+    %a = load(fl{i},'area');
     %brainArea{i} = a.area;
     load(fl{i}, 'analyzedData')
     if ~exist('analyzedData', 'var')
+        analyzedData = getPSTHSingleUnit(fl{i}); 
+        save(fl{i},'-append','analyzedData')
+    elseif length(analyzedData.raster)<14
         analyzedData = getPSTHSingleUnit(fl{i}); 
         save(fl{i},'-append','analyzedData')
     end
@@ -50,7 +56,7 @@ for i = 1:length(fl)
         bw = mean(r_temp{2}(:,tw),2);
         p_binWin(k) = ranksum(rw,bw);
     end
-    ind = strfind(p_binWin<0.05,[1 1 1 1]);
+    ind = strfind(p_binWin<0.05,[1 1 1 1 1]);
     if ~isempty(ind)
         Rcslatency(i) = (ind(1)-1)*step+25;
     else
@@ -66,7 +72,7 @@ for i = 1:length(fl)
         bw = mean(r_temp{2}(:,tw),2);
         p_binWin(k) = ranksum(rw,bw);
     end
-    ind = strfind(p_binWin<0.05,[1 1 1 1]);
+    ind = strfind(p_binWin<0.05,[1 1 1 1 1]);
     if ~isempty(ind)
         Acslatency(i) = (ind(1)-1)*step+25;
     else
@@ -160,10 +166,10 @@ end
 
 %% plot latency
 plotAreas = {'Ventral striatum','Dorsal striatum','Ventral pallidum','Subthalamic',...
-    'Lateral hypothalamus','RMTg','PPTg','VTA type3', 'VTA type2','Dopamine','rdopamine'}; % 
+    'Lateral hypothalamus','RMTg','PPTg'}; % 'VTA type3', 'VTA type2','Dopamine','rdopamine'
 %plotAreas = fliplr(plotAreas);
 G = orderAreaGroup(brainArea, plotAreas);
-ind = find(RCSvalue);
+ind = find(RCSvalue==-1);
 bin = 0:20:500;
 figure;
 plotHistByGroup(Rcslatency(ind),bin,G(ind),plotAreas)
@@ -175,7 +181,7 @@ sum(Rcslatency(~RCSvalue)<500)/sum(~RCSvalue)
 
 
 figure;
-ind = find(sigACS&(direACS==1)); % &(direACS==0)
+ind = find(sigACS&(direACS==0)); % &(direACS==0)
 plotHistByGroup(Acslatency(ind),bin,G(ind),plotAreas)
 
 sum(Acslatency(ind)<500)/length(ind)
