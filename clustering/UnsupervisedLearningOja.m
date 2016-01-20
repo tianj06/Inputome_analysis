@@ -40,12 +40,27 @@ colorset= [  0 	0 	255;%blue
 %%
 plotdata = reshape(output,[],size(a,2));
 figure;
+subplot(2,1,1)
 for i = 1:size(a,2)
     plot(squeeze(plotdata(:,i)),'color',colorset(i,:))
     hold on;
 end
 %set(gca,'xtick',[1:10:30],'xticklabel',{'0','1','2'})
 xlabel('Time - odor (s)')
+title('Oja''s')
+
+subplot(2,1,2)
+plotdata = reshape(mean(zeroMeanPSTh),[],size(a,2));
+for i = 1:size(a,2)
+    plot(squeeze(plotdata(:,i)),'color',colorset(i,:))
+    hold on;
+end
+%set(gca,'xtick',[1:10:30],'xticklabel',{'0','1','2'})
+xlabel('Time - odor (s)')
+title('Simple average')
+%%
+
+
 
 [eigvect,proj,eigval] = princomp(zeroMeanPSTh);
 plotdata = reshape(eigvect(:,1),[],3);

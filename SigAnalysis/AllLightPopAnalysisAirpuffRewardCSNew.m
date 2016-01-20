@@ -22,6 +22,9 @@ step = 5;
 N_step = 500/step;
 Rcslatency = zeros(N,1);
 Acslatency = zeros(N,1);
+Al = zeros(N,1);
+Rl = zeros(N,1);
+
 for i = 1:length(fl)
     if rem(i,100)==0
         disp(sprintf('%0.2f%%',100*i/length(fl)))
@@ -78,6 +81,12 @@ for i = 1:length(fl)
     else
         Acslatency(i) = nan;
     end
+    
+    Rl(i) = freeUSlatency(rs{11},500,5,50,1000);
+    Rl2(i) = freeUSlatency(rs{11},500,5,30,1000);
+
+    Al(i) = freeUSlatency(rs{14},500,5,50,1000);
+    Al2(i) = freeUSlatency(rs{14},500,5,30,1000);
 end
 %%
 brainArea(ismember(brainArea,{'LH_an','LH_psth','LH_po'})) = {'LH'};
@@ -166,7 +175,7 @@ end
 
 %% plot latency
 plotAreas = {'Ventral striatum','Dorsal striatum','Ventral pallidum','Subthalamic',...
-    'Lateral hypothalamus','RMTg','PPTg'}; % 'VTA type3', 'VTA type2','Dopamine','rdopamine'
+    'Lateral hypothalamus','RMTg','PPTg','VTA type3', 'VTA type2','Dopamine'}; % 'rdopamine'
 %plotAreas = fliplr(plotAreas);
 G = orderAreaGroup(brainArea, plotAreas);
 ind = find(RCSvalue==-1);
@@ -185,3 +194,18 @@ ind = find(sigACS&(direACS==0)); % &(direACS==0)
 plotHistByGroup(Acslatency(ind),bin,G(ind),plotAreas)
 
 sum(Acslatency(ind)<500)/length(ind)
+
+
+figure;
+ind = find(sigACS&(direACS==0));
+bin = 0:10:500;
+plotHistByGroup(Al2(ind),bin,G(ind),plotAreas)
+
+%% plot input with CS responses that are faster than 140ms
+for i = 1:8
+    ind = G==i&Rcslatency<140&RCSvalue==1;
+    if sum(ind)>0
+        plot_pop_summary_fromAnalyzedPanel_USplus(fl(ind),savePath,'temp',3)
+        title(plotAreas{i})
+    end
+end

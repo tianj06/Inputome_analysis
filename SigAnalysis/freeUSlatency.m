@@ -1,5 +1,7 @@
-function l = freeUSlatency(r,timeWindow,step,bin)
+function l = freeUSlatency(r,timeWindow,step,bin,resOffset)
+if nargin < 5
     resOffset = 3000;
+end
     p_binWin = [];
 %     r1 = r(:,resOffset-500:resOffset-1); % preUS period
 %     N = 500/bin;

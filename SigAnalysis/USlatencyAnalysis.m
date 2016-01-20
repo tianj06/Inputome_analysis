@@ -64,10 +64,10 @@ end
 
 %%
 plotAreas = {'Ventral striatum','Dorsal striatum','Ventral pallidum','Subthalamic',...
-    'Lateral hypothalamus','RMTg','PPTg'}; % ,'VTA type3', 'VTA type2','Dopamine','rdopamine'
+    'Lateral hypothalamus','RMTg','PPTg','VTA type3', 'VTA type2','Dopamine'}; % ,,'rdopamine'
 %plotAreas = fliplr(plotAreas);
 G = orderAreaGroup(brainArea, plotAreas);
-ind = find(freeWater==1); %dirFreeWater==1 freeWater
+ind = find(dirFreeWater==0); %dirFreeWater==1 freeWater
 bin = 0:10:500;
 figure;
 plotHistByGroup(Rlatency(ind),bin,G(ind),plotAreas)
@@ -76,7 +76,7 @@ sum(Rlatency(ind)<500)/length(ind)
 % among all non RCSvalue neurons, 42.0% have latency smaller than 500
 sum(Rlatency(isnan(freeWater)|(freeWater==0))<500)/sum(isnan(freeWater)|(freeWater==0))
 
-ind = find(freePuff==1); %dirFreeWater==1 freeWater
+ind = find(dirFreePuff==0); %dirFreeWater==1 freeWater
 figure;
 plotHistByGroup(Alatency(ind),bin,G(ind),plotAreas)
 % among all RCSvalue neurons, 96.1% have latency smaller than 500
