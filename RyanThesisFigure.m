@@ -189,7 +189,7 @@ CSposNegRPE = double((Tus.RPEsign.*TCS.csValue >0)&(Tus.OM50sign.*TCS.csValue >0
 CSposRPE = double(Tus.RPEsign.*TCS.csValue >0);
 JoinedRPE = table(CSposRPE,CSposNegRPE,RewardRPE);
 %%
-groups = {1:length(fl), rabieslight,AAVlight, rabieslightL,AAVlightL};
+groups = {true(length(fl),1), rabieslight,AAVlight, rabieslightL,AAVlightL};
 groupTitles = {'All neurons','InputsS','VGlut2S','Inputs','VGlut2'};
 
 r = Tus{:,{'pureRewardWithCue','pureReward','pureExp','mixed'}};
@@ -229,7 +229,7 @@ legend({'Cue Pos','Cue Neg'})
 ylim([0 1])
 prettyP('','','','','a')
 
-%% plot mean response
+%% plot mean psth response for each group
 for i = 1:length(groups)
     ax = plotAveragePSTH_analyzed_filelist(fl(groups{i}));
     title(groupTitles{i})
@@ -248,8 +248,9 @@ for i = 1:length(fl)
     clear newCodingResults
 end
 
-%%
+% plot percent of neurons showing sig value coding before reward
 figure;
+xvalues = {'CS','Early delay','Late delay'};
 for i = 1:length(groups)
     valueKeys = {'csValue','EarlydelayValue','delayValue'};
     r = CSdir{groups{i},valueKeys};
@@ -258,28 +259,259 @@ for i = 1:length(groups)
     bardata(:,2) =  mean(r==-1);
     subplot(2,3,i)
     bar(bardata,'stacked')
-    set(gca,'xticklabel',valueKeys)
+    set(gca,'xticklabel',xvalues)
     title(groupTitles{i})
     legend({'Cue Pos','Cue Neg'})
     ylim([0 1])
     prettyP('','','','','a')
 end
 
-figure;
-for i = 1:length(groups)
-    valueKeys = {'csValue','EarlydelayValue','delayValue'};
-    r = CSdir{groups{i},valueKeys};
-    bardata = [];
-    bardata(1) =  mean((r(:,1)==1)); % first positive
-    bardata(2) =  mean((r(:,1)==1)& (r(:,2)==1)); % stay positive
-    bardata(3) =  mean((r(:,1)==1)& (r(:,2)==-1)); % becomes negative
+% figure;
+% for i = 1:length(groups)
+%     valueKeys = {'csValue','EarlydelayValue','delayValue'};
+%     r = CSdir{groups{i},valueKeys};
+%     bardata = [];
+%     bardata(1) =  mean((r(:,1)==1)); % first positive
+%     bardata(2) =  mean((r(:,1)==1)& (r(:,2)==1)); % stay positive
+%     bardata(3) =  mean((r(:,1)==1)& (r(:,2)==-1)); % becomes negative
+% 
+%     subplot(1,5,i)
+%     bar(bardata)
+%     set(gca,'xticklabel',{'Pos first','stay Pos','Pos to Neg'})
+%     title(groupTitles{i})
+%     %legend({'All Pos','Pos to Neg'})
+%     ylim([0 1])
+%     prettyP('','','','','a')
+% end
 
-    subplot(1,5,i)
-    bar(bardata)
-    set(gca,'xticklabel',{'Pos first','stay Pos','Pos to Neg'})
-    title(groupTitles{i})
-    %legend({'All Pos','Pos to Neg'})
-    ylim([0 1])
-    prettyP('','','','','a')
+
+%% plot baseline
+bl = squeeze(mean(rawPSTH(:,1,1:1000),3));
+edge = 0:2:70;
+figure;
+histogram(bl(groups{2}),edge, 'Normalization','probability')
+xlabel('Spikes/s')
+title('inputS baseline')
+
+figure;
+histogram(bl(groups{3}),edge, 'Normalization','probability')
+xlabel('Spikes/s')
+title('vGlut2S baseline')
+
+ranksum(bl(groups{2}),bl(groups{3}))
+
+figure;
+histogram(bl(groups{1}),edge, 'Normalization','probability')
+xlabel('Spikes/s')
+title('All units baseline')
+%% population ROC plots with different baseline range
+titleText = {'50% reward','omission 50% reward'};
+plotdata = rocPSTH(:,[2 6],:);
+figure;
+for j = 1:2
+    subplot(1,2,j)
+    plotValue = squeeze(plotdata(groups{3}&bl<10,j,:));
+    if j==1
+        [~,plotorder] = sort(sum(plotValue(:,11:20),2));
+    end
+    hold on;
+    imagesc(plotValue(plotorder,:),[0 1]); %
+    colormap yellowblue
+    axis(gca,'tight','ij');
+    set(gca,'XTick',[10.5:10:50],'XTickLabel',{'0','1','2','3'})
+    ylabel('Neuron'); xlabel('Time (s)');
+    title(titleText{j});
 end
+%% the following block of code is adapted from AllLightPopAnalysisAirpuffRewardCSNew
+
+% CS analysis
+direRCS = RCSvalue;
+direRCS(direRCS==-1) = 0;
+tempIdx = [];
+tempIdx(:,1) = RCSvalue&sigACS&(direACS==direRCS); %RewadPuffSame
+tempIdx(:,2) = RCSvalue&sigACS&(direACS~=direRCS); % RewardPuffOppo
+tempIdx(:,3) = RCSvalue&(~sigACS); %rewardOnly
+tempIdx(:,4) = (~sigRCS)&(~sigR50CS')&sigACS; %puffOnly
+tempIdx(:,5) = (sigACS|sigRCS|sigR50CS')&(~(tempIdx(:,1)|tempIdx(:,2)...
+    |tempIdx(:,3)|tempIdx(:,4))); %others
+
+%
+figure;
+titleText = {'Salience','Value','RewardOnly','PuffOnly','Other'};
+
+for i = 1:5
+    subplot(2,3,i)
+    gm = groupedmean(tempIdx(:,i), groups);
+    barh(gm); set(gca,'ytickLabel',groupTitles);xlim([0 1])
+    title(titleText{i})
+end
+
+figure;
+res = [];
+plotdata  = [];
+for i = 1:length(groups)
+    subplot(2,3,i)
+    res(:,1,1) = tempIdx(:,1)&direRCS==1;
+    res(:,1,2) = tempIdx(:,1)&direRCS==0;
+    res(:,2,1) = tempIdx(:,2)&direRCS==1;
+    res(:,2,2) = tempIdx(:,2)&direRCS==0;
+    res(:,3,1) = tempIdx(:,3)&direRCS==1;
+    res(:,3,2) = tempIdx(:,3)&direRCS==0;
+    res(:,4,1) = tempIdx(:,4)&direACS==1;
+    res(:,4,2) = tempIdx(:,4)&direACS==0;
+    plotdata(i,:,:) = squeeze(mean(res(groups{i},:,:)))';
+    bar(squeeze(mean(res(groups{i},:,:))),'stacked');
+    legend('pos','neg')
+    title(groupTitles{i});ylim([0 1]);xlim([0 5])
+    set(gca,'xtickLabel',titleText)
+end
+
+figure;
+for i = 1:4
+    subplot(2,2,i)
+    barh(squeeze(plotdata(:,:,i)))
+    set(gca,'yticklabel',groupTitles);xlim([0 1])
+    title(titleText{i})
+end
+
+% plot latency
+ind = find(RCSvalue==1);
+bin = 0:20:500;
+figure;
+for i = 1:5
+    tempG{i} = groups{i}(ind);
+end
+plotHistByGroup_cellarray(Rcslatency(ind),bin,tempG,groupTitles)
+% among all RCSvalue neurons, 96.1% have latency smaller than 500
+sum(Rcslatency(ind)<500)/length(ind)
+% among all non RCSvalue neurons, 42.0% have latency smaller than 500
+sum(Rcslatency(~RCSvalue)<500)/sum(~RCSvalue)
+
+
+
+% figure;
+% ind = find(sigACS&(direACS==0)); % &(direACS==0)
+% plotHistByGroup(Acslatency(ind),bin,G(ind),plotAreas)
+% 
+% sum(Acslatency(ind)<500)/length(ind)
+
+%% the following code is adapted from AllLightPopAnalysisAirpuffRewardUSNew
+sigReward = WaterVsBefore&WaterVsNothing;
+sigPuff = PuffVsBefore&PuffVsNothing;
+
+tempIdx = [];
+tempIdx(:,1) = sigReward&sigPuff&(direAUS==direRUS); %RewadPuffSame
+tempIdx(:,2) = sigReward&sigPuff&(direAUS~=direRUS); % RewardPuffOppo
+tempIdx(:,3) = sigReward&(~sigPuff); %rewardOnly
+tempIdx(:,4) = (~sigReward)&sigPuff; %puffOnly
+figure;
+titleText = {'salience','Value','RewardOnly','PuffOnly'};
+
+for i = 1:4
+    subplot(2,2,i)
+    barh(groupedmean(tempIdx(:,i),groups)); set(gca,'ytickLabel',groupTitles);xlim([0 1])
+    title(titleText{i})
+end
+
+figure;
+res = [];
+for i = 1:length(groups)
+    subplot(2,3,i)
+    res(:,1,1) = tempIdx(:,1)&direRUS==1;
+    res(:,1,2) = tempIdx(:,1)&direRUS==0;
+    res(:,2,1) = tempIdx(:,2)&direRUS==1;
+    res(:,2,2) = tempIdx(:,2)&direRUS==0;
+    res(:,3,1) = tempIdx(:,3)&direRUS==1;
+    res(:,3,2) = tempIdx(:,3)&direRUS==0;
+    res(:,4,1) = tempIdx(:,4)&direAUS==1;
+    res(:,4,2) = tempIdx(:,4)&direAUS==0;
+    plotdata(i,:,:) = squeeze(mean(res(groups{i},:,:)))';
+    bar(squeeze(mean(res(groups{i},:,:))),'stacked');
+    legend('pos','neg')
+    title(groupTitles{i});ylim([0 1]);xlim([0 5])
+    set(gca,'xtickLabel',titleText)
+end
+
+figure;
+for i = 1:4
+    subplot(2,2,i)
+    barh(squeeze(plotdata(:,:,i)))
+    set(gca,'yticklabel',groupTitles);xlim([0 1])
+    title(titleText{i})
+end
+
+
+tempIdx = [];
+tempIdx(:,1) = sigReward&(direRUS==1); % reward pos
+tempIdx(:,2) = sigReward&(direRUS==0); % reward neg
+tempIdx(:,3) = sigPuff&(direAUS==1); % airpuff pos
+tempIdx(:,4) = sigPuff&(direAUS==0); % airpuff neg
+figure;
+titleText = {'reward pos','reward neg','airpuff pos','airpuff neg'};
+
+[G,areaName]=grp2idx(brainArea);
+for i = 1:4
+    subplot(2,2,i)
+    barh(grpstats(tempIdx(:,i),G')); set(gca,'ytickLabel',areaName);xlim([0 1])
+    title(titleText{i})
+end
+%%
+puffNans = find(isnan(freePuff));
+waterNans = find(isnan (freeWater));
+notNans = find((~isnan(freePuff))&(~isnan(freeWater)));
+sigReward = freeWater(notNans);
+sigPuff = freePuff(notNans);
+dirFreePuff = dirFreePuff(notNans)';
+dirFreeWater = dirFreeWater(notNans)';
+
+%%
+tempIdx = [];
+tempIdx(:,1) = sigReward&sigPuff&(dirFreePuff==dirFreeWater); %RewadPuffSame
+tempIdx(:,2) = sigReward&sigPuff&(dirFreePuff~=dirFreeWater); % RewardPuffOppo
+tempIdx(:,3) = sigReward&(~sigPuff); %rewardOnly
+tempIdx(:,4) = (~sigReward)&sigPuff; %puffOnly
+figure;
+titleText = {'salience','Value','RewardOnly','PuffOnly'};
+for i = 1:5
+    tempG{i} = groups{i}(notNans);
+end
+for i = 1:4
+    subplot(2,2,i)
+    barh(groupedmean(tempIdx(:,i),tempG)); set(gca,'ytickLabel',groupTitles);xlim([0 1])
+    title(titleText{i})
+end
+
+figure;
+res = [];
+for i = 1:length(tempG)
+    subplot(2,3,i)
+    res(:,1,1) = tempIdx(:,1)&dirFreeWater==1;
+    res(:,1,2) = tempIdx(:,1)&dirFreeWater==0;
+    res(:,2,1) = tempIdx(:,2)&dirFreeWater==1;
+    res(:,2,2) = tempIdx(:,2)&dirFreeWater==0;
+    res(:,3,1) = tempIdx(:,3)&dirFreeWater==1;
+    res(:,3,2) = tempIdx(:,3)&dirFreeWater==0;
+    res(:,4,1) = tempIdx(:,4)&dirFreePuff==1;
+    res(:,4,2) = tempIdx(:,4)&dirFreePuff==0;
+    plotdata(i,:,:) = squeeze(mean(res(tempG{i},:,:)))';
+    bar(squeeze(mean(res(tempG{i},:,:))),'stacked');
+    legend('pos','neg')
+    title(groupTitles{i});ylim([0 1]);xlim([0 5])
+    set(gca,'xtickLabel',titleText)
+end
+figure;
+for i = 1:4
+    subplot(2,2,i)
+    barh(squeeze(plotdata(:,:,i)))
+    set(gca,'yticklabel',groupTitles);xlim([0 1])
+    title(titleText{i})
+end
+
+freeWaterResponse = squeeze(mean(rawPSTH(:,9,3001:3500),3))-squeeze(mean(rawPSTH(:,9,2501:3000),3));
+freePuffResponse = squeeze(mean(rawPSTH(:,10,3001:3500),3))-squeeze(mean(rawPSTH(:,10,2501:3001),3));
+figure;
+i = 3;
+scatter(freeWaterResponse(groups{i}),freePuffResponse(groups{i}))
+hold on; vline(0);hline(0)
+xlabel('free water');ylabel('free puff');title(groupTitles{i})
 

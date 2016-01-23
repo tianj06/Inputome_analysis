@@ -20,8 +20,8 @@ PuffVsNothing = zeros(N,1);
 direRUS = zeros(N,1);
 direAUS = zeros(N,1);
 for i = 1:length(fl)
-    %a = load(fl{i},'area');
-    %brainArea{i} = a.area;
+    a = load(fl{i},'area');
+    brainArea{i} = a.area;
     load(fl{i}, 'analyzedData')
     if ~exist('analyzedData', 'var')
         analyzedData = getPSTHSingleUnit(fl{i}); 

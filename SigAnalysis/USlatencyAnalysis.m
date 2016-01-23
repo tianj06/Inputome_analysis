@@ -4,7 +4,7 @@ for i = 1:length(fl)
     a = load(fl{i},'area');
     brainArea{i} = a.area;
 end
-%% remove VTA rabies units
+% remove VTA rabies units
 VTAind = ismember(brainArea,{'rVTA Type2','r VTA Type3','rdopamine'});
 fl = fl(~VTAind);
 N = length(fl);
@@ -17,6 +17,9 @@ dirFreeWater = zeros(N,1);
 dirFreePuff = zeros(N,1);
 timeWindowLatency = 500;
 for i = 1:length(fl)
+    if rem(i,100)==0
+        disp(sprintf('%0.2f%%',100*i/length(fl)))
+    end
     a = load(fl{i},'area');
     brainArea{i} = a.area;
     load(fl{i}, 'analyzedData')
@@ -61,24 +64,47 @@ for i = 1:length(oldnames)
     idx = ismember(oldbrain,oldnames{i});
     brainArea(idx) = newnames(i);
 end
+%%
+% remove nans
+nonNans = ~isnan(freeWater);
+brainArea1 = brainArea(nonNans);
+dirFreeWater = dirFreeWater(nonNans);
+Rlatency = Rlatency(nonNans);
+
+nonNans = ~isnan(freePuff);
+brainArea2 = brainArea(nonNans);
+Alatency = Alatency(nonNans);
+dirFreePuff = dirFreePuff(nonNans);
 
 %%
 plotAreas = {'Ventral striatum','Dorsal striatum','Ventral pallidum','Subthalamic',...
-    'Lateral hypothalamus','RMTg','PPTg','VTA type3', 'VTA type2','Dopamine'}; % ,,'rdopamine'
+    'Lateral hypothalamus','RMTg','PPTg'}; % ,,'rdopamine','VTA type3', 'VTA type2','Dopamine'
 %plotAreas = fliplr(plotAreas);
-G = orderAreaGroup(brainArea, plotAreas);
-ind = find(dirFreeWater==0); %dirFreeWater==1 freeWater
-bin = 0:10:500;
+
+G = orderAreaGroup(brainArea1, plotAreas);
+ind = dirFreeWater==0; %dirFreeWater==1 freeWater
+bin = [0:10:520 inf];
 figure;
-plotHistByGroup(Rlatency(ind),bin,G(ind),plotAreas)
+tempdata = Rlatency;%Rcslatency
+tempdata (~ind) = 10000;  
+tempdata (isnan(tempdata)) = 5000; % set a big value so that those neurons
+%are not shown in histogram calculation
+plotHistByGroup(tempdata,bin,G,plotAreas)
+
 % among all RCSvalue neurons, 96.1% have latency smaller than 500
 sum(Rlatency(ind)<500)/length(ind)
 % among all non RCSvalue neurons, 42.0% have latency smaller than 500
 sum(Rlatency(isnan(freeWater)|(freeWater==0))<500)/sum(isnan(freeWater)|(freeWater==0))
 
-ind = find(dirFreePuff==0); %dirFreeWater==1 freeWater
+G = orderAreaGroup(brainArea2, plotAreas);
+ind = dirFreePuff==1; %dirFreeWater==1 freeWater
+bin = [0:10:520 inf];
 figure;
-plotHistByGroup(Alatency(ind),bin,G(ind),plotAreas)
+tempdata = Alatency;
+tempdata (~ind) = 10000;  
+tempdata (isnan(tempdata)) = 5000; % set a big value so that those neurons
+%are not shown in histogram calculation
+plotHistByGroup(tempdata,bin,G,plotAreas)
 % among all RCSvalue neurons, 96.1% have latency smaller than 500
 sum(Alatency(ind)<500)/length(ind)
 % among all non RCSvalue neurons, 42.0% have latency smaller than 500
