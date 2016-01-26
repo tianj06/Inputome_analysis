@@ -89,7 +89,7 @@ tempdata = Rlatency;%Rcslatency
 tempdata (~ind) = 10000;  
 tempdata (isnan(tempdata)) = 5000; % set a big value so that those neurons
 %are not shown in histogram calculation
-plotHistByGroup(tempdata,bin,G,plotAreas)
+plotHistByGroup(tempdata,bin,G,plotAreas,45)
 
 % among all RCSvalue neurons, 96.1% have latency smaller than 500
 sum(Rlatency(ind)<500)/length(ind)
@@ -97,14 +97,14 @@ sum(Rlatency(ind)<500)/length(ind)
 sum(Rlatency(isnan(freeWater)|(freeWater==0))<500)/sum(isnan(freeWater)|(freeWater==0))
 
 G = orderAreaGroup(brainArea2, plotAreas);
-ind = dirFreePuff==1; %dirFreeWater==1 freeWater
+ind = dirFreePuff==0; %dirFreeWater==1 freeWater
 bin = [0:10:520 inf];
 figure;
 tempdata = Alatency;
 tempdata (~ind) = 10000;  
 tempdata (isnan(tempdata)) = 5000; % set a big value so that those neurons
 %are not shown in histogram calculation
-plotHistByGroup(tempdata,bin,G,plotAreas)
+plotHistByGroup(tempdata,bin,G,plotAreas,30)
 % among all RCSvalue neurons, 96.1% have latency smaller than 500
 sum(Alatency(ind)<500)/length(ind)
 % among all non RCSvalue neurons, 42.0% have latency smaller than 500

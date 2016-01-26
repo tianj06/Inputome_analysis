@@ -1,30 +1,17 @@
 
 for i = 1:length(fl)
-    load([allunitPath '\' fl{i}], 'analyzedData')
-    brainArea(i) = load([allunitPath '\' fl{i}], 'area');
+    load([allunitPath '\' filelist{i}], 'analyzedData')
+    load([allunitPath '\' filelist{i}], 'analyzedData')
+
     analyzedData = remove_too_few_trials(analyzedData,5);
     smoothPSTH(i,:,:) = analyzedData.smoothPSTH(1:10,:);
-    rawpsthAll(i,:,:) = analyzedData.rawPSTH(1:10,:);
+    rocPSTH(i,:,:) = analyzedData.rocPSTH(1:10,:);
+    lickPSTH(i,:,:) = analyzedData.rawLick(1:10,:);
+    rawPSTH(i,:,:) = analyzedData.rawPSTH(1:10,:);
     %
 end
-brainArea = {brainArea.area};
 %%
-oldnames = {'Striatum','LH','VS','PPTg','RMTg','VP','STh'};
-newnames = {'Dorsal striatum','Lateral hypothalamus','Ventral striatum',...
-    'PPTg','RMTg','Ventral pallidum','Subthalamic'};
-oldbrain = brainArea;
-for i = 1:length(oldnames)
-    idx = ismember(oldbrain,oldnames{i});
-    brainArea(idx) = newnames(i);
-end
-
-%%
-plotAreas = {'Ventral striatum','Dorsal striatum','Ventral pallidum','Subthalamic',...
-    'Lateral hypothalamus','RMTg','PPTg'}; % ,,'rdopamine','VTA type3', 'VTA type2','Dopamine'
-%plotAreas = fliplr(plotAreas);
-
-G = orderAreaGroup(brainArea, plotAreas);
-
+[G, area]=grp2idx(brainArea);
 normalized = 1;
 bin = 250;
 
@@ -55,4 +42,4 @@ for i = 1:10
     end
 end
 savePath = 'C:\Users\uchidalab\Dropbox (Uchida Lab)\lab\FunInputome\writing\Figures\';
-%export_fig([savePath 'average response by area normalized.pdf'])
+export_fig([savePath 'average response by area normalized.pdf'])

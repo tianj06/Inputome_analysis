@@ -28,13 +28,10 @@ for i = 1:length(groupName)
     set(gca,'TickDir','out')
     set(gca,'TickLength',[0.02 0.025])
     title(sprintf('%s n=%d/%d total=%d',groupName{i},plotNeuronCounts,valueNeuronCount,sum(G==i)))   
-    hold on;
+    %hold on;
     %vline(y_25,'g');vline(y_median,'r')
     if thresFlag
-        perc = sum(tempdata<=thres)/sum(G==i);
-        title(sprintf('%s n=%d/%d fast = %0.1f%%/%d',groupName{i},...
-            plotNeuronCounts,valueNeuronCount,perc*100,sum(G==i))) 
-        vline(thres,'r')
+        perc = sum(tempdata<thres)/sum(G==i);
     end
     
     xlim([0 500])

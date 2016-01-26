@@ -175,19 +175,19 @@ end
 
 %% plot latency
 plotAreas = {'Ventral striatum','Dorsal striatum','Ventral pallidum','Subthalamic',...
-    'Lateral hypothalamus','RMTg','PPTg','VTA type3', 'VTA type2','Dopamine'}; % 'rdopamine'
+    'Lateral hypothalamus','RMTg','PPTg'}; % 'rdopamine',,'VTA type3', 'VTA type2','Dopamine'
 %plotAreas = fliplr(plotAreas);
 
 G = orderAreaGroup(brainArea, plotAreas);
 %add free number o
-ind = RCSvalue== -1;%  ;  sigACS&(direACS==0)
+ind = RCSvalue== 1;%  ;  sigACS&(direACS==0)
 bin = [0:10:520 inf];
 figure;
 tempdata = Rcslatency;%Rcslatency
 tempdata (~ind) = 10000;  
 tempdata (isnan(tempdata)) = 5000; % set a big value so that those neurons
 %are not shown in histogram calculation
-plotHistByGroup(tempdata,bin,G,plotAreas)
+plotHistByGroup(tempdata,bin,G,plotAreas,120)
 % among all RCSvalue neurons, 96.1% have latency smaller than 500
 sum(Rcslatency(ind)<500)/length(ind)
 % among all non RCSvalue neurons, 42.0% have latency smaller than 500
@@ -196,7 +196,7 @@ sum(Rcslatency(~RCSvalue)<500)/sum(~RCSvalue)
 
 
 figure;
-ind = sigACS&(direACS==0); % &(direACS==0)
+ind = sigACS&(direACS==1); % &(direACS==0)
 tempdata = Acslatency;
 tempdata (isnan(tempdata)) = 10000; % set a big value so that those neurons
 %are not shown in histogram calculation
